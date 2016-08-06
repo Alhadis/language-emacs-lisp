@@ -1,0 +1,3 @@
+".source.emacs.lisp":
+	editor:
+		commentStart: ";; "

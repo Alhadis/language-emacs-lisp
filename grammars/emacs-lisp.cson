@@ -7,3 +7,22 @@ fileTypes: [
 	"emacs"
 	"emacs.desktop"
 ]
+patterns: [include: "#main"]
+
+
+repository:
+	
+	# Top-level patterns
+	main:
+		patterns: [
+			{include: "#comment"}
+		]
+	
+	
+	# Comment-line
+	comment:
+		name: "comment.line.semicolon.emacs.lisp"
+		begin: ";"
+		end:   "$"
+		beginCaptures:
+			0: name: "punctuation.definition.comment.emacs.lisp"
