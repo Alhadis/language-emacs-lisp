@@ -1,0 +1,9 @@
+name: "Emacs Lisp"
+scopeName: "source.emacs.lisp"
+fileTypes: [
+	"el"
+	"elc"
+	"spacemacs"
+	"emacs"
+	"emacs.desktop"
+]
