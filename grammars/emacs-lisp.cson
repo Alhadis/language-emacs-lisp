@@ -16,6 +16,9 @@ repository:
 	main:
 		patterns: [
 			{include: "#comment"}
+			{include: "#expression"}
+			{include: "#definition"}
+			{include: "#string"}
 		]
 	
 	
@@ -26,3 +29,29 @@ repository:
 		end:   "$"
 		beginCaptures:
 			0: name: "punctuation.definition.comment.emacs.lisp"
+
+
+	# S-expression
+	expression:
+		name: "meta.expression.emacs.lisp"
+		begin: "\\("
+		end:   "\\)"
+		beginCaptures: 0: name: "punctuation.section.expression.begin.emacs.lisp"
+		endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
+		patterns: [include: "$self"]
+
+	
+	# def* statement
+	definition:
+		name: "storage.type.function.emacs.lisp"
+		match: "defun|defadvice|defcustom|defvar"
+
+	
+	# "Double-quoted" string
+	string:
+		name: "string.quoted.double.emacs.lisp"
+		begin: '"'
+		end:   '"'
+		beginCaptures: 0: name: "punctuation.definition.string.begin.emacs.lisp"
+		endCaptures:   0: name: "punctuation.definition.string.end.emacs.lisp"
+	
