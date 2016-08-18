@@ -18,6 +18,7 @@ repository:
 			{include: "#comment"}
 			{include: "#expression"}
 			{include: "#definition"}
+			{include: "#keyword"}
 			{include: "#string"}
 			{include: "#quote"}
 			{include: "#nil"}
@@ -82,3 +83,11 @@ repository:
 	quote:
 		name: "keyword.control.quote.emacs.lisp"
 		match: "\\bquote\\b"
+
+
+	# :keywords
+	keyword:
+		name: "constant.keyword.emacs.lisp"
+		match: "(:)[-\\w]+"
+		captures:
+			1: name: "punctuation.definition.keyword.emacs.lisp"
