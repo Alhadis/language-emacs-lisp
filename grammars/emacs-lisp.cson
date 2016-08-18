@@ -51,8 +51,8 @@ repository:
 	
 	# def* statement
 	definition:
-		name: "storage.type.function.emacs.lisp"
-		match: "defun|defadvice|defcustom|defvar"
+		name: "storage.type.function.$1.emacs.lisp"
+		match: "\\b(defun|defadvice|defcustom|defvar)\\b"
 
 	
 	# "Double-quoted" string
