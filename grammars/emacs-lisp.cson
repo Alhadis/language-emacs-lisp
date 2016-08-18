@@ -19,6 +19,7 @@ repository:
 			{include: "#expression"}
 			{include: "#definition"}
 			{include: "#string"}
+			{include: "#quote"}
 			{include: "#nil"}
 		]
 	
@@ -62,3 +63,8 @@ repository:
 		beginCaptures: 0: name: "punctuation.definition.string.begin.emacs.lisp"
 		endCaptures:   0: name: "punctuation.definition.string.end.emacs.lisp"
 	
+
+	# Argument-quoting
+	quote:
+		name: "keyword.control.quote.emacs.lisp"
+		match: "\\bquote\\b"
