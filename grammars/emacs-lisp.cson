@@ -19,6 +19,7 @@ repository:
 			{include: "#expression"}
 			{include: "#definition"}
 			{include: "#keyword"}
+			{include: "#quotes"}
 			{include: "#string"}
 			{include: "#quote"}
 			{include: "#nil"}
@@ -42,12 +43,25 @@ repository:
 
 	# S-expression
 	expression:
-		name: "meta.expression.emacs.lisp"
-		begin: "\\("
-		end:   "\\)"
-		beginCaptures: 0: name: "punctuation.section.expression.begin.emacs.lisp"
-		endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
-		patterns: [include: "$self"]
+		patterns: [{
+			name: "meta.expression.emacs.lisp"
+			begin: "\\("
+			end:   "\\)"
+			beginCaptures: 0: name: "punctuation.section.expression.begin.emacs.lisp"
+			endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
+			patterns: [include: "$self"]
+		},{
+			name: "meta.quoted.expression.emacs.lisp"
+			begin: "(\\')(\\()"
+			end:   "\\)"
+			beginCaptures:
+				1: name: "punctuation.definition.symbol.emacs.lisp"
+				2: name: "punctuation.section.quoted.expression.begin.emacs.lisp"
+			endCaptures:
+				0: name: "punctuation.section.quoted.expression.end.emacs.lisp"
+			patterns: [include: "$self"]
+		}]
+
 
 	
 	# def* statement
@@ -91,3 +105,11 @@ repository:
 		match: "(:)[-\\w]+"
 		captures:
 			1: name: "punctuation.definition.keyword.emacs.lisp"
+
+
+	# 'Quoted values
+	quotes:
+		name: "string.quoted.other.emacs.lisp"
+		match: "(')[-\\w]+"
+		captures:
+			1: name: "punctuation.definition.quote.emacs.lisp"
