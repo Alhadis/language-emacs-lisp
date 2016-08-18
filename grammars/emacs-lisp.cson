@@ -51,8 +51,16 @@ repository:
 	
 	# def* statement
 	definition:
-		name: "storage.type.function.$1.emacs.lisp"
-		match: "\\b(defun|defadvice|defcustom|defvar)\\b"
+		patterns: [{
+			name: "storage.type.function.emacs.lisp"
+			match: "\\bdefun\\b"
+		},{
+			name: "storage.type.$1.emacs.lisp"
+			match: "\\b(?:(?:cl-)?def(advice|class|custom|face|group|package|struct|theme|type|var))\\b"
+		},{
+			name: "storage.type.$1.emacs.lisp"
+			match: "\\b(define-(?:condition|widget))"
+		}]
 
 	
 	# "Double-quoted" string
