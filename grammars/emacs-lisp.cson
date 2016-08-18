@@ -19,7 +19,6 @@ repository:
 			{include: "#expression"}
 			{include: "#definition"}
 			{include: "#keyword"}
-			{include: "#quotes"}
 			{include: "#string"}
 			{include: "#quote"}
 			{include: "#nil"}
@@ -35,10 +34,18 @@ repository:
 			0: name: "punctuation.definition.comment.emacs.lisp"
 
 
-	# Empty value
-	nil:
-		name: "constant.language.nil.emacs.lisp"
-		match: "\\bnil\\b"
+	# def* statement
+	definition:
+		patterns: [{
+			name: "storage.type.function.emacs.lisp"
+			match: "\\bdefun\\b"
+		},{
+			name: "storage.type.$1.emacs.lisp"
+			match: "\\b(?:(?:cl-)?def(advice|class|custom|face|group|package|struct|theme|type|var))\\b"
+		},{
+			name: "storage.type.$1.emacs.lisp"
+			match: "\\b(define-(?:condition|widget))"
+		}]
 
 
 	# S-expression
@@ -63,18 +70,35 @@ repository:
 		}]
 
 
-	
-	# def* statement
-	definition:
+	# :keywords
+	keyword:
+		name: "constant.keyword.emacs.lisp"
+		match: "(:)[-\\w]+"
+		captures:
+			1: name: "punctuation.definition.keyword.emacs.lisp"
+
+
+	# Empty value
+	nil:
+		name: "constant.language.nil.emacs.lisp"
+		match: "\\bnil\\b"
+
+
+
+	# Argument-quoting
+	quote:
 		patterns: [{
-			name: "storage.type.function.emacs.lisp"
-			match: "\\bdefun\\b"
+			
+			# (quote value)
+			name: "keyword.control.quote.emacs.lisp"
+			match: "\\bquote\\b"
 		},{
-			name: "storage.type.$1.emacs.lisp"
-			match: "\\b(?:(?:cl-)?def(advice|class|custom|face|group|package|struct|theme|type|var))\\b"
-		},{
-			name: "storage.type.$1.emacs.lisp"
-			match: "\\b(define-(?:condition|widget))"
+			
+			# 'value
+			name: "string.quoted.other.emacs.lisp"
+			match: "(')[-\\w]+"
+			captures:
+				1: name: "punctuation.definition.quote.emacs.lisp"
 		}]
 
 	
@@ -91,25 +115,3 @@ repository:
 			captures:
 				1: name: "punctuation.escape.backslash.emacs.lisp"
 		]
-	
-
-	# Argument-quoting
-	quote:
-		name: "keyword.control.quote.emacs.lisp"
-		match: "\\bquote\\b"
-
-
-	# :keywords
-	keyword:
-		name: "constant.keyword.emacs.lisp"
-		match: "(:)[-\\w]+"
-		captures:
-			1: name: "punctuation.definition.keyword.emacs.lisp"
-
-
-	# 'Quoted values
-	quotes:
-		name: "string.quoted.other.emacs.lisp"
-		match: "(')[-\\w]+"
-		captures:
-			1: name: "punctuation.definition.quote.emacs.lisp"
