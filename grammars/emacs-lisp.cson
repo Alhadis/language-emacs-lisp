@@ -19,6 +19,7 @@ repository:
 			{include: "#expression"}
 			{include: "#definition"}
 			{include: "#string"}
+			{include: "#nil"}
 		]
 	
 	
@@ -29,6 +30,12 @@ repository:
 		end:   "$"
 		beginCaptures:
 			0: name: "punctuation.definition.comment.emacs.lisp"
+
+
+	# Empty value
+	nil:
+		name: "constant.language.nil.emacs.lisp"
+		match: "\\bnil\\b"
 
 
 	# S-expression
