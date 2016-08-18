@@ -70,6 +70,12 @@ repository:
 		end:   '"'
 		beginCaptures: 0: name: "punctuation.definition.string.begin.emacs.lisp"
 		endCaptures:   0: name: "punctuation.definition.string.end.emacs.lisp"
+		patterns: [
+			match: '(\\\\)"'
+			name: "constant.character.escape.emacs.lisp"
+			captures:
+				0: name: "punctuation.escape.backslash.emacs.lisp"
+		]
 	
 
 	# Argument-quoting
