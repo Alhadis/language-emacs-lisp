@@ -26,14 +26,31 @@ repository:
 			{include: "#string"}
 			{include: "#number"}
 			{include: "#quote"}
-			{include: "#nil"}
+			{include: "#arg-values"}
+			{include: "#boolean"}
 		]
+	
+	
+	# Special keywords used in function/macro definitions
+	"arg-values":
+		patterns: [{
+			name: "constant.language.$1.arguments.emacs.lisp"
+			match: "&(optional|rest)(?=\\s|\\))"
+		}]
 	
 	
 	# Binding
 	binding:
 		name: "storage.binding.emacs.lisp"
 		match: "\\b(?<=[\\s()]|^)(let\\*?|set[fq]?)(?=[\\s()]|$)"
+	
+
+	# Boolean constants
+	boolean:
+		patterns: [
+			{name: "constant.boolean.true.emacs.lisp", match: "\\b(?<=[\\s()]|^)t(?=[\\s()]|$)\\b"}
+			{name: "constant.language.nil.emacs.lisp", match: "\\b(?<=[\\s()]|^)(nil)(?=[\\s()]|$)\\b"}
+		]	
 	
 	
 	# Comment-line
@@ -50,11 +67,11 @@ repository:
 	definition:
 		patterns: [{
 			name: "meta.function.definition.emacs.lisp"
-			begin: "(\\()(defun)(?!-)\\b(?:\\s*([-\\w]+))?"
+			begin: "(\\()(defun|defmacro)(?!-)\\b(?:\\s*([-\\w]+))?"
 			end:   "\\)"
 			beginCaptures:
 				1: name: "punctuation.section.expression.begin.emacs.lisp"
-				2: name: "storage.type.function.emacs.lisp"
+				2: name: "storage.type.$2.function.emacs.lisp"
 				3: name: "entity.function.name.emacs.lisp"
 			endCaptures:
 				0: name: "punctuation.section.expression.end.emacs.lisp"
@@ -83,9 +100,7 @@ repository:
 			beginCaptures: 0: name: "punctuation.section.expression.begin.emacs.lisp"
 			endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
 			patterns: [
-				name: "constant.language.$1.arguments.emacs.lisp"
-				match: "&(optional|rest)(?=\\s|\\))"
-				
+				{include: "#arg-keywords"}
 				{name: "variable.parameter.emacs.lisp", match: "[-\\w]+"}
 				{include: "$self"}
 			]
@@ -165,17 +180,12 @@ repository:
 				2: name: "punctuation.separator.key-value.emacs.lisp"
 				3: patterns: [include: "#modeline-innards"]
 			}
-			{name: "constant.boolean.emacs.lisp", match: "\\b(?<!-)t(?!-)\\b"}
 			{name: "punctuation.terminator.statement.emacs.lisp", match: ";"}
 			{name: "punctuation.separator.key-value.emacs.lisp",  match: ":"}
 			{name: "string.other.modeline.emacs.lisp", match: "\\S+"}
 		]
 
 
-	# Empty value
-	nil:
-		name: "constant.language.nil.emacs.lisp"
-		match: "\\b(?<=[\\s()]|^)(nil)(?=[\\s()]|$)\\b"
 
 
 	# Numeric literals
