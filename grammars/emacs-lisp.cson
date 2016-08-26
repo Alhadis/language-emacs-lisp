@@ -67,7 +67,7 @@ repository:
 	definition:
 		patterns: [{
 			name: "meta.function.definition.emacs.lisp"
-			begin: "(\\()(defun|defmacro)(?!-)\\b(?:\\s*([-\\w]+))?"
+			begin: "(\\()(defun|defmacro|defsubst)(?!-)\\b(?:\\s*([-\\w]+))?"
 			end:   "\\)"
 			beginCaptures:
 				1: name: "punctuation.section.expression.begin.emacs.lisp"
@@ -82,8 +82,8 @@ repository:
 		},{
 			name: "storage.type.$1.emacs.lisp"
 			match: """(?x)(?<=[\\s()]|^)(?:
-				(?:cl-)?def(advice|class|const|custom|face|group|package
-				|struct|theme|type|var))(?=[\\s()]|$)"""
+				(?:cl-)?def(advice|class|const|custom|face|image|group|package
+				|struct|subst|theme|type|var))(?=[\\s()]|$)"""
 		},{
 			name: "storage.type.$1.emacs.lisp"
 			match: "\\b(?<=[\\s()]|^)(define-(?:condition|widget))(?=[\\s()]|$)\\b"
@@ -210,6 +210,11 @@ repository:
 				|equal|if|not|or|pcase|prog[12n]|throw|unless|unwind-protect
 				|when|while)
 				(?=[\\s()]|$)"""
+		},{
+			
+			# Interactive function marker
+			match: "(?<=\\(|\\s|^)(interactive)(?=\\s|\\(|\\))"
+			name: "storage.modifier.interactive.function.emacs.lisp"
 		},{
 			
 			# Mathematical operators

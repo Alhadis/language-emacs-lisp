@@ -39,8 +39,9 @@
 ; (pprint object output-stream)
 ;==  (write object :stream output-stream :escape t :pretty t)
 
-(do-defclass)
-(do-define-condition)
+(defclass)
+(define-condition)
+
 
 ;; Defun with lexically-scoped parameters.  Could also be called
 ;; lexical-defun.
@@ -127,6 +128,11 @@
 (condition-case-unless-debug )
 (defconst )
 (defvar )
+(defface )
+(defgroup )
+(defimage )
+(defsubst )
+(defcustom )
 (function )
 (if )
 (interactive )
