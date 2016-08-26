@@ -42,6 +42,7 @@ repository:
 		end:   "$"
 		beginCaptures:
 			0: name: "punctuation.definition.comment.emacs.lisp"
+		patterns: [include: "#modeline"]
 
 
 	# def* statement
@@ -115,6 +116,31 @@ repository:
 			]
 			
 		}, include: "$self"]
+
+
+	# Modeline
+	modeline:
+		name: "meta.modeline.emacs.lisp"
+		match: "(-\\*-)(.*)(-\\*-)"
+		captures:
+			1: name: "punctuation.definition.modeline.begin.emacs.lisp"
+			2: patterns: [include: "#modeline-innards"]
+			3: name: "punctuation.definition.modeline.end.emacs.lisp"
+
+	"modeline-innards":
+		patterns: [{
+			name: "meta.modeline.variable.emacs.lisp"
+			match: "([^\\s:;]+)\\s*(:)\\s*([^;]*)"
+			captures:
+				1: name: "variable.assignment.modeline.emacs.lisp"
+				2: name: "punctuation.separator.key-value.emacs.lisp"
+				3: patterns: [include: "#modeline-innards"]
+			}
+			{name: "constant.boolean.emacs.lisp", match: "\\b(?<!-)t(?!-)\\b"}
+			{name: "punctuation.terminator.statement.emacs.lisp", match: ";"}
+			{name: "punctuation.separator.key-value.emacs.lisp",  match: ":"}
+			{name: "string.other.modeline.emacs.lisp", match: "\\S+"}
+		]
 
 
 	# Empty value
