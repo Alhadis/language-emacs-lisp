@@ -16,13 +16,21 @@ repository:
 	main:
 		patterns: [
 			{include: "#comment"}
+			{include: "#lambda"}
 			{include: "#expression"}
 			{include: "#definition"}
+			{include: "#binding"}
 			{include: "#keyword"}
 			{include: "#string"}
 			{include: "#quote"}
 			{include: "#nil"}
 		]
+	
+	
+	# Binding
+	binding:
+		name: "storage.binding.emacs.lisp"
+		match: "\\b(let|setq)\\b"
 	
 	
 	# Comment-line
@@ -76,6 +84,32 @@ repository:
 		match: "(:)[-\\w]+"
 		captures:
 			1: name: "punctuation.definition.keyword.emacs.lisp"
+
+
+	# Lambda function
+	lambda:
+		name: "meta.lambda.expression.emacs.lisp"
+		begin: "(\\()(lambda)\\s+"
+		end:   "\\)"
+		beginCaptures:
+			1: name: "punctuation.section.expression.begin.emacs.lisp"
+			2: name: "storage.type.lambda.function.emacs.lisp"
+		endCaptures:
+			0: name: "punctuation.section.expression.end.emacs.lisp"
+		patterns: [{
+			
+			# Argument variables
+			name: "meta.argument-list.lambda.expression.emacs.lisp"
+			begin: "\\G\\s*(\\()"
+			end:   "\\)"
+			beginCaptures: 0: name: "punctuation.section.expression.begin.emacs.lisp"
+			endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
+			patterns: [
+				{name: "variable.parameter.emacs.lisp", match: "[-\\w]+"}
+				{include: "$self"}
+			]
+			
+		}, include: "$self"]
 
 
 	# Empty value
