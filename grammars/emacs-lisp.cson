@@ -17,8 +17,8 @@ repository:
 		patterns: [
 			{include: "#comment"}
 			{include: "#lambda"}
-			{include: "#expression"}
 			{include: "#definition"}
+			{include: "#expression"}
 			{include: "#operators"}
 			{include: "#binding"}
 			{include: "#keyword"}
@@ -48,8 +48,19 @@ repository:
 	# def* statement
 	definition:
 		patterns: [{
+			name: "meta.function.definition.emacs.lisp"
+			begin: "(\\()(defun)(?!-)\\b(?:\\s*([-\\w]+))?"
+			end:   "\\)"
+			beginCaptures:
+				1: name: "punctuation.section.expression.begin.emacs.lisp"
+				2: name: "storage.type.function.emacs.lisp"
+				3: name: "entity.function.name.emacs.lisp"
+			endCaptures:
+				0: name: "punctuation.section.expression.end.emacs.lisp"
+			patterns: [include: "#defun-innards"]
+		},{
 			name: "storage.type.function.emacs.lisp"
-			match: "\\bdefun\\b"
+			match: "\\b(?<!-)defun(?!-)\\b"
 		},{
 			name: "storage.type.$1.emacs.lisp"
 			match: "\\b(?:(?:cl-)?def(advice|class|custom|face|group|package|struct|theme|type|var))\\b"
@@ -57,6 +68,26 @@ repository:
 			name: "storage.type.$1.emacs.lisp"
 			match: "\\b(define-(?:condition|widget))"
 		}]
+	
+	
+	"defun-innards":
+		patterns: [{
+			
+			# Argument variables
+			name: "meta.argument-list.expression.emacs.lisp"
+			begin: "\\G\\s*(\\()"
+			end:   "\\)"
+			beginCaptures: 0: name: "punctuation.section.expression.begin.emacs.lisp"
+			endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
+			patterns: [
+				name: "constant.language.$1.arguments.emacs.lisp"
+				match: "&(optional|rest)(?=\\s|\\))"
+				
+				{name: "variable.parameter.emacs.lisp", match: "[-\\w]+"}
+				{include: "$self"}
+			]
+			
+		}, include: "$self"]
 
 
 	# S-expression
@@ -99,23 +130,7 @@ repository:
 			2: name: "storage.type.lambda.function.emacs.lisp"
 		endCaptures:
 			0: name: "punctuation.section.expression.end.emacs.lisp"
-		patterns: [{
-			
-			# Argument variables
-			name: "meta.argument-list.lambda.expression.emacs.lisp"
-			begin: "\\G\\s*(\\()"
-			end:   "\\)"
-			beginCaptures: 0: name: "punctuation.section.expression.begin.emacs.lisp"
-			endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
-			patterns: [
-				name: "constant.language.$1.arguments.emacs.lisp"
-				match: "&(optional|rest)(?=\\s|\\))"
-				
-				{name: "variable.parameter.emacs.lisp", match: "[-\\w]+"}
-				{include: "$self"}
-			]
-			
-		}, include: "$self"]
+		patterns: [include: "#defun-innards"]
 
 
 	# Modeline
