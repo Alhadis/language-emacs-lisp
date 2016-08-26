@@ -107,6 +107,9 @@ repository:
 			beginCaptures: 0: name: "punctuation.section.expression.begin.emacs.lisp"
 			endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
 			patterns: [
+				name: "constant.language.$1.arguments.emacs.lisp"
+				match: "&(optional|rest)(?=\\s|\\))"
+				
 				{name: "variable.parameter.emacs.lisp", match: "[-\\w]+"}
 				{include: "$self"}
 			]
