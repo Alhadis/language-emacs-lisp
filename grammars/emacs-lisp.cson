@@ -32,7 +32,7 @@ repository:
 	# Binding
 	binding:
 		name: "storage.binding.emacs.lisp"
-		match: "\\b(let|setq)\\b"
+		match: "\\b(let\\*?|setq)(?=[\\s(]|$)"
 	
 	
 	# Comment-line
@@ -172,9 +172,14 @@ repository:
 		]
 		
 
-	# Operators
+	# "Operators" (as far as TextMate's classification is concerned)
 	operators:
 		patterns: [{
+			
+			# Control flow
+			name: "keyword.control.$1.emacs.lisp"
+			match: "(?<=[()]|^)(and|cond|eq|if|not|or)(?=[\\s()]|$)"
+		},{
 			name: "keyword.operator.emacs.lisp"
 			match: "\\b(?<!-)(funcall)(?!-)\\b"
 		},{
