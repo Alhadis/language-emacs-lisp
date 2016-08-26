@@ -19,9 +19,11 @@ repository:
 			{include: "#lambda"}
 			{include: "#expression"}
 			{include: "#definition"}
+			{include: "#operators"}
 			{include: "#binding"}
 			{include: "#keyword"}
 			{include: "#string"}
+			{include: "#number"}
 			{include: "#quote"}
 			{include: "#nil"}
 		]
@@ -117,6 +119,24 @@ repository:
 		name: "constant.language.nil.emacs.lisp"
 		match: "\\bnil\\b"
 
+
+	# Numeric literals
+	number:
+		patterns: [
+			{name: "constant.numeric.float.emacs.lisp",   match: "\\b\\d*\\.\\d+"}
+			{name: "constant.numeric.integer.emacs.lisp", match: "\\b\\d+"}
+		]
+		
+
+	# Operators
+	operators:
+		patterns: [{
+			name: "keyword.operator.emacs.lisp"
+			match: "\\b(funcall)\\b"
+		},{
+			name: "keyword.operator.numeric.emacs.lisp"
+			match: "[-*+/]"
+		}]
 
 
 	# Argument-quoting
