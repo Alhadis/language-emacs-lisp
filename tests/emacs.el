@@ -39,6 +39,8 @@
  (pprint object output-stream)
 ;==  (write object :stream output-stream :escape t :pretty t)
 
+(do-defclass)
+(do-define-condition)
 
 ;; Defun with lexically-scoped parameters.  Could also be called
 ;; lexical-defun.
