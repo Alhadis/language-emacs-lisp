@@ -30,13 +30,13 @@
 
 (prin1 object output-stream)
 (princ object output-stream)
-(write object stream output-stream :escape nil :readably nil)
+; (write object stream output-stream :escape nil :readably nil)
 (print object output-stream)
 (progn (terpri output-stream)
        (write object :stream output-stream
                      :escape t)
            (write-char #\space output-stream))
- (pprint object output-stream)
+; (pprint object output-stream)
 ;==  (write object :stream output-stream :escape t :pretty t)
 
 (do-defclass)
@@ -124,6 +124,7 @@
 (catch )
 (cond )
 (condition-case )
+(condition-case-unless-debug )
 (defconst )
 (defvar )
 (function )
@@ -145,6 +146,15 @@
 (track-mouse )
 (unwind-protect )
 (while )
+
+
+(defun reverse (list)
+  (let (value)
+    (dolist (elt list value)
+      (setq value (cons elt value)))))
+
+(dotimes (i 100)
+  (insert "I will not obey absurd orders\n"))
 
 (defvar fuzz-factor -1.1e+16)
 (defun approx-equal (x y)

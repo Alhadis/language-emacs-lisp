@@ -64,7 +64,9 @@ repository:
 			match: "\\b(?<=[\\s()]|^)defun(?=[\\s()]|$)"
 		},{
 			name: "storage.type.$1.emacs.lisp"
-			match: "\\b(?<=[\\s()]|^)(?:(?:cl-)?def(advice|class|custom|face|group|package|struct|theme|type|var))(?=[\\s()]|$)\\b"
+			match: """(?x)(?<=[\\s()]|^)(?:
+				(?:cl-)?def(advice|class|const|custom|face|group|package
+				|struct|theme|type|var))(?=[\\s()]|$)"""
 		},{
 			name: "storage.type.$1.emacs.lisp"
 			match: "\\b(?<=[\\s()]|^)(define-(?:condition|widget))(?=[\\s()]|$)\\b"
@@ -135,7 +137,7 @@ repository:
 	# Lambda function
 	lambda:
 		name: "meta.lambda.expression.emacs.lisp"
-		begin: "(\\()(lambda)\\s+"
+		begin: "(\\()(lambda|function)\\s+"
 		end:   "\\)"
 		beginCaptures:
 			1: name: "punctuation.section.expression.begin.emacs.lisp"
@@ -193,7 +195,11 @@ repository:
 			
 			# Control flow
 			name: "keyword.control.$1.emacs.lisp"
-			match: "(?<=[()]|^)(and|cond|eql?|equal|if|not|or)(?=[\\s()]|$)"
+			match: """(?x)(?<=[()]|^)
+				(and|catch|cond|condition-case(?:-unless-debug)?|dotimes|eql?
+				|equal|if|not|or|pcase|prog[12n]|throw|unless|unwind-protect
+				|when|while)
+				(?=[\\s()]|$)"""
 		},{
 			
 			# Mathematical operators
