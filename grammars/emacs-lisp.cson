@@ -135,10 +135,10 @@ repository:
 	operators:
 		patterns: [{
 			name: "keyword.operator.emacs.lisp"
-			match: "\\b(funcall)\\b"
+			match: "\\b(?<!-)(funcall)(?!-)\\b"
 		},{
 			name: "keyword.operator.numeric.emacs.lisp"
-			match: "[-*+/]"
+			match: "(?<=\\(|\\s|^)[-*+/](?=\\s|\\)|$)"
 		}]
 
 
