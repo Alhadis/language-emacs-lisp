@@ -29,7 +29,6 @@
 
 
 (prin1 object output-stream)
-(write object :stream output-stream :escape t)
 (princ object output-stream)
 (write object stream output-stream :escape nil :readably nil)
 (print object output-stream)
@@ -38,7 +37,7 @@
                      :escape t)
            (write-char #\space output-stream))
  (pprint object output-stream)
-==  (write object :stream output-stream :escape t :pretty t)
+;==  (write object :stream output-stream :escape t :pretty t)
 
 
 ;; Defun with lexically-scoped parameters.  Could also be called
@@ -114,9 +113,9 @@
 
 
 
-(nthcdr 1 '(1 2 3 4))
+(nthcdr 1  '(1 2 3 4))
 (nthcdr 10 '(1 2 3 4))
-(nthcdr 0 '(1 2 3 4))
+(nthcdr 0  '(1 2 3 4))
 
 (apply )
 (and )
@@ -145,7 +144,7 @@
 (unwind-protect )
 (while )
 
-(defvar fuzz-factor 1.0e+6)
+(defvar fuzz-factor -1.1e+16)
 (defun approx-equal (x y)
   (or (= x y)
       (< (/ (abs (- x y))

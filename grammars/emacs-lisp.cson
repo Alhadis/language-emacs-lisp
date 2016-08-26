@@ -178,10 +178,13 @@ repository:
 
 	# Numeric literals
 	number:
-		patterns: [
-			{name: "constant.numeric.float.emacs.lisp",   match: "(?<!\\w)-?\\d*\\.\\d+"}
-			{name: "constant.numeric.integer.emacs.lisp", match: "(?<!\\w)-?\\d+"}
-		]
+		patterns: [{
+			name: "constant.numeric.float.emacs.lisp"
+			match: "(?<!\\w)-?\\d*\\.\\d+(?:[Ee][-+]?\\d+)?"
+		},{
+			name: "constant.numeric.integer.emacs.lisp"
+			match: "(?<!\\w)-?\\d+(?:[Ee][-+]?\\d+)?"
+		}]
 		
 
 	# "Operators" (as far as TextMate's classification is concerned)
@@ -190,12 +193,17 @@ repository:
 			
 			# Control flow
 			name: "keyword.control.$1.emacs.lisp"
-			match: "(?<=[()]|^)(and|cond|eq|if|not|or)(?=[\\s()]|$)"
+			match: "(?<=[()]|^)(and|cond|eql?|equal|if|not|or)(?=[\\s()]|$)"
 		},{
 			
 			# Mathematical operators
 			name: "keyword.operator.numeric.emacs.lisp"
 			match: "(?<=\\(|\\s|^)[-*+/](?=\\s|\\)|$)"
+		},{
+			
+			# Comparison operators
+			name: "keyword.operator.comparison.emacs.lisp"
+			match: "(?<=\\(|\\s|^)[=<>]|[/<>]=(?=\\s|\\)|$)"
 		}]
 
 
