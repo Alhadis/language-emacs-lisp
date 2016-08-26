@@ -20,6 +20,7 @@ repository:
 			{include: "#definition"}
 			{include: "#expression"}
 			{include: "#operators"}
+			{include: "#functions"}
 			{include: "#binding"}
 			{include: "#keyword"}
 			{include: "#string"}
@@ -32,7 +33,7 @@ repository:
 	# Binding
 	binding:
 		name: "storage.binding.emacs.lisp"
-		match: "\\b(let\\*?|setq)(?=[\\s(]|$)"
+		match: "\\b(let\\*?|set[fq]?)(?=[\\s(]|$)"
 	
 	
 	# Comment-line
@@ -112,6 +113,17 @@ repository:
 		}]
 
 
+	# Primitives/Fundamental Lisp functions
+	functions:
+		name: "keyword.control.function.$1.emacs.lisp"
+		match: """(?x)\\b(?<=[\\s()]|^)
+			(abs|append|apply|assoc|butlast|c[ad]{1,2}r|c[ad]r-safe|consp?|copy-alist|copy-tree
+			|dolist|funcall|last|length|listp?|load|make-list|mapc|mapcar|max|min|member|nbutlast
+			|nconc|nreverse|nth|nthcdr|null|pop|prin[1ct]|push|rassoc|reverse|rplac[ad]
+			|safe-length|setcar|setcdr)
+			(?=[\\s()]|$)\\b"""
+
+
 	# :keywords
 	keyword:
 		name: "constant.keyword.emacs.lisp"
@@ -180,9 +192,8 @@ repository:
 			name: "keyword.control.$1.emacs.lisp"
 			match: "(?<=[()]|^)(and|cond|eq|if|not|or)(?=[\\s()]|$)"
 		},{
-			name: "keyword.operator.emacs.lisp"
-			match: "\\b(?<!-)(funcall)(?!-)\\b"
-		},{
+			
+			# Mathematical operators
 			name: "keyword.operator.numeric.emacs.lisp"
 			match: "(?<=\\(|\\s|^)[-*+/](?=\\s|\\)|$)"
 		}]
