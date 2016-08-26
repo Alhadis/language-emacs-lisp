@@ -167,8 +167,8 @@ repository:
 	# Numeric literals
 	number:
 		patterns: [
-			{name: "constant.numeric.float.emacs.lisp",   match: "\\b\\d*\\.\\d+"}
-			{name: "constant.numeric.integer.emacs.lisp", match: "\\b\\d+"}
+			{name: "constant.numeric.float.emacs.lisp",   match: "(?<!\\w)-?\\d*\\.\\d+"}
+			{name: "constant.numeric.integer.emacs.lisp", match: "(?<!\\w)-?\\d+"}
 		]
 		
 

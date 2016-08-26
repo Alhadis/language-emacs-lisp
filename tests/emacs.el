@@ -4,12 +4,12 @@
 
 (defun defunct (this and that)
       (+ this and that))
-(message (number-to-string (defunct 1 2 3))) ; 6
+(message (number-to-string (defunct 1 -2 3))) ; 6
 
 (funcall (defunct 2 3 4))
 
-(no-funcall (nope))
-(funcall-n (nope))
+(no-funcall (nope -2.0))
+(funcall-n (nope -.0))
 
 
 (lambda (x)
