@@ -1,5 +1,6 @@
 ;;
 ;; -*- lexical-binding: t; -*-
+;; -*-byte-compile-dynamic-docstrings: nil;-*-
 ;;
 
 (defun defunct (this and that)
