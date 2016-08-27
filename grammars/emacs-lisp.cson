@@ -136,7 +136,7 @@ repository:
 		match: """(?x)\\b(?<=[\\s()]|^)
 			(abs|append|apply|assoc|butlast|c[ad]{1,2}r|c[ad]r-safe|consp?|copy-alist|copy-tree
 			|dolist|funcall|last|length|listp?|load|make-list|mapc|mapcar|max|min|member|nbutlast
-			|nconc|nreverse|nth|nthcdr|null|pop|prin[1ct]|push|rassoc|reverse|rplac[ad]
+			|nconc|nreverse|nth|nthcdr|null|pop|prin[1ct]|push|quote|rassoc|reverse|rplac[ad]
 			|safe-length|setcar|setcdr)
 			(?=[\\s()]|$)\\b"""
 
@@ -231,11 +231,6 @@ repository:
 	# Argument-quoting
 	quote:
 		patterns: [{
-			
-			# (quote value)
-			name: "keyword.control.quote.emacs.lisp"
-			match: "\\bquote\\b"
-		},{
 			
 			# 'value
 			name: "string.quoted.other.emacs.lisp"
