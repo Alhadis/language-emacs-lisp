@@ -15,6 +15,19 @@
 #:ll
 #\a
 
+
+(defface git-commit-branch-face
+  '((((class grayscale) (background light) (type tty))
+     (:foreground "DimGray" :slant italic))
+    (((class grayscale) (background dark))
+     (:foreground "LightGray" :slant italic))
+    (((class color) (min-colors 88) (background light))
+     (:foreground "VioletRed2"))
+    (((class color) (min-colors 8)) (:foreground "green"))
+    (t (:slant italic)))
+  "Face used to highlight the branch name in comments in git commit messages"
+  :group 'git-commit-faces)
+
 (message "%d x %s")
 
 foo                 ; A symbol named ‘foo’.

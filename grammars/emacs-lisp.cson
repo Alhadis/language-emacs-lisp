@@ -19,6 +19,7 @@ repository:
 			{include: "#lambda"}
 			{include: "#escapes"}
 			{include: "#definition"}
+			{include: "#face-innards"}
 			{include: "#expression"}
 			{include: "#operators"}
 			{include: "#functions"}
@@ -83,10 +84,20 @@ repository:
 			name: "storage.type.function.emacs.lisp"
 			match: "\\b(?<=[\\s()]|^)defun(?=[\\s()]|$)"
 		},{
-			name: "storage.type.$1.emacs.lisp"
-			match: """(?x)(?<=[\\s()]|^)(?:
-				(?:cl-)?def(advice|class|const|custom|face|image|group|package
-				|struct|subst|theme|type|var))(?=[\\s()]|$)"""
+			# Generic definition
+			name: "meta.$3.definition.emacs.lisp"
+			begin: """(?x) (?<=\\s|^) (\\()
+				(def(advice|class|const|custom|face|image|group|package|struct|subst|theme|type|var))
+				(?:\\s+([-+=*/\\w~!@$%^&:<>{}?]+))?
+				(?=[\\s()]|$)"""
+			end: "\\)"
+			beginCaptures:
+				1: name: "punctuation.section.expression.begin.emacs.lisp"
+				2: name: "storage.type.$3.emacs.lisp"
+				4: name: "entity.name.$3.emacs.lisp"
+			endCaptures:
+				0: name: "punctuation.section.expression.end.emacs.lisp"
+			patterns: [include: "$self"]
 		},{
 			name: "storage.type.$1.emacs.lisp"
 			match: "\\b(?<=[\\s()]|^)(define-(?:condition|widget))(?=[\\s()]|$)\\b"
@@ -140,6 +151,46 @@ repository:
 				0: name: "punctuation.section.quoted.expression.end.emacs.lisp"
 			patterns: [include: "$self"]
 		}]
+
+
+	# Font-face properties
+	"face-innards":
+		patterns: [{
+			name: "meta.expression.display-type.emacs.lisp"
+			match: "(\\()(type)\\s+(graphic|x|pc|w32|tty)(\\))"
+			captures:
+				1: name: "punctuation.section.expression.begin.emacs.lisp"
+				2: name: "variable.language.display.type.emacs.lisp"
+				3: name: "support.constant.display.type.emacs.lisp"
+				4: name: "punctuation.section.expression.end.emacs.lisp"
+		},{
+			name: "meta.expression.display-class.emacs.lisp"
+			match: "(\\()(class)\\s+(color|grayscale|mono)(\\))"
+			captures:
+				1: name: "punctuation.section.expression.begin.emacs.lisp"
+				2: name: "variable.language.display.class.emacs.lisp"
+				3: name: "support.constant.display.class.emacs.lisp"
+				4: name: "punctuation.section.expression.end.emacs.lisp"
+		},{
+			name: "meta.expression.background-type.emacs.lisp"
+			match: "(\\()(background)\\s+(light|dark)(\\))"
+			captures:
+				1: name: "punctuation.section.expression.begin.emacs.lisp"
+				2: name: "variable.language.background-type.emacs.lisp"
+				3: name: "support.constant.background-type.emacs.lisp"
+				4: name: "punctuation.section.expression.end.emacs.lisp"
+		},{
+			name: "meta.expression.display-prerequisite.emacs.lisp"
+			begin: "(\\()(min-colors|supports)(?=[\\s()]|$)"
+			end:   "\\)"
+			beginCaptures:
+				1: name: "punctuation.section.expression.begin.emacs.lisp"
+				2: name: "variable.language.display-prerequisite.emacs.lisp"
+			endCaptures:
+				0: name: "punctuation.section.expression.end.emacs.lisp"
+			patterns: [include: "$self"]
+		}]
+		
 
 
 	# Primitives/Fundamental Lisp functions
