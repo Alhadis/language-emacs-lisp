@@ -17,6 +17,7 @@ repository:
 		patterns: [
 			{include: "#comment"}
 			{include: "#lambda"}
+			{include: "#escapes"}
 			{include: "#definition"}
 			{include: "#expression"}
 			{include: "#operators"}
@@ -26,6 +27,7 @@ repository:
 			{include: "#string"}
 			{include: "#number"}
 			{include: "#quote"}
+			{include: "#symbols"}
 			{include: "#arg-values"}
 			{include: "#boolean"}
 			{include: "#stdlib"}
@@ -110,6 +112,14 @@ repository:
 		}, include: "$self"]
 
 
+	# Escape sequences
+	escapes:
+		name: "constant.character.escape.emacs.lisp"
+		match: "(\\\\)."
+		captures:
+			1: name: "punctuation.definition.backslash.emacs.lisp"
+	
+
 	# S-expression
 	expression:
 		patterns: [{
@@ -146,7 +156,7 @@ repository:
 	# :keywords
 	keyword:
 		name: "constant.keyword.emacs.lisp"
-		match: "(:)[-+=*/\\w~!@$%^&:<>{}?]+"
+		match: "(?<=[\\s()]|^)(:)[-+=*/\\w~!@$%^&:<>{}?]+"
 		captures:
 			1: name: "punctuation.definition.keyword.emacs.lisp"
 
@@ -235,7 +245,7 @@ repository:
 		patterns: [{
 			
 			# 'value
-			name: "string.quoted.other.emacs.lisp"
+			name: "constant.other.symbol.emacs.lisp"
 			match: "(')([-+=*/\\w~!@$%^&:<>{}?]+)"
 			captures:
 				1: name: "punctuation.definition.quote.emacs.lisp"
@@ -251,11 +261,19 @@ repository:
 		beginCaptures: 0: name: "punctuation.definition.string.begin.emacs.lisp"
 		endCaptures:   0: name: "punctuation.definition.string.end.emacs.lisp"
 		patterns: [{
+			
+			# Concealed newline
+			name: "constant.character.escape.newline.emacs.lisp"
+			match: "(\\\\)$\\n?"
+		},{
+			
+			# Escaped character, any
 			match: '(\\\\).'
 			name: "constant.character.escape.emacs.lisp"
 			captures:
 				1: name: "punctuation.escape.backslash.emacs.lisp"
 		},{
+			
 			# Formatting placeholder
 			match: "(%[%cdefgosSxX])|(%.)"
 			captures:
@@ -263,6 +281,22 @@ repository:
 				2: name: "invalid.illegal.placeholder.emacs.lisp"
 		}]
 
+
+	# Symbols (at least the ones we care to highlight)
+	symbols:
+		patterns: [{
+			name: "constant.other.interned.blank.symbol.emacs.lisp"
+			match: "(?<=[\\s()]|^)##"
+			captures:
+				0: name: "punctuation.definition.symbol.emacs.lisp"
+		},{
+			name: "constant.other.symbol.emacs.lisp"
+			match: "(?<=[\\s()]|^)(#)((?:['-+=*/\\w~!@$%^&:<>{}?]|\\\\.)+)"
+			captures:
+				1: name: "punctuation.definition.symbol.emacs.lisp"
+				2: patterns: [include: "$self"]
+		}]
+	
 
 	# Emacs standard library
 	stdlib:
@@ -388,7 +422,7 @@ repository:
 				|font-lock-keywords-case-fold-search|font-lock-keywords-only|font-lock-mark-block-function|font-lock-multiline|font-lock-negation-char-face
 				|font-lock-preprocessor-face|font-lock-remove-keywords|font-lock-string-face|font-lock-syntactic-face-function|font-lock-syntax-table|font-lock-type-face
 				|font-lock-unfontify-buffer-function|font-lock-unfontify-region-function|font-lock-variable-name-face|font-lock-warning-face|font-put|font-spec
-				|font-xlfd-name|fontification-functions|fontp|foo|for|force-mode-line-update|force-window-update|format|format-alist|format-find-file|format-insert-file
+				|font-xlfd-name|fontification-functions|fontp|for|force-mode-line-update|force-window-update|format|format-alist|format-find-file|format-insert-file
 				|format-mode-line|format-network-address|format-seconds|format-time-string|format-write-file|forward-button|forward-char|forward-comment|forward-line
 				|forward-list|forward-sexp|forward-to-indentation|forward-word|frame-alpha-lower-limit|frame-auto-hide-function|frame-char-height|frame-char-width
 				|frame-current-scroll-bars|frame-first-window|frame-height|frame-inherited-parameters|frame-list|frame-live-p|frame-monitor-attributes|frame-parameter

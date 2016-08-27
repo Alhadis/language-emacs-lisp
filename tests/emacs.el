@@ -12,7 +12,20 @@
 (no-funcall (nope -2.0))
 (funcall-n (nope -.0))
 
+#:ll
+#\a
+
 (message "%d x %s")
+
+foo                 ; A symbol named ‘foo’.
+FOO                 ; A symbol named ‘FOO’, different from ‘foo’.
+1+                  ; A symbol named ‘1+’
+                    ;   (not ‘+1’, which is an integer).
+\+1                 ; A symbol named ‘+1’
+                    ;   (not a very readable name).
+\(*\ 1\ 2\)         ; A symbol named ‘(* 1 2)’ (a worse name).
++-*/_~!@$%^&=:<>{}  ; A symbol named ‘+-*/_~!@$%^&=:<>{}’.
+                    ;   These characters need not be escaped.
 
 (lambda (x)
   "Return the hyperbolic cosine of X."
@@ -37,7 +50,7 @@
 (progn (terpri output-stream)
        (write object :stream output-stream
                      :escape t)
-           (write-char #\space output-stream))
+           (write-char #\ output-stream))
 ; (pprint object output-stream)
 ;==  (write object :stream output-stream :escape t :pretty t)
 
