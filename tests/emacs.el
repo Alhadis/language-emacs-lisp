@@ -12,6 +12,7 @@
 (no-funcall (nope -2.0))
 (funcall-n (nope -.0))
 
+(message "%d x %s")
 
 (lambda (x)
   "Return the hyperbolic cosine of X."

@@ -250,12 +250,18 @@ repository:
 		end:   '"'
 		beginCaptures: 0: name: "punctuation.definition.string.begin.emacs.lisp"
 		endCaptures:   0: name: "punctuation.definition.string.end.emacs.lisp"
-		patterns: [
+		patterns: [{
 			match: '(\\\\).'
 			name: "constant.character.escape.emacs.lisp"
 			captures:
 				1: name: "punctuation.escape.backslash.emacs.lisp"
-		]
+		},{
+			# Formatting placeholder
+			match: "(%[%cdefgosSxX])|(%.)"
+			captures:
+				1: name: "constant.other.placeholder.emacs.lisp"
+				2: name: "invalid.illegal.placeholder.emacs.lisp"
+		}]
 
 
 	# Emacs standard library
