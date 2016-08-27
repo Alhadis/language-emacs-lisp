@@ -311,7 +311,7 @@ repository:
 			
 			# Mathematical operators
 			name: "keyword.operator.numeric.emacs.lisp"
-			match: "(?<=\\(|\\s|^)[-*+/](?=\\s|\\)|$)"
+			match: "(?<=\\(|\\s|^)[-*+/%](?=\\s|\\)|$)"
 		},{
 			
 			# Comparison operators
