@@ -151,6 +151,26 @@ repository:
 			endCaptures:
 				0: name: "punctuation.section.quoted.expression.end.emacs.lisp"
 			patterns: [include: "$self"]
+		},{
+			name: "meta.backquoted.expression.emacs.lisp"
+			begin: "(\\`)(\\()"
+			end:   "\\)"
+			beginCaptures:
+				1: name: "punctuation.definition.symbol.emacs.lisp"
+				2: name: "punctuation.section.backquoted.expression.begin.emacs.lisp"
+			endCaptures:
+				0: name: "punctuation.section.backquoted.expression.end.emacs.lisp"
+			patterns: [include: "$self"]
+		},{
+			name: "meta.interpolated.expression.emacs.lisp"
+			begin: "(,@)(\\()"
+			end:   "\\)"
+			beginCaptures:
+				1: name: "punctuation.definition.symbol.emacs.lisp"
+				2: name: "punctuation.section.interpolated.expression.begin.emacs.lisp"
+			endCaptures:
+				0: name: "punctuation.section.interpolated.expression.end.emacs.lisp"
+			patterns: [include: "$self"]
 		}]
 
 
@@ -375,6 +395,12 @@ repository:
 			captures:
 				1: name: "punctuation.definition.symbol.emacs.lisp"
 				2: patterns: [include: "$self"]
+		},{
+			# ,@spliced-symbol
+			name: "constant.other.spliced.symbol.emacs.lisp"
+			match: "(,@)([-+=*/\\w~!@$%^&:<>{}?]+)"
+			captures:
+				1: name: "punctuation.definition.spliced.symbol.emacs.lisp"
 		}]
 	
 

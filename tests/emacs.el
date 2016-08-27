@@ -16,6 +16,18 @@
 #\a
 
 
+`(1 2 (3 ,(+ 4 5)))
+
+(setq some-list '(2 3))
+(cons 1 (append some-list '(4) some-list))
+`(1 ,@some-list 4 ,@some-list)
+(setq list '(hack foo bar))
+(cons 'use
+  (cons 'the
+    (cons 'words (append (cdr list) '(as elements)))))
+`(use the words ,@(cdr list) as elements)
+
+
 (defface git-commit-branch-face
   '((((class grayscale) (background light) (type tty))
      (:foreground "DimGray" :slant italic))
