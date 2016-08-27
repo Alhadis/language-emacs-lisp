@@ -1,0 +1,2 @@
+# Stop test fixtures skewing the repo's language statistics
+tests/* linguist-vendored
