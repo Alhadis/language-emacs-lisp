@@ -17,6 +17,7 @@ repository:
 		patterns: [
 			{include: "#comment"}
 			{include: "#lambda"}
+			{include: "#loop"}
 			{include: "#escapes"}
 			{include: "#definition"}
 			{include: "#face-innards"}
@@ -225,6 +226,36 @@ repository:
 		patterns: [include: "#defun-innards"]
 
 
+	# Common Lisp loop structures
+	loop:
+		name: "meta.cl-lib.loop.emacs.lisp"
+		begin: "(\\()(cl-loop)(?=[\\s()]|$)"
+		end:   "\\)"
+		beginCaptures:
+			1: name: "punctuation.section.expression.begin.emacs.lisp"
+			2: name: "support.function.cl-lib.emacs.lisp"
+		endCaptures:
+			0: name: "punctuation.section.expression.end.emacs.lisp"
+		patterns: [{
+			name: "keyword.control.emacs.lisp"
+			match: """(?x)(?<=[\\s()]|^)
+				(above|across|across-ref|always|and|append|as|below|by|collect|concat
+				|count|do|each|finally|for|from|if|in|in-ref|initially|into|maximize
+				|minimize|named|nconc|never|of|of-ref|on|repeat|return|sum|then|thereis
+				|sum|to|unless|until|using|vconcat|when|while|with|(?:
+					
+					being    \\s+
+					(?:the)? \\s+
+					
+					(?:element|hash-key|hash-value|key-code|key-binding
+					|key-seq|overlay|interval|symbols|frame|window|buffer)
+					s?
+				
+				))(?=[\\s()]|$)"""
+			
+		}, include: "$self"]
+		
+
 	# Modeline
 	modeline:
 		name: "meta.modeline.emacs.lisp"
@@ -247,8 +278,6 @@ repository:
 			{name: "punctuation.separator.key-value.emacs.lisp",  match: ":"}
 			{name: "string.other.modeline.emacs.lisp", match: "\\S+"}
 		]
-
-
 
 
 	# Numeric literals
