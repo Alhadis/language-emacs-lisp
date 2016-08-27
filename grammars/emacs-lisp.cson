@@ -68,7 +68,7 @@ repository:
 	definition:
 		patterns: [{
 			name: "meta.function.definition.emacs.lisp"
-			begin: "(\\()(defun|defmacro|defsubst)(?!-)\\b(?:\\s*([-\\w]+))?"
+			begin: "(\\()(defun|defmacro|defsubst)(?!-)\\b(?:\\s*(?![-+\\d])([-+=*/\\w~!@$%^&:<>{}?]+))?"
 			end:   "\\)"
 			beginCaptures:
 				1: name: "punctuation.section.expression.begin.emacs.lisp"
@@ -102,7 +102,8 @@ repository:
 			endCaptures:   0: name: "punctuation.section.expression.end.emacs.lisp"
 			patterns: [
 				{include: "#arg-keywords"}
-				{name: "variable.parameter.emacs.lisp", match: "[-\\w]+"}
+				 name: "variable.parameter.emacs.lisp"
+				 match: "(?![-+\\d:&'#])([-+=*/\\w~!@$%^&:<>{}?]+)"
 				{include: "$self"}
 			]
 			
@@ -145,7 +146,7 @@ repository:
 	# :keywords
 	keyword:
 		name: "constant.keyword.emacs.lisp"
-		match: "(:)[-\\w]+"
+		match: "(:)[-+=*/\\w~!@$%^&:<>{}?]+"
 		captures:
 			1: name: "punctuation.definition.keyword.emacs.lisp"
 
@@ -193,10 +194,10 @@ repository:
 	number:
 		patterns: [{
 			name: "constant.numeric.float.emacs.lisp"
-			match: "(?<!\\w)-?\\d*\\.\\d+(?:[Ee][-+]?\\d+)?"
+			match: "(?<=[\\s()]|^)[-+]?\\d*\\.\\d+(?:[Ee][-+]?\\d+)?(?=[\\s()]|$)"
 		},{
 			name: "constant.numeric.integer.emacs.lisp"
-			match: "(?<!\\w)-?\\d+(?:[Ee][-+]?\\d+)?"
+			match: "(?<=[\\s()]|^)[-+]?\\d+(?:[Ee][-+]?\\d+)?(?=[\\s()]|$)"
 		}]
 		
 
@@ -235,9 +236,10 @@ repository:
 			
 			# 'value
 			name: "string.quoted.other.emacs.lisp"
-			match: "(')[-\\w]+"
+			match: "(')([-+=*/\\w~!@$%^&:<>{}?]+)"
 			captures:
 				1: name: "punctuation.definition.quote.emacs.lisp"
+				2: patterns: [include: "$self"]
 		}]
 
 	
