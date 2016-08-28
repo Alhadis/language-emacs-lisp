@@ -1,4 +1,11 @@
 {
 	"name": "language-emacs-lisp",
-	"version": "0.0.1"
+	"version": "0.0.1",
+	"description": "Emacs Lisp support for Atom.",
+	"keywords": ["Emacs", "Lisp", "Elisp", "Scheme", "GNU", "FSF"],
+	"repository": "https://github.com/Alhadis/language-emacs-lisp",
+	"license": "ISC",
+	"engines": {
+		"atom": "*"
+	}
 }
