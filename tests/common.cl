@@ -1,3 +1,0 @@
-; Comment
-
-((a b c))
