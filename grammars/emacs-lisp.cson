@@ -3,9 +3,14 @@ scopeName: "source.emacs.lisp"
 fileTypes: [
 	"el"
 	"elc"
+	"eld"
 	"spacemacs"
 	"emacs"
 	"emacs.desktop"
+	"abbrev_defs"
+	"Project.ede"
+	"gnus"
+	"viper"
 ]
 patterns: [include: "#main"]
 
