@@ -309,11 +309,24 @@ repository:
 	# Numeric literals
 	number:
 		patterns: [{
-			name: "constant.numeric.float.emacs.lisp"
-			match: "(?<=[\\s()]|^)[-+]?\\d*\\.\\d+(?:[Ee][-+]?\\d+)?(?=[\\s()]|$)"
+			
+			# #b10010110: Binary notation
+			name: "constant.numeric.integer.binary.emacs.lisp"
+			match: "(?<=[\\s()]|^)(#)[Bb][01]+"
+			captures: 1: name: "punctuation.definition.binary.emacs.lisp"
 		},{
+			# 0xFFFF: Hexadecimal notation
+			name: "constant.numeric.integer.hex.viml"
+			match: "(?<=[\\s()]|^)(#)[Xx][0-9A-Fa-f]+"
+			captures: 1: name: "punctuation.definition.hex.emacs.lisp"
+		},{
+			# Float
+			name: "constant.numeric.float.emacs.lisp"
+			match: "(?<=[\\s()]|^)[-+]?\\d*\\.\\d+(?:[Ee][-+]?\\d+|[Ee]\\+(?:INF|NaN))?(?=[\\s()]|$)"
+		},{
+			# Integer
 			name: "constant.numeric.integer.emacs.lisp"
-			match: "(?<=[\\s()]|^)[-+]?\\d+(?:[Ee][-+]?\\d+)?(?=[\\s()]|$)"
+			match: "(?<=[\\s()]|^)[-+]?\\d+(?:[Ee][-+]?\\d+|[Ee]\\+(?:INF|NaN))?(?=[\\s()]|$)"
 		}]
 		
 
