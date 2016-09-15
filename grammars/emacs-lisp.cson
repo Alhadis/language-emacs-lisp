@@ -5,6 +5,7 @@ fileTypes: [
 	"elc"
 	"eld"
 	"spacemacs"
+	"_emacs"
 	"emacs"
 	"emacs.desktop"
 	"abbrev_defs"
