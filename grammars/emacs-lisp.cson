@@ -36,6 +36,7 @@ repository:
 			{include: "#number"}
 			{include: "#quote"}
 			{include: "#symbols"}
+			{include: "#vectors"}
 			{include: "#arg-values"}
 			{include: "#boolean"}
 			{include: "#stdlib"}
@@ -53,14 +54,14 @@ repository:
 	# Binding
 	binding:
 		name: "storage.binding.emacs.lisp"
-		match: "\\b(?<=[\\s()]|^)(let\\*?|set[fq]?)(?=[\\s()]|$)"
+		match: "\\b(?<=[\\s()\\[]|^)(let\\*?|set[fq]?)(?=[\\s()]|$)"
 	
 
 	# Boolean constants
 	boolean:
 		patterns: [
-			{name: "constant.boolean.true.emacs.lisp", match: "\\b(?<=[\\s()]|^)t(?=[\\s()]|$)\\b"}
-			{name: "constant.language.nil.emacs.lisp", match: "\\b(?<=[\\s()]|^)(nil)(?=[\\s()]|$)\\b"}
+			{name: "constant.boolean.true.emacs.lisp", match: "\\b(?<=[\\s()\\[]|^)t(?=[\\s()]|$)\\b"}
+			{name: "constant.language.nil.emacs.lisp", match: "\\b(?<=[\\s()\\[]|^)(nil)(?=[\\s()]|$)\\b"}
 		]	
 	
 	
@@ -89,7 +90,7 @@ repository:
 			patterns: [include: "#defun-innards"]
 		},{
 			name: "storage.type.function.emacs.lisp"
-			match: "\\b(?<=[\\s()]|^)defun(?=[\\s()]|$)"
+			match: "\\b(?<=[\\s()\\[]|^)defun(?=[\\s()]|$)"
 		},{
 			# Generic definition
 			name: "meta.$3.definition.emacs.lisp"
@@ -107,7 +108,7 @@ repository:
 			patterns: [include: "$self"]
 		},{
 			name: "storage.type.$1.emacs.lisp"
-			match: "\\b(?<=[\\s()]|^)(define-(?:condition|widget))(?=[\\s()]|$)\\b"
+			match: "\\b(?<=[\\s()\\[]|^)(define-(?:condition|widget))(?=[\\s()]|$)\\b"
 		}]
 	
 	
@@ -223,7 +224,7 @@ repository:
 	# Primitives/Fundamental Lisp functions
 	functions:
 		name: "keyword.control.function.$1.emacs.lisp"
-		match: """(?x)\\b(?<=[\\s()]|^)
+		match: """(?x)\\b(?<=[\\s()\\[]|^)
 			(abs|append|apply|assoc|butlast|c[ad]{1,2}r|c[ad]r-safe|consp?|copy-alist|copy-tree
 			|dolist|funcall|last|length|listp?|load|make-list|mapc|mapcar|max|min|member|nbutlast
 			|nconc|nreverse|nth|nthcdr|null|pop|prin[1ct]|push|quote|rassoc|reverse|rplac[ad]
@@ -234,7 +235,7 @@ repository:
 	# :keywords
 	keyword:
 		name: "constant.keyword.emacs.lisp"
-		match: "(?<=[\\s()]|^)(:)[-+=*/\\w~!@$%^&:<>{}?]+"
+		match: "(?<=[\\s()\\[]|^)(:)[-+=*/\\w~!@$%^&:<>{}?]+"
 		captures:
 			1: name: "punctuation.definition.keyword.emacs.lisp"
 
@@ -264,7 +265,7 @@ repository:
 			0: name: "punctuation.section.expression.end.emacs.lisp"
 		patterns: [{
 			name: "keyword.control.emacs.lisp"
-			match: """(?x)(?<=[\\s()]|^)
+			match: """(?x)(?<=[\\s()\\[]|^)
 				(above|across|across-ref|always|and|append|as|below|by|collect|concat
 				|count|do|each|finally|for|from|if|in|in-ref|initially|into|maximize
 				|minimize|named|nconc|never|of|of-ref|on|repeat|return|sum|then|thereis
@@ -312,21 +313,21 @@ repository:
 			
 			# #b10010110: Binary notation
 			name: "constant.numeric.integer.binary.emacs.lisp"
-			match: "(?<=[\\s()]|^)(#)[Bb][01]+"
+			match: "(?<=[\\s()\\[]|^)(#)[Bb][01]+"
 			captures: 1: name: "punctuation.definition.binary.emacs.lisp"
 		},{
 			# 0xFFFF: Hexadecimal notation
 			name: "constant.numeric.integer.hex.viml"
-			match: "(?<=[\\s()]|^)(#)[Xx][0-9A-Fa-f]+"
+			match: "(?<=[\\s()\\[]|^)(#)[Xx][0-9A-Fa-f]+"
 			captures: 1: name: "punctuation.definition.hex.emacs.lisp"
 		},{
 			# Float
 			name: "constant.numeric.float.emacs.lisp"
-			match: "(?<=[\\s()]|^)[-+]?\\d*\\.\\d+(?:[Ee][-+]?\\d+|[Ee]\\+(?:INF|NaN))?(?=[\\s()]|$)"
+			match: "(?<=[\\s()\\[]|^)[-+]?\\d*\\.\\d+(?:[Ee][-+]?\\d+|[Ee]\\+(?:INF|NaN))?(?=[\\s()]|$)"
 		},{
 			# Integer
 			name: "constant.numeric.integer.emacs.lisp"
-			match: "(?<=[\\s()]|^)[-+]?\\d+(?:[Ee][-+]?\\d+|[Ee]\\+(?:INF|NaN))?(?=[\\s()]|$)"
+			match: "(?<=[\\s()\\[]|^)[-+]?\\d+(?:[Ee][-+]?\\d+|[Ee]\\+(?:INF|NaN))?(?=[\\s()]|$)"
 		}]
 		
 
@@ -405,12 +406,12 @@ repository:
 	symbols:
 		patterns: [{
 			name: "constant.other.interned.blank.symbol.emacs.lisp"
-			match: "(?<=[\\s()]|^)##"
+			match: "(?<=[\\s()\\[]|^)##"
 			captures:
 				0: name: "punctuation.definition.symbol.emacs.lisp"
 		},{
 			name: "constant.other.symbol.emacs.lisp"
-			match: "(?<=[\\s()]|^)(#)((?:[-'+=*/\\w~!@$%^&:<>{}?]|\\\\.)+)"
+			match: "(?<=[\\s()\\[]|^)(#)((?:[-'+=*/\\w~!@$%^&:<>{}?]|\\\\.)+)"
 			captures:
 				1: name: "punctuation.definition.symbol.emacs.lisp"
 				2: patterns: [include: "$self"]
@@ -421,6 +422,15 @@ repository:
 			captures:
 				1: name: "punctuation.definition.spliced.symbol.emacs.lisp"
 		}]
+	
+	
+	# [Vector lists]
+	vectors:
+		patterns: [
+			{match: "\\[", name: "punctuation.section.vector.begin.emacs.lisp"}
+			{match: "\\]", name: "punctuation.section.vector.end.emacs.lisp"}
+		]
+		
 	
 
 	# Emacs standard library
