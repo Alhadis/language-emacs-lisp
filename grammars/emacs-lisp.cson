@@ -133,10 +133,40 @@ repository:
 
 	# Escape sequences
 	escapes:
-		name: "constant.character.escape.emacs.lisp"
-		match: "(\\\\)."
-		captures:
-			1: name: "punctuation.definition.backslash.emacs.lisp"
+		patterns: [{
+			
+			# Hex: ?\uFFFF
+			name: "constant.character.escape.hex.emacs.lisp"
+			match: "(\\?)\\\\u[A-Fa-f0-9]{4}|(\\?)\\\\U00[A-Fa-f0-9]{6}"
+			captures:
+				1: name: "punctuation.definition.codepoint.emacs.lisp"
+				2: name: "punctuation.definition.codepoint.emacs.lisp"
+		},{
+			# Hex: ?\xFF
+			name: "constant.character.escape.hex.emacs.lisp"
+			match: "(\\?)\\\\x[A-Fa-f0-9]+"
+			captures:
+				1: name: "punctuation.definition.codepoint.emacs.lisp"
+		},{
+			# Octal: ?\777
+			name: "constant.character.escape.octal.emacs.lisp"
+			match: "(\\?)\\\\[0-7]{1,3}"
+			captures:
+				1: name: "punctuation.definition.codepoint.emacs.lisp"
+		},{
+			# Codepoint query: ?x
+			name: "constant.numeric.codepoint.emacs.lisp"
+			match: "(\\?)(?:[^\\\\]|(\\\\).)"
+			captures:
+				1: name: "punctuation.definition.codepoint.emacs.lisp"
+				2: name: "punctuation.definition.backslash.emacs.lisp"
+		},{
+			# Generic escape: \x
+			name: "constant.character.escape.emacs.lisp"
+			match: "(\\\\)."
+			captures:
+				1: name: "punctuation.definition.backslash.emacs.lisp"
+		}]
 	
 
 	# S-expression
