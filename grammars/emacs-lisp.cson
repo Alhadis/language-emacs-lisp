@@ -13,6 +13,25 @@ fileTypes: [
 	"gnus"
 	"viper"
 ]
+firstLineMatch: """(?x)
+	# Hashbang
+	^\\#!.*(?:\\s|\\/|(?<=!)\\b)
+		emacs
+	(?:$|\\s)
+	|
+	# Modeline
+	(?i:
+		# Emacs
+		-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)
+			emacs-lisp
+		(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-
+		|
+		# Vim
+		(?:(?:\\s|^)vi(?:m[<=>]?\\d+|m)?|\\sex)(?=:(?=\\s*set?\\s[^\\n:]+:)|:(?!\\s*set?\\s))(?:(?:\\s|\\s*:\\s*)\\w*(?:\\s*=(?:[^\\n\\\\\\s]|\\\\.)*)?)*[\\s:](?:filetype|ft|syntax)\\s*=
+			(?:emacs-lisp|elisp)
+		(?=\\s|:|$)
+	)
+"""
 patterns: [include: "#main"]
 
 
