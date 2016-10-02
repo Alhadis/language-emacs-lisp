@@ -7,7 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [v1.1.1]
 ------------------------------------------------------------------------
 **October 2nd, 2016**  
-* __Fixed [#1]__: Inaccurate matching of formatting specifiers
+* __Fixed [#1]:__ Inaccurate matching of formatting specifiers
 
 [#1]: https://github.com/Alhadis/language-emacs-lisp/issues/1
 
