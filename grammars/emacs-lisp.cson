@@ -45,6 +45,7 @@ repository:
 			{include: "#loop"}
 			{include: "#escapes"}
 			{include: "#definition"}
+			{include: "#formatting"}
 			{include: "#face-innards"}
 			{include: "#expression"}
 			{include: "#operators"}
@@ -269,6 +270,56 @@ repository:
 		}]
 		
 
+	# Formatting functions
+	formatting:
+		name: "meta.string-formatting.expression.emacs.lisp"
+		begin: '(\\()(format|format-message|message|error)(?=\\s|$|")'
+		end:   '\\)'
+		beginCaptures:
+			1: name: "punctuation.section.expression.begin.emacs.lisp"
+			2: name: "support.function.$2.emacs.lisp"
+		endCaptures:
+			0: name: "punctuation.section.expression.end.emacs.lisp"
+		patterns: [{
+			
+			# Pin-hack: Part 1
+			begin: '\\G\\s*(")'
+			end:   '"'
+			beginCaptures: 1: name: "punctuation.definition.string.begin.emacs.lisp"
+			endCaptures:   0: name: "punctuation.definition.string.end.emacs.lisp"
+			patterns: [include: "#format"]
+		},{
+			# Pin-hack: Part 2
+			begin: '\\G\\s*$\\n?'
+			end:   '"|(?<!^)$|[\\s"](?=[^\\s"])'
+			patterns: [
+				match: "^\\s*$\\n?"
+				
+				{match: '(?:^|\\G)\\s*(")',
+				captures:
+					1: name: "punctuation.definition.string.begin.emacs.lisp"}
+				
+				begin: '(?<=")'
+				end:   '"'
+				patterns: [include: "#format"]
+				endCaptures:
+					0: name: "punctuation.definition.string.end.emacs.lisp"
+			]
+		}, include: "$self"]
+
+
+	# Formatting string, where "%" has special significance
+	format:
+		contentName: "string.quoted.double.emacs.lisp"
+		begin: '\\G'
+		end:   '(?=")'
+		patterns: [{
+			match: "(%[%cdefgosSxX])|(%.)"
+			captures:
+				1: name: "constant.other.placeholder.emacs.lisp"
+				2: name: "invalid.illegal.placeholder.emacs.lisp"
+		}, include: "#string-innards"]
+
 
 	# Primitives/Fundamental Lisp functions
 	functions:
@@ -434,6 +485,11 @@ repository:
 		end:   '"'
 		beginCaptures: 0: name: "punctuation.definition.string.begin.emacs.lisp"
 		endCaptures:   0: name: "punctuation.definition.string.end.emacs.lisp"
+		patterns: [include: "#string-innards"]
+
+
+	# Escape sequences within double-quoted strings
+	"string-innards":
 		patterns: [{
 			
 			# Concealed newline
@@ -446,13 +502,6 @@ repository:
 			name: "constant.character.escape.emacs.lisp"
 			captures:
 				1: name: "punctuation.escape.backslash.emacs.lisp"
-		},{
-			
-			# Formatting placeholder
-			match: "(%[%cdefgosSxX])|(%.)"
-			captures:
-				1: name: "constant.other.placeholder.emacs.lisp"
-				2: name: "invalid.illegal.placeholder.emacs.lisp"
 		}]
 
 
