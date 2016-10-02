@@ -4,6 +4,14 @@ Change Log
 This project adheres to [Semantic Versioning](http://semver.org).
 
 
+[v1.1.1]
+------------------------------------------------------------------------
+**October 2nd, 2016**  
+* __Fixed [#1]__: Inaccurate matching of formatting specifiers
+
+[#1]: https://github.com/Alhadis/language-emacs-lisp/issues/1
+
+
 [v1.1.0]
 ------------------------------------------------------------------------
 **September 28th, 2016**  
@@ -31,6 +39,7 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 
 
 [Referenced links]:_____________________________________________________
+[v1.1.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.1.1
 [v1.1.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.1.0
 [v1.0.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.1
 [v1.0.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.0
