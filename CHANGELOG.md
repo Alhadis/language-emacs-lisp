@@ -3,6 +3,16 @@ Change Log
 
 This project adheres to [Semantic Versioning](http://semver.org).
 
+[Unpublished]: ../../compare/v1.1.1...HEAD
+
+
+[Unpublished]
+------------------------------------------------------------------------
+* __Fixed:__ Editor commands not deregistered when deactivating package
+* __Fixed:__ Duplication warning shown when evaluating Lisp expressions
+* __Fixed:__ Duplicated output when `language-emacs-lisp:run-selection`
+evaluates an expression which is already enclosed by `(message "%s" …)`
+
 
 [v1.1.1]
 ------------------------------------------------------------------------
