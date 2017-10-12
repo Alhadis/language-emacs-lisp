@@ -4,8 +4,17 @@ const childProcess = require("child_process");
 const path = require("path");
 
 
+/**
+ * Singleton class which manages the package's lifecycle.
+ * @hideconstructor
+ * @class
+ */
 class EmacsLisp{
 	
+	/**
+	 * Register the package's commands with Atom.
+	 * @internal
+	 */
 	activate(){
 		const target = "atom-text-editor";
 		
@@ -29,12 +38,9 @@ class EmacsLisp{
 	/**
 	 * Evaluate a string of Emacs Lisp code.
 	 *
-	 * Returns a {Promise} that resolves to the stringified output.
-	 *
-	 * @public
 	 * @example eval("(+ 5 5)") -> "10"
 	 * @param {String} text
-	 * @return {Promise}
+	 * @return {Promise} Resolves with collected output.
 	 */
 	eval(text){
 		return new Promise((resolve, reject) => {
@@ -62,11 +68,9 @@ class EmacsLisp{
 	/**
 	 * Run a Lisp file in Emacs.
 	 *
-	 * Returns a {Promise} with the script's output, if any.
-	 *
-	 * @public
+	 * @example runFile("~/.emacs.d/lisp/script.el")
 	 * @param {String} file - Path to file
-	 * @return {Promise}
+	 * @return {Promise} Resolves with the script's output, if any.
 	 */
 	runFile(file){
 		return new Promise((resolve, reject) => {
@@ -92,7 +96,7 @@ class EmacsLisp{
 	 *
 	 * @param {String} text
 	 * @param {Boolean} error
-	 * @private
+	 * @internal
 	 */
 	showOutput(text, error = false){
 		const msg = "**Emacs:** " + text;
@@ -106,30 +110,31 @@ class EmacsLisp{
 	/**
 	 * Retrieve an editor's currently-selected text.
 	 *
-	 * If nothing's selected, the scope enclosing the cursor's current
-	 * position is selected and returned instead.
+	 * If nothing's selected, the scope enclosing the cursor's
+	 * current position is selected and returned instead.
 	 *
 	 * @param {TextEditor} ed - Defaults to current editor
-	 * @private
+	 * @return {String}
+	 * @internal
 	 */
 	getSelection(ed){
 		ed = ed || atom.workspace.getActiveTextEditor();
-		if(!ed) return;
+		if(!ed) return "";
 		let text = ed.getSelectedText();
 		
-		/** If the user hasn't made a selection, make one for 'em */
+		// If the user hasn't made a selection, make one for 'em
 		if(!text){
 			if(atom.packages.activePackages["bracket-matcher"]){
 				atom.commands.dispatch(ed.editorElement, "bracket-matcher:select-inside-brackets");
 				
-				/** Select containing brackets too */
+				// Select containing brackets too
 				let range = ed.getSelectedBufferRange();
 				--range.start.column;
 				++range.end.column;
 				ed.setSelectedBufferRange(range);
 			}
 			
-			/** Fallback if bracket-matcher isn't available */
+			// Fallback if bracket-matcher isn't available
 			else ed.selectWordsContainingCursors();
 			
 			text = ed.getSelectedText();
