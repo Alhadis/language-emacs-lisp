@@ -137,10 +137,11 @@ class EmacsLisp{
 		// If the user hasn't made a selection, make one for 'em
 		if(!text){
 			if(atom.packages.activePackages["bracket-matcher"]){
-				atom.commands.dispatch(ed.editorElement, "bracket-matcher:select-inside-brackets");
+				const command = "bracket-matcher:select-inside-brackets";
+				atom.commands.dispatch(ed.element, command);
 				
 				// Select containing brackets too
-				let range = ed.getSelectedBufferRange();
+				const range = ed.getSelectedBufferRange();
 				--range.start.column;
 				++range.end.column;
 				ed.setSelectedBufferRange(range);
