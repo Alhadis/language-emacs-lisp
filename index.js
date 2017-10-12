@@ -51,16 +51,15 @@ class EmacsLisp{
 	 * Evaluate a string of Emacs Lisp code.
 	 *
 	 * @example eval("(+ 5 5)") -> "10"
-	 * @param {String} text
+	 * @param {String} expr
 	 * @return {Promise} Resolves with collected output.
 	 */
-	eval(text){
+	eval(expr){
 		return new Promise((resolve, reject) => {
-			const emacs = childProcess.spawn("emacs", [
-				"--batch",
-				"--eval",
-				`(message "%s" ${text})`
-			]);
+			expr = expr.replace(/\r(?=\n)/g, "");
+			if(!/^\s*\(message\s+".+?%.+?"\s(?:.|\n)+\)\s*$/.test(expr))
+				expr = `(message "%s" ${expr})`;
+			const emacs = childProcess.spawn("emacs", ["--batch", "--eval", expr]);
 			
 			let output = "";
 			emacs.stderr.on("data", data => {
