@@ -1,5 +1,6 @@
 "use strict";
 
+const {CompositeDisposable} = require("atom");
 const childProcess = require("child_process");
 const path = require("path");
 
@@ -16,22 +17,33 @@ class EmacsLisp{
 	 * @internal
 	 */
 	activate(){
-		const target = "atom-text-editor";
-		
-		atom.commands.add(target, "language-emacs-lisp:run-selection", e => {
-			const text = this.getSelection();
-			if(text && !/^\s+$/.test(text))
-				this.eval(text)
+		this.disposables = new CompositeDisposable();
+		this.disposables.add(atom.commands.add("atom-text-editor", {
+			"language-emacs-lisp:run-selection": e => {
+				const text = this.getSelection();
+				if(text && !/^\s+$/.test(text))
+					this.eval(text)
+						.then(output  => this.showOutput(output))
+						.catch(output => this.showOutput(output, true));
+			},
+			"language-emacs-lisp:run-file": e => {
+				const ed = atom.workspace.getActiveTextEditor();
+				if(ed) this.runFile(ed.getPath())
 					.then(output  => this.showOutput(output))
 					.catch(output => this.showOutput(output, true));
-		});
-		
-		atom.commands.add(target, "language-emacs-lisp:run-file", e => {
-			const ed = atom.workspace.getActiveTextEditor();
-			if(ed) this.runFile(ed.getPath())
-				.then(output  => this.showOutput(output))
-				.catch(output => this.showOutput(output, true));
-		});
+			},
+		}));
+	}
+	
+	
+	/**
+	 * Free up memory when deactivating package.
+	 * @internal
+	 */
+	deactivate(){
+		if(null !== this.disposables)
+			this.disposables.dispose();
+		this.disposables = null;
 	}
 	
 	
@@ -143,4 +155,5 @@ class EmacsLisp{
 	}
 }
 
+EmacsLisp.prototype.disposables = null;
 module.exports = new EmacsLisp();
