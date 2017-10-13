@@ -14,6 +14,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 * __Fixed:__ Duplication warning shown when evaluating Lisp expressions
 * __Fixed:__ Duplicated output when `language-emacs-lisp:run-selection`
 evaluates an expression which is already enclosed by `(message "%s" …)`
+* __Fixed:__ Incomplete highlighting of `<=` and `>=` as function names
 
 
 [v1.1.1]

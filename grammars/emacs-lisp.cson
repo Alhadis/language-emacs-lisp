@@ -456,7 +456,7 @@ repository:
 			
 			# Comparison operators
 			name: "keyword.operator.comparison.emacs.lisp"
-			match: "(?<=\\(|\\s|^)[=<>]|[/<>]=(?=\\s|\\)|$)"
+			match: "(?<=\\(|\\s|^)[/<>]=|[=<>](?=\\s|\\)|$)"
 		},{
 			
 			# Pair separator
