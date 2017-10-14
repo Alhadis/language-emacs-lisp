@@ -10,6 +10,8 @@ This project adheres to [Semantic Versioning](http://semver.org).
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for another 30,134 function names, courtesy of
 [Endless Parentheses](http://doc.endlessparentheses.com/functions.html)
+* __Added:__ Highlighting of built-in or common face names, also sourced
+[from E.P.](http://doc.endlessparentheses.com/faces.html#main_content)
 * __Fixed:__ Editor commands not deregistered when deactivating package
 * __Fixed:__ Duplication warning shown when evaluating Lisp expressions
 * __Fixed:__ Duplicated output when `language-emacs-lisp:run-selection`
