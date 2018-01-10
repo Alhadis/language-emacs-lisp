@@ -682,6 +682,7 @@ repository:
 	# Emacs standard library
 	stdlib:
 		patterns: [{
+			# Standard library: A-D
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
 				(abbrev-all-caps|abbrev-expand-function|abbrev-expansion|abbrev-file-name|abbrev-get|abbrev-insert|abbrev-map|abbrev-minor-mode-table-alist
@@ -754,17 +755,22 @@ repository:
 				|delete-terminal-functions|delete-to-left-margin|delete-trailing-whitespace|delete-window|delete-windows-on|delq|derived-mode-p|describe-bindings
 				|describe-buffer-case-table|describe-categories|describe-current-display-table|describe-display-table|describe-mode|describe-prefix-bindings
 				|describe-syntax|desktop-buffer-mode-handlers|desktop-save-buffer|destroy-fringe-bitmap|detect-coding-region|detect-coding-string|digit-argument
-				|ding|dir-locals-class-alist|dir-locals-directory-cache|dir-locals-file|dir-locals-set-class-variables|dir-locals-set-directory-class
-				|directory-file-name|directory-files|directory-files-and-attributes|dired-kept-versions|disable-command|disable-point-adjustment|disable-theme
-				|disabled|disabled-command-function|disassemble|discard-input|display-backing-store|display-buffer|display-buffer-alist|display-buffer-at-bottom
-				|display-buffer-base-action|display-buffer-below-selected|display-buffer-fallback-action|display-buffer-in-previous-window|display-buffer-no-window
-				|display-buffer-overriding-action|display-buffer-pop-up-frame|display-buffer-pop-up-window|display-buffer-reuse-window|display-buffer-same-window
-				|display-buffer-use-some-window|display-color-cells|display-color-p|display-completion-list|display-delayed-warnings|display-graphic-p|display-grayscale-p
-				|display-images-p|display-message-or-buffer|display-mm-dimensions-alist|display-mm-height|display-mm-width|display-monitor-attributes-list|display-mouse-p
-				|display-pixel-height|display-pixel-width|display-planes|display-popup-menus-p|display-save-under|display-screens|display-selections-p
-				|display-supports-face-attributes-p|display-table-slot|display-visual-class|display-warning|dnd-protocol-alist|do-auto-save|doc-directory|documentation
-				|documentation-property|dotimes-with-progress-reporter|double-click-fuzz|double-click-time|down-list|downcase|downcase-region|downcase-word|dump-emacs
-				|dynamic-library-alist|easy-menu-define|easy-mmode-define-minor-mode|echo-area-clear-hook|echo-keystrokes|edebug|edebug-all-defs|edebug-all-forms
+				|ding|dir-locals-class-alist|dir-locals-directory-cache|dir-locals-file|dir-locals-set-class-variables|dir-locals-set-directory-class|directory-file-name
+				|directory-files|directory-files-and-attributes|dired-kept-versions|disable-command|disable-point-adjustment|disable-theme|disabled|disabled-command-function
+				|disassemble|discard-input|display-backing-store|display-buffer|display-buffer-alist|display-buffer-at-bottom|display-buffer-base-action|display-buffer-below-selected
+				|display-buffer-fallback-action|display-buffer-in-previous-window|display-buffer-no-window|display-buffer-overriding-action|display-buffer-pop-up-frame
+				|display-buffer-pop-up-window|display-buffer-reuse-window|display-buffer-same-window|display-buffer-use-some-window|display-color-cells|display-color-p
+				|display-completion-list|display-delayed-warnings|display-graphic-p|display-grayscale-p|display-images-p|display-message-or-buffer|display-mm-dimensions-alist
+				|display-mm-height|display-mm-width|display-monitor-attributes-list|display-mouse-p|display-pixel-height|display-pixel-width|display-planes|display-popup-menus-p
+				|display-save-under|display-screens|display-selections-p|display-supports-face-attributes-p|display-table-slot|display-visual-class|display-warning|dnd-protocol-alist
+				|do-auto-save|doc-directory|documentation|documentation-property|dotimes-with-progress-reporter|double-click-fuzz|double-click-time|down-list|downcase|downcase-region
+				|downcase-word|dump-emacs|dynamic-library-alist)
+			(?=[\\s()]|$)"""
+		},{
+			# Standard library: E-H
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)
+				(easy-menu-define|easy-mmode-define-minor-mode|echo-area-clear-hook|echo-keystrokes|edebug|edebug-all-defs|edebug-all-forms
 				|edebug-continue-kbd-macro|edebug-defun|edebug-display-freq-count|edebug-eval-macro-args|edebug-eval-top-level-form|edebug-global-break-condition
 				|edebug-initial-mode|edebug-on-error|edebug-on-quit|edebug-print-circle|edebug-print-length|edebug-print-level|edebug-print-trace-after|edebug-print-trace-before
 				|edebug-save-displayed-buffer-points|edebug-save-windows|edebug-set-global-break-condition|edebug-setup-hook|edebug-sit-for-seconds|edebug-temp-display-freq-count
@@ -819,15 +825,20 @@ repository:
 				|gv-define-simple-setter|gv-letplace|hack-dir-local-variables|hack-dir-local-variables-non-file-buffer|hack-local-variables|hack-local-variables-hook
 				|handle-shift-selection|handle-switch-frame|hash-table-count|hash-table-p|hash-table-rehash-size|hash-table-rehash-threshold|hash-table-size|hash-table-test
 				|hash-table-weakness|header-line-format|help-buffer|help-char|help-command|help-event-list|help-form|help-map|help-setup-xref|help-window-select
-				|Helper-describe-bindings|Helper-help|Helper-help-map|history-add-new-input|history-delete-duplicates|history-length|icon-title-format|iconify-frame
-				|identity|ignore|ignore-errors|ignore-window-parameters|ignored-local-variables|image-animate|image-animate-timer|image-cache-eviction-delay
-				|image-current-frame|image-default-frame-delay|image-flush|image-format-suffixes|image-load-path|image-load-path-for-library|image-mask-p|image-minimum-frame-delay
-				|image-multi-frame-p|image-show-frame|image-size|image-type-available-p|image-types|imagemagick-enabled-types|imagemagick-types|imagemagick-types-inhibit
-				|imenu-add-to-menubar|imenu-case-fold-search|imenu-create-index-function|imenu-extract-index-name-function|imenu-generic-expression
-				|imenu-prev-index-position-function|imenu-syntax-alist|inc|indent-according-to-mode|indent-code-rigidly|indent-for-tab-command|indent-line-function
-				|indent-region|indent-region-function|indent-relative|indent-relative-maybe|indent-rigidly|indent-tabs-mode|indent-to|indent-to-left-margin|indicate-buffer-boundaries
-				|indicate-empty-lines|indirect-function|indirect-variable|inhibit-default-init|inhibit-eol-conversion|inhibit-field-text-motion|inhibit-file-name-handlers
-				|inhibit-file-name-operation|inhibit-iso-escape-detection|inhibit-local-variables-regexps|inhibit-modification-hooks|inhibit-null-byte-detection
+				|Helper-describe-bindings|Helper-help|Helper-help-map|history-add-new-input|history-delete-duplicates|history-length)
+			(?=[\\s()]|$)"""
+		},{
+			# Standard patterns: I-R
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)
+				(icon-title-format|iconify-frame|identity|ignore|ignore-errors|ignore-window-parameters|ignored-local-variables|image-animate|image-animate-timer
+				|image-cache-eviction-delay|image-current-frame|image-default-frame-delay|image-flush|image-format-suffixes|image-load-path|image-load-path-for-library
+				|image-mask-p|image-minimum-frame-delay|image-multi-frame-p|image-show-frame|image-size|image-type-available-p|image-types|imagemagick-enabled-types
+				|imagemagick-types|imagemagick-types-inhibit|imenu-add-to-menubar|imenu-case-fold-search|imenu-create-index-function|imenu-extract-index-name-function
+				|imenu-generic-expression|imenu-prev-index-position-function|imenu-syntax-alist|inc|indent-according-to-mode|indent-code-rigidly|indent-for-tab-command
+				|indent-line-function|indent-region|indent-region-function|indent-relative|indent-relative-maybe|indent-rigidly|indent-tabs-mode|indent-to|indent-to-left-margin
+				|indicate-buffer-boundaries|indicate-empty-lines|indirect-function|indirect-variable|inhibit-default-init|inhibit-eol-conversion|inhibit-field-text-motion
+				|inhibit-file-name-handlers|inhibit-file-name-operation|inhibit-iso-escape-detection|inhibit-local-variables-regexps|inhibit-modification-hooks|inhibit-null-byte-detection
 				|inhibit-point-motion-hooks|inhibit-quit|inhibit-read-only|inhibit-splash-screen|inhibit-startup-echo-area-message|inhibit-startup-message|inhibit-startup-screen
 				|inhibit-x-resources|init-file-user|initial-buffer-choice|initial-environment|initial-frame-alist|initial-major-mode|initial-scratch-message|initial-window-system
 				|input-decode-map|input-method-alist|input-method-function|input-pending-p|insert|insert-abbrev-table-description|insert-and-inherit|insert-before-markers
@@ -909,7 +920,13 @@ repository:
 				|revert-buffer-function|revert-buffer-in-progress-p|revert-buffer-insert-file-contents-function|revert-without-query|right-fringe-width|right-margin-width
 				|ring-bell-function|ring-copy|ring-elements|ring-empty-p|ring-insert|ring-insert-at-beginning|ring-length|ring-p|ring-ref|ring-remove|ring-size
 				|risky-local-variable-p|rm|round|run-at-time|run-hook-with-args|run-hook-with-args-until-failure|run-hook-with-args-until-success|run-hooks
-				|run-mode-hooks|run-with-idle-timer|safe-local-eval-forms|safe-local-variable-p|safe-local-variable-values|same-window-buffer-names|same-window-p
+				|run-mode-hooks|run-with-idle-timer)
+			(?=[\\s()]|$)"""
+		},{
+			# Standard patterns: S-Z
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)
+				(safe-local-eval-forms|safe-local-variable-p|safe-local-variable-values|same-window-buffer-names|same-window-p
 				|same-window-regexps|save-abbrevs|save-buffer|save-buffer-coding-system|save-current-buffer|save-excursion|save-match-data|save-restriction
 				|save-selected-window|save-some-buffers|save-window-excursion|scalable-fonts-allowed|scan-lists|scan-sexps|scroll-bar-event-ratio|scroll-bar-mode
 				|scroll-bar-scale|scroll-bar-width|scroll-conservatively|scroll-down|scroll-down-aggressively|scroll-down-command|scroll-error-top-bottom|scroll-left
@@ -1009,8 +1026,8 @@ repository:
 				|typecase|typep|union)
 			)(?=[\\s()]|$)"""
 		},{
-			
-			# Extended standard library (Source: http://doc.endlessparentheses.com/functions.html)
+			# Extended standard library (1 / 55)
+			# (Source: http://doc.endlessparentheses.com/functions.html)
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)(?:
 				 \\*table--cell-backward-kill-paragraph|\\*table--cell-backward-kill-sentence|\\*table--cell-backward-kill-sexp|\\*table--cell-backward-kill-word
@@ -1103,7 +1120,11 @@ repository:
 				|ad-update|ad-verify-cache-class-id|ad-verify-cache-id|ad-with-originals|ada-activate-keys-for-case|ada-add-extensions|ada-adjust-case-buffer
 				|ada-adjust-case-identifier|ada-adjust-case-interactive|ada-adjust-case-region|ada-adjust-case-skeleton|ada-adjust-case-substring
 				|ada-adjust-case|ada-after-keyword-p|ada-array|ada-batch-reformat|ada-call-from-contextual-menu|ada-capitalize-word|ada-case-read-exceptions-from-file
-				|ada-case-read-exceptions|ada-case|ada-change-prj|ada-check-current|ada-check-defun-name|ada-check-matching-start|ada-compile-application
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (2 / 55)
+			match: """(?x)(?<=[()]|^)(?:
+				 ada-case-read-exceptions|ada-case|ada-change-prj|ada-check-current|ada-check-defun-name|ada-check-matching-start|ada-compile-application
 				|ada-compile-current|ada-compile-goto-error|ada-compile-mouse-goto-error|ada-complete-identifier|ada-contextual-menu|ada-create-case-exception-substring
 				|ada-create-case-exception|ada-create-keymap|ada-create-menu|ada-customize|ada-declare-block|ada-else|ada-elsif|ada-exception-block
 				|ada-exception|ada-exit|ada-ff-other-window|ada-fill-comment-paragraph-justify|ada-fill-comment-paragraph-postfix|ada-fill-comment-paragraph
@@ -1193,7 +1214,12 @@ repository:
 				|ange-ftp-file-attributes|ange-ftp-file-directory-p|ange-ftp-file-entry-not-ignored-p|ange-ftp-file-entry-p|ange-ftp-file-executable-p
 				|ange-ftp-file-exists-p|ange-ftp-file-local-copy|ange-ftp-file-modtime|ange-ftp-file-name-all-completions|ange-ftp-file-name-as-directory
 				|ange-ftp-file-name-completion-1|ange-ftp-file-name-completion|ange-ftp-file-name-directory|ange-ftp-file-name-nondirectory|ange-ftp-file-name-sans-versions
-				|ange-ftp-file-newer-than-file-p|ange-ftp-file-readable-p|ange-ftp-file-remote-p|ange-ftp-file-size|ange-ftp-file-symlink-p|ange-ftp-file-writable-p
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (3 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 ange-ftp-file-newer-than-file-p|ange-ftp-file-readable-p|ange-ftp-file-remote-p|ange-ftp-file-size|ange-ftp-file-symlink-p|ange-ftp-file-writable-p
 				|ange-ftp-find-backup-file-name|ange-ftp-fix-dir-name-for-bs2000|ange-ftp-fix-dir-name-for-cms|ange-ftp-fix-dir-name-for-mts
 				|ange-ftp-fix-dir-name-for-vms|ange-ftp-fix-name-for-bs2000|ange-ftp-fix-name-for-cms|ange-ftp-fix-name-for-mts|ange-ftp-fix-name-for-vms
 				|ange-ftp-ftp-name-component|ange-ftp-ftp-name|ange-ftp-ftp-process-buffer|ange-ftp-generate-passwd-key|ange-ftp-generate-root-prefixes
@@ -1283,7 +1309,12 @@ repository:
 				|artist-go-get-prep-fill-fn|artist-go-get-shifted|artist-go-get-symbol-shift-sub|artist-go-get-symbol-shift|artist-go-get-symbol
 				|artist-go-get-undraw-fn-from-symbol|artist-go-get-undraw-fn|artist-go-get-unshifted|artist-go-retrieve-from-symbol-sub|artist-go-retrieve-from-symbol
 				|artist-intersection-char|artist-is-in-op-list-p|artist-key-do-continously-1point|artist-key-do-continously-2points|artist-key-do-continously-common
-				|artist-key-do-continously-continously|artist-key-do-continously-poly|artist-key-draw-1point|artist-key-draw-2points|artist-key-draw-common
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (4 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 artist-key-do-continously-continously|artist-key-do-continously-poly|artist-key-draw-1point|artist-key-draw-2points|artist-key-draw-common
 				|artist-key-draw-continously|artist-key-draw-poly|artist-key-set-point-1point|artist-key-set-point-2points|artist-key-set-point-common
 				|artist-key-set-point-continously|artist-key-set-point-poly|artist-key-set-point|artist-key-undraw-1point|artist-key-undraw-2points
 				|artist-key-undraw-common|artist-key-undraw-continously|artist-key-undraw-poly|artist-make-2point-object|artist-make-arrow-point
@@ -1373,7 +1404,12 @@ repository:
 				|bibtex-string-files-init|bibtex-string=|bibtex-strings|bibtex-style-calculate-indentation|bibtex-style-indent-line|bibtex-style-mode
 				|bibtex-summary|bibtex-text-in-field-bounds|bibtex-text-in-field|bibtex-text-in-string|bibtex-type-in-head|bibtex-url|bibtex-valid-entry
 				|bibtex-validate-globally|bibtex-validate|bibtex-vec-incr|bibtex-vec-push|bibtex-yank-pop|bibtex-yank|bidi-find-overridden-directionality
-				|bidi-resolved-levels|binary-overwrite-mode|bindat--length-group|bindat--pack-group|bindat--pack-item|bindat--pack-u16|bindat--pack-u16r
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (5 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 bidi-resolved-levels|binary-overwrite-mode|bindat--length-group|bindat--pack-group|bindat--pack-item|bindat--pack-u16|bindat--pack-u16r
 				|bindat--pack-u24|bindat--pack-u24r|bindat--pack-u32|bindat--pack-u32r|bindat--pack-u8|bindat--unpack-group|bindat--unpack-item
 				|bindat--unpack-u16|bindat--unpack-u16r|bindat--unpack-u24|bindat--unpack-u24r|bindat--unpack-u32|bindat--unpack-u32r|bindat--unpack-u8
 				|bindat-format-vector|bindat-vector-to-dec|bindat-vector-to-hex|bindings--define-key|binhex-char-int|binhex-char-map|binhex-decode-region-external
@@ -1463,7 +1499,12 @@ repository:
 				|byte-compile-stack-ref|byte-compile-stack-set|byte-compile-subr-wrong-args|byte-compile-three-args|byte-compile-top-level-body
 				|byte-compile-top-level|byte-compile-toplevel-file-form|byte-compile-trueconstp|byte-compile-two-args|byte-compile-two-or-three-args
 				|byte-compile-unbind|byte-compile-unfold-bcf|byte-compile-unfold-lambda|byte-compile-unwind-protect|byte-compile-variable-ref
-				|byte-compile-variable-set|byte-compile-warn-about-unresolved-functions|byte-compile-warn-obsolete|byte-compile-warn|byte-compile-warning-enabled-p
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (6 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 byte-compile-variable-set|byte-compile-warn-about-unresolved-functions|byte-compile-warn-obsolete|byte-compile-warn|byte-compile-warning-enabled-p
 				|byte-compile-warning-prefix|byte-compile-warning-series|byte-compile-while|byte-compile-zero-or-one-arg|byte-compiler-base-file-name
 				|byte-decompile-bytecode-1|byte-decompile-bytecode|byte-defop-compiler-1|byte-defop-compiler|byte-defop|byte-extrude-byte-code-vectors
 				|byte-force-recompile|byte-optimize-all-constp|byte-optimize-and|byte-optimize-apply|byte-optimize-approx-equal|byte-optimize-associative-math
@@ -1553,7 +1594,12 @@ repository:
 				|c-state-lit-beg|c-state-literal-at|c-state-mark-point-min-literal|c-state-maybe-marker|c-state-pp-to-literal|c-state-push-any-brace-pair
 				|c-state-safe-place|c-state-semi-safe-place|c-submit-bug-report|c-subword-mode|c-suppress-<->-as-parens|c-syntactic-content|c-syntactic-end-of-macro
 				|c-syntactic-information-on-region|c-syntactic-re-search-forward|c-syntactic-skip-backward|c-tentative-buffer-changes|c-tnt-chng-cleanup
-				|c-tnt-chng-record-state|c-toggle-auto-hungry-state|c-toggle-auto-newline|c-toggle-auto-state|c-toggle-electric-state|c-toggle-hungry-state
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (7 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 c-tnt-chng-record-state|c-toggle-auto-hungry-state|c-toggle-auto-newline|c-toggle-auto-state|c-toggle-electric-state|c-toggle-hungry-state
 				|c-toggle-parse-state-debug|c-toggle-syntactic-indentation|c-trim-found-types|c-try-one-liner|c-uncomment-out-cpps|c-unfind-coalesced-tokens
 				|c-unfind-enclosing-token|c-unfind-type|c-unmark-<->-as-paren|c-up-conditional-with-else|c-up-conditional|c-up-list-backward|c-up-list-forward
 				|c-update-modeline|c-valid-offset|c-version|c-vsemi-status-unknown-p|c-whack-state-after|c-whack-state-before|c-where-wrt-brace-construct
@@ -1643,7 +1689,12 @@ repository:
 				|chart-sequece|chart-size-in-dir|chart-sort-matchlist|chart-sort|chart-space-usage|chart-test-it-all|chart-translate-namezone|chart-translate-xpos
 				|chart-translate-ypos|chart-trim|chart-zap-chars|chart|check-ccl-program|check-completion-length|check-declare-directory|check-declare-errmsg
 				|check-declare-file|check-declare-files|check-declare-locate|check-declare-scan|check-declare-sort|check-declare-verify|check-declare-warn
-				|check-face|check-ispell-version|check-parens|check-type|checkdoc-autofix-ask-replace|checkdoc-buffer-label|checkdoc-char=|checkdoc-comments
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (8 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 check-face|check-ispell-version|check-parens|check-type|checkdoc-autofix-ask-replace|checkdoc-buffer-label|checkdoc-char=|checkdoc-comments
 				|checkdoc-continue|checkdoc-create-common-verbs-regexp|checkdoc-create-error|checkdoc-current-buffer|checkdoc-defun-info|checkdoc-defun
 				|checkdoc-delete-overlay|checkdoc-display-status-buffer|checkdoc-error-end|checkdoc-error-start|checkdoc-error-text|checkdoc-error-unfixable
 				|checkdoc-error|checkdoc-eval-current-buffer|checkdoc-eval-defun|checkdoc-file-comments-engine|checkdoc-in-example-string-p|checkdoc-in-sample-code-p
@@ -1733,7 +1784,12 @@ repository:
 				|compilation-forget-errors|compilation-get-file-structure|compilation-goto-locus-delete-o|compilation-goto-locus|compilation-handle-exit
 				|compilation-internal-error-properties|compilation-loop|compilation-minor-mode|compilation-mode-font-lock-keywords|compilation-mode
 				|compilation-move-to-column|compilation-next-error-function|compilation-next-error|compilation-next-file|compilation-next-single-property-change
-				|compilation-parse-errors|compilation-previous-error|compilation-previous-file|compilation-read-command|compilation-revert-buffer
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (9 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 compilation-parse-errors|compilation-previous-error|compilation-previous-file|compilation-read-command|compilation-revert-buffer
 				|compilation-sentinel|compilation-set-skip-threshold|compilation-set-window-height|compilation-set-window|compilation-setup|compilation-shell-minor-mode
 				|compilation-start|compile-goto-error|compile-mouse-goto-error|compile|compiler-macroexpand|complete-in-turn|complete-symbol|complete-tag
 				|complete-with-action|complete|completing-read-default|completing-read-multiple|completion--cache-all-sorted-completions|completion--capf-wrapper
@@ -1823,7 +1879,12 @@ repository:
 				|custom-buffer-create|custom-check-theme|custom-command-apply|custom-comment-create|custom-comment-hide|custom-comment-invisible-p
 				|custom-comment-show|custom-convert-widget|custom-current-group|custom-declare-face|custom-declare-group|custom-declare-theme|custom-declare-variable
 				|custom-face-action|custom-face-attributes-get|custom-face-edit-activate|custom-face-edit-all|custom-face-edit-attribute-tag|custom-face-edit-convert-widget
-				|custom-face-edit-deactivate|custom-face-edit-delete|custom-face-edit-fix-value|custom-face-edit-lisp|custom-face-edit-selected
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (10 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 custom-face-edit-deactivate|custom-face-edit-delete|custom-face-edit-fix-value|custom-face-edit-lisp|custom-face-edit-selected
 				|custom-face-edit-value-create|custom-face-edit-value-visibility-action|custom-face-get-current-spec|custom-face-mark-to-reset-standard
 				|custom-face-mark-to-save|custom-face-menu-create|custom-face-reset-saved|custom-face-reset-standard|custom-face-save-command
 				|custom-face-save|custom-face-set|custom-face-standard-value|custom-face-state-set-and-redraw|custom-face-state-set|custom-face-state
@@ -1913,7 +1974,12 @@ repository:
 				|dcl-save-local-variable|dcl-save-mode|dcl-save-nondefault-options|dcl-save-option|dcl-set-option|dcl-show-line-type|dcl-split-line
 				|dcl-tab|dcl-was-looking-at|deactivate-input-method|deactivate-mode-local-bindings|debug--function-list|debug--implement-debug-on-entry
 				|debug-help-follow|debugger--backtrace-base|debugger--hide-locals|debugger--insert-locals|debugger--locals-visible-p|debugger--show-locals
-				|debugger-continue|debugger-env-macro|debugger-eval-expression|debugger-frame-clear|debugger-frame-number|debugger-frame|debugger-jump
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (11 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 debugger-continue|debugger-env-macro|debugger-eval-expression|debugger-frame-clear|debugger-frame-number|debugger-frame|debugger-jump
 				|debugger-list-functions|debugger-make-xrefs|debugger-mode|debugger-record-expression|debugger-reenable|debugger-return-value|debugger-setup-buffer
 				|debugger-step-through|debugger-toggle-locals|decf|decipher--analyze|decipher--digram-counts|decipher--digram-total|decipher-add-undo
 				|decipher-adjacency-list|decipher-alphabet-keypress|decipher-analyze-buffer|decipher-analyze|decipher-complete-alphabet|decipher-copy-cons
@@ -2003,7 +2069,12 @@ repository:
 				|dired-align-file|dired-alist-add-1|dired-at-point-prompter|dired-at-point|dired-backup-diff|dired-between-files|dired-buffer-stale-p
 				|dired-buffers-for-dir|dired-build-subdir-alist|dired-change-marks|dired-check-switches|dired-clean-directory|dired-clean-up-after-deletion
 				|dired-clear-alist|dired-compare-directories|dired-compress-file|dired-copy-file|dired-copy-filename-as-kill|dired-create-directory
-				|dired-current-directory|dired-delete-entry|dired-delete-file|dired-desktop-buffer-misc-data|dired-diff|dired-directory-changed-p
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (12 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 dired-current-directory|dired-delete-entry|dired-delete-file|dired-desktop-buffer-misc-data|dired-diff|dired-directory-changed-p
 				|dired-display-file|dired-dnd-do-ask-action|dired-dnd-handle-file|dired-dnd-handle-local-file|dired-dnd-popup-notice|dired-do-async-shell-command
 				|dired-do-byte-compile|dired-do-chgrp|dired-do-chmod|dired-do-chown|dired-do-compress|dired-do-copy-regexp|dired-do-copy|dired-do-create-files-regexp
 				|dired-do-delete|dired-do-flagged-delete|dired-do-hardlink-regexp|dired-do-hardlink|dired-do-isearch-regexp|dired-do-isearch|dired-do-kill-lines
@@ -2093,7 +2164,12 @@ repository:
 				|ebnf-node-width-func|ebnf-node-width|ebnf-non-terminal-dimension|ebnf-one-or-more-dimension|ebnf-optimize|ebnf-optional-dimension
 				|ebnf-otz-initialize|ebnf-parse-and-sort|ebnf-pop-style|ebnf-print-buffer|ebnf-print-directory|ebnf-print-file|ebnf-print-region
 				|ebnf-production-dimension|ebnf-push-style|ebnf-range-regexp|ebnf-repeat-dimension|ebnf-reset-style|ebnf-sequence-dimension|ebnf-sequence-width
-				|ebnf-setup|ebnf-shape-value|ebnf-sorter-ascending|ebnf-sorter-descending|ebnf-special-dimension|ebnf-spool-buffer|ebnf-spool-directory
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (13 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 ebnf-setup|ebnf-shape-value|ebnf-sorter-ascending|ebnf-sorter-descending|ebnf-special-dimension|ebnf-spool-buffer|ebnf-spool-directory
 				|ebnf-spool-file|ebnf-spool-region|ebnf-string|ebnf-syntax-buffer|ebnf-syntax-directory|ebnf-syntax-file|ebnf-syntax-region|ebnf-terminal-dimension
 				|ebnf-terminal-dimension1|ebnf-token-alternative|ebnf-token-except|ebnf-token-optional|ebnf-token-repeat|ebnf-token-sequence|ebnf-trim-right
 				|ebnf-vertical-movement|ebnf-yac-initialize|ebnf-yac-parser|ebnf-zero-or-more-dimension|ebrowse-back-in-position-stack|ebrowse-base-classes
@@ -2183,7 +2259,12 @@ repository:
 				|ede-expand-filename-local|ede-expand-filename|ede-file-find|ede-find-file|ede-find-nearest-file-line|ede-find-subproject-for-directory
 				|ede-find-target|ede-flush-deleted-projects|ede-flush-directory-hash|ede-flush-project-hash|ede-get-locator-object|ede-global-list-sanity-check
 				|ede-header-file|ede-html-documentation-files|ede-html-documentation|ede-ignore-file|ede-initialize-state-current-buffer|ede-invoke-method
-				|ede-java-classpath|ede-linux-load|ede-load-cache|ede-load-project-file|ede-make-check-version|ede-make-dist|ede-make-project-local-variable
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (14 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 ede-java-classpath|ede-linux-load|ede-load-cache|ede-load-project-file|ede-make-check-version|ede-make-dist|ede-make-project-local-variable
 				|ede-map-all-subprojects|ede-map-any-target-p|ede-map-buffers|ede-map-project-buffers|ede-map-subprojects|ede-map-target-buffers
 				|ede-map-targets|ede-menu-items-build|ede-menu-obj-of-class-p|ede-minor-mode|ede-name|ede-new-target-custom|ede-new-target|ede-new
 				|ede-normalize-file\\/directory|ede-object-keybindings|ede-object-menu|ede-object-sourcecode|ede-parent-project|ede-preprocessor-map
@@ -2273,7 +2354,12 @@ repository:
 				|ediff-mark-diff-as-space-only|ediff-mark-for-hiding-at-pos|ediff-mark-for-operation-at-pos|ediff-mark-if-equal|ediff-mark-session-for-hiding
 				|ediff-mark-session-for-operation|ediff-maybe-checkout|ediff-maybe-save-and-delete-merge|ediff-member|ediff-merge-buffers-with-ancestor
 				|ediff-merge-buffers|ediff-merge-changed-from-default-p|ediff-merge-command|ediff-merge-directories-command|ediff-merge-directories-with-ancestor-command
-				|ediff-merge-directories-with-ancestor|ediff-merge-directories|ediff-merge-directory-revisions-with-ancestor|ediff-merge-directory-revisions
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (15 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 ediff-merge-directories-with-ancestor|ediff-merge-directories|ediff-merge-directory-revisions-with-ancestor|ediff-merge-directory-revisions
 				|ediff-merge-files-with-ancestor|ediff-merge-files|ediff-merge-job|ediff-merge-metajob|ediff-merge-on-startup|ediff-merge-region-is-non-clash-to-skip
 				|ediff-merge-region-is-non-clash|ediff-merge-revisions-with-ancestor|ediff-merge-revisions|ediff-merge-with-ancestor-command
 				|ediff-merge-with-ancestor-job|ediff-merge-with-ancestor|ediff-merge|ediff-message-if-verbose|ediff-meta-insert-file-info1|ediff-meta-mark-equal-files
@@ -2363,7 +2449,12 @@ repository:
 				|eieio-object-p|eieio-object-set-name-string|eieio-object-value-create|eieio-object-value-get|eieio-object-value-to-abstract|eieio-oref-default
 				|eieio-oref|eieio-oset-default|eieio-oset|eieio-override-prin1|eieio-perform-slot-validation-for-default|eieio-perform-slot-validation
 				|eieio-persistent-child-p|eieio-persistent-convert-list-to-object|eieio-persistent-list-p|eieio-persistent-p|eieio-persistent-path-relative
-				|eieio-persistent-read|eieio-persistent-save-interactive|eieio-persistent-save|eieio-persistent-slot-type-is-class-p|eieio-persistent-validate\\/fix-slot-value
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (16 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 eieio-persistent-read|eieio-persistent-save-interactive|eieio-persistent-save|eieio-persistent-slot-type-is-class-p|eieio-persistent-validate\\/fix-slot-value
 				|eieio-persistent|eieio-read-customization-group|eieio-set-defaults|eieio-singleton-child-p|eieio-singleton-list-p|eieio-singleton-p
 				|eieio-singleton|eieio-slot-name-index|eieio-slot-originating-class-p|eieio-slot-value-create|eieio-slot-value-get|eieio-specialized-key-to-generic-key
 				|eieio-speedbar-buttons|eieio-speedbar-child-description|eieio-speedbar-child-make-tag-lines|eieio-speedbar-child-p|eieio-speedbar-create-engine
@@ -2453,7 +2544,12 @@ repository:
 				|epg--status-GET_HIDDEN|epg--status-GET_LINE|epg--status-GOODSIG|epg--status-IMPORTED|epg--status-IMPORT_OK|epg--status-IMPORT_PROBLEM
 				|epg--status-IMPORT_RES|epg--status-INV_RECP|epg--status-INV_SGNR|epg--status-KEYEXPIRED|epg--status-KEYREVOKED|epg--status-KEY_CREATED
 				|epg--status-KEY_NOT_CREATED|epg--status-NEED_PASSPHRASE|epg--status-NEED_PASSPHRASE_PIN|epg--status-NEED_PASSPHRASE_SYM|epg--status-NODATA
-				|epg--status-NOTATION_DATA|epg--status-NOTATION_NAME|epg--status-NO_PUBKEY|epg--status-NO_RECP|epg--status-NO_SECKEY|epg--status-NO_SGNR
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (17 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 epg--status-NOTATION_DATA|epg--status-NOTATION_NAME|epg--status-NO_PUBKEY|epg--status-NO_RECP|epg--status-NO_SECKEY|epg--status-NO_SGNR
 				|epg--status-POLICY_URL|epg--status-PROGRESS|epg--status-REVKEYSIG|epg--status-SIG_CREATED|epg--status-TRUST_FULLY|epg--status-TRUST_MARGINAL
 				|epg--status-TRUST_NEVER|epg--status-TRUST_ULTIMATE|epg--status-TRUST_UNDEFINED|epg--status-UNEXPECTED|epg--status-USERID_HINT
 				|epg--status-VALIDSIG|epg--time-from-seconds|epg-cancel|epg-check-configuration|epg-config--compare-version|epg-config--parse-version
@@ -2543,7 +2639,12 @@ repository:
 				|erc-echo-notice-in-server-buffer|erc-echo-notice-in-target-buffer|erc-echo-notice-in-user-and-target-buffers|erc-echo-notice-in-user-buffers
 				|erc-echo-timestamp|erc-emacs-time-to-erc-time|erc-encode-coding-string|erc-end-of-input-line|erc-ensure-channel-name|erc-error
 				|erc-extract-command-from-line|erc-extract-nick|erc-ezb-add-session|erc-ezb-end-of-session-list|erc-ezb-get-login|erc-ezb-identify
-				|erc-ezb-init-session-list|erc-ezb-initialize|erc-ezb-lookup-action|erc-ezb-notice-autodetect|erc-ezb-select-session|erc-ezb-select
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (18 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 erc-ezb-init-session-list|erc-ezb-initialize|erc-ezb-lookup-action|erc-ezb-notice-autodetect|erc-ezb-select-session|erc-ezb-select
 				|erc-faces-in|erc-fill-disable|erc-fill-enable|erc-fill-mode|erc-fill-regarding-timestamp|erc-fill-static|erc-fill-variable|erc-fill
 				|erc-find-file|erc-find-parsed-property|erc-find-script-file|erc-format-@nick|erc-format-away-status|erc-format-channel-modes|erc-format-lag-time
 				|erc-format-message|erc-format-my-nick|erc-format-network|erc-format-nick|erc-format-privmessage|erc-format-target-and\\/or-network
@@ -2633,7 +2734,12 @@ repository:
 				|ert--results-update-stats-display-maybe|ert--results-update-stats-display|ert--run-test-debugger|ert--run-test-internal|ert--setup-results-buffer
 				|ert--should-error-handle-error|ert--signal-should-execution|ert--significant-plist-keys|ert--skip-unless|ert--special-operator-p
 				|ert--stats-aborted-p--cmacro|ert--stats-aborted-p|ert--stats-current-test--cmacro|ert--stats-current-test|ert--stats-end-time--cmacro
-				|ert--stats-end-time|ert--stats-failed-expected--cmacro|ert--stats-failed-expected|ert--stats-failed-unexpected--cmacro|ert--stats-failed-unexpected
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (19 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 ert--stats-end-time|ert--stats-failed-expected--cmacro|ert--stats-failed-expected|ert--stats-failed-unexpected--cmacro|ert--stats-failed-unexpected
 				|ert--stats-next-redisplay--cmacro|ert--stats-next-redisplay|ert--stats-p--cmacro|ert--stats-p|ert--stats-passed-expected--cmacro
 				|ert--stats-passed-expected|ert--stats-passed-unexpected--cmacro|ert--stats-passed-unexpected|ert--stats-selector--cmacro|ert--stats-selector
 				|ert--stats-set-test-and-result|ert--stats-skipped--cmacro|ert--stats-skipped|ert--stats-start-time--cmacro|ert--stats-start-time
@@ -2723,7 +2829,12 @@ repository:
 				|eudc-extract-n-word-formats|eudc-filter-duplicate-attributes|eudc-filter-partial-records|eudc-format-attribute-name-for-display
 				|eudc-format-query|eudc-get-attribute-list|eudc-get-email|eudc-get-phone|eudc-insert-record-at-point-into-bbdb|eudc-install-menu
 				|eudc-lax-plist-get|eudc-load-eudc|eudc-menu|eudc-mode|eudc-move-to-next-record|eudc-move-to-previous-record|eudc-plist-get|eudc-plist-member
-				|eudc-print-attribute-value|eudc-print-record-field|eudc-process-form|eudc-protocol-local-variable-p|eudc-protocol-set|eudc-query-form
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (20 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 eudc-print-attribute-value|eudc-print-record-field|eudc-process-form|eudc-protocol-local-variable-p|eudc-protocol-set|eudc-query-form
 				|eudc-query|eudc-register-protocol|eudc-replace-in-string|eudc-save-options|eudc-select|eudc-server-local-variable-p|eudc-server-set
 				|eudc-set-server|eudc-set|eudc-tools-menu|eudc-translate-attribute-list|eudc-translate-query|eudc-try-bbdb-insert|eudc-update-local-variables
 				|eudc-update-variable|eudc-variable-default-value|eudc-variable-protocol-value|eudc-variable-server-value|eval-after-load--anon-cmacro
@@ -2813,7 +2924,12 @@ repository:
 				|file-cache-canonical-directory|file-cache-choose-completion|file-cache-clear-cache|file-cache-complete|file-cache-completion-setup-function
 				|file-cache-debug-read-from-minibuffer|file-cache-delete-directory-list|file-cache-delete-directory|file-cache-delete-file-list
 				|file-cache-delete-file-regexp|file-cache-delete-file|file-cache-directory-name|file-cache-display|file-cache-do-delete-directory
-				|file-cache-file-name|file-cache-files-matching-internal|file-cache-files-matching|file-cache-minibuffer-complete|file-cache-mouse-choose-completion
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (21 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 file-cache-file-name|file-cache-files-matching-internal|file-cache-files-matching|file-cache-minibuffer-complete|file-cache-mouse-choose-completion
 				|file-dependents|file-loadhist-lookup|file-modes-char-to-right|file-modes-char-to-who|file-modes-rights-to-number|file-name-non-special
 				|file-name-shadow-mode|file-notify--event-cookie|file-notify--event-file-name|file-notify--event-file1-name|file-notify-callback
 				|file-notify-handle-event|file-of-tag|file-provides|file-requires|file-set-intersect|file-size-human-readable|file-tree-walk|filesets-add-buffer
@@ -2903,7 +3019,12 @@ repository:
 				|follow-end-of-buffer|follow-estimate-first-window-start|follow-find-file-hook|follow-first-window|follow-last-window|follow-maximize-region
 				|follow-menu-filter|follow-mode|follow-mwheel-scroll|follow-next-window|follow-point-visible-all-windows-p|follow-pos-visible|follow-post-command-hook
 				|follow-previous-window|follow-recenter|follow-redisplay|follow-redraw-after-event|follow-redraw|follow-scroll-bar-drag|follow-scroll-bar-scroll-down
-				|follow-scroll-bar-scroll-up|follow-scroll-bar-toolkit-scroll|follow-scroll-down|follow-scroll-up|follow-select-if-end-visible
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (22 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 follow-scroll-bar-scroll-up|follow-scroll-bar-toolkit-scroll|follow-scroll-down|follow-scroll-up|follow-select-if-end-visible
 				|follow-select-if-visible-from-first|follow-select-if-visible|follow-split-followers|follow-switch-to-buffer-all|follow-switch-to-buffer
 				|follow-switch-to-current-buffer-all|follow-update-window-start|follow-window-size-change|follow-windows-aligned-p|follow-windows-start-end
 				|font-get-glyphs|font-get-system-font|font-get-system-normal-font|font-info|font-lock-after-change-function|font-lock-after-fontify-buffer
@@ -2993,7 +3114,12 @@ repository:
 				|gdb-mouse-toggle-breakpoint-fringe|gdb-mouse-toggle-breakpoint-margin|gdb-mouse-until|gdb-non-stop-handler|gdb-pad-string|gdb-parent-mode
 				|gdb-partial-output-name|gdb-pending-handler-p|gdb-place-breakpoints|gdb-preempt-existing-or-display-buffer|gdb-preemptively-display-disassembly-buffer
 				|gdb-preemptively-display-locals-buffer|gdb-preemptively-display-registers-buffer|gdb-preemptively-display-stack-buffer|gdb-propertize-header
-				|gdb-put-breakpoint-icon|gdb-put-string|gdb-read-memory-custom|gdb-read-memory-handler|gdb-register-names-handler|gdb-registers-buffer-name
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (23 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 gdb-put-breakpoint-icon|gdb-put-string|gdb-read-memory-custom|gdb-read-memory-handler|gdb-register-names-handler|gdb-registers-buffer-name
 				|gdb-registers-handler-custom|gdb-registers-handler|gdb-registers-mode|gdb-remove-all-pending-triggers|gdb-remove-breakpoint-icons
 				|gdb-remove-strings|gdb-reset|gdb-restore-windows|gdb-resync|gdb-rules-buffer-mode|gdb-rules-name-maker|gdb-rules-update-trigger
 				|gdb-running|gdb-script-beginning-of-defun|gdb-script-calculate-indentation|gdb-script-end-of-defun|gdb-script-font-lock-syntactic-face
@@ -3083,7 +3209,12 @@ repository:
 				|gnus-info-set-entry|gnus-info-set-group|gnus-info-set-level|gnus-info-set-marks|gnus-info-set-method|gnus-info-set-params|gnus-info-set-rank
 				|gnus-info-set-read|gnus-info-set-score|gnus-insert-random-face-header|gnus-insert-random-x-face-header|gnus-interactive|gnus-intern-safe
 				|gnus-intersection|gnus-invisible-p|gnus-iswitchb-completing-read|gnus-jog-cache|gnus-key-press-event-p|gnus-kill-all-overlays
-				|gnus-kill-buffer|gnus-kill-ephemeral-group|gnus-kill-file-edit-file|gnus-kill-file-raise-followups-to-author|gnus-kill-save-kill-buffer
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (24 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 gnus-kill-buffer|gnus-kill-ephemeral-group|gnus-kill-file-edit-file|gnus-kill-file-raise-followups-to-author|gnus-kill-save-kill-buffer
 				|gnus-kill|gnus-list-debbugs|gnus-list-memq-of-list|gnus-list-of-read-articles|gnus-list-of-unread-articles|gnus-local-set-keys
 				|gnus-mail-strip-quoted-names|gnus-mailing-list-insinuate|gnus-mailing-list-mode|gnus-make-directory|gnus-make-hashtable|gnus-make-local-hook
 				|gnus-make-overlay|gnus-make-predicate-1|gnus-make-predicate|gnus-make-sort-function-1|gnus-make-sort-function|gnus-make-thread-indent-array
@@ -3182,7 +3313,12 @@ repository:
 				|hashcash-processes-running-p|hashcash-strip-quoted-names|hashcash-token-substring|hashcash-verify-payment|hashcash-version|hashcash-wait-async
 				|hashcash-wait-or-cancel|he--all-buffers|he-buffer-member|he-capitalize-first|he-concat-directory-file-name|he-dabbrev-beg|he-dabbrev-kill-search
 				|he-dabbrev-search|he-file-name-beg|he-init-string|he-kill-beg|he-line-beg|he-line-search-regexp|he-line-search|he-lisp-symbol-beg
-				|he-list-beg|he-list-search|he-ordinary-case-p|he-reset-string|he-string-member|he-substitute-string|he-transfer-case|he-whole-kill-search
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (25 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 he-list-beg|he-list-search|he-ordinary-case-p|he-reset-string|he-string-member|he-substitute-string|he-transfer-case|he-whole-kill-search
 				|hebrew-font-get-precomposed|hebrew-shape-gstring|help--binding-locus|help--key-binding-keymap|help-C-file-name|help-add-fundoc-usage
 				|help-at-pt-cancel-timer|help-at-pt-kbd-string|help-at-pt-maybe-display|help-at-pt-set-timer|help-at-pt-string|help-bookmark-jump
 				|help-bookmark-make-record|help-button-action|help-describe-category-set|help-do-arg-highlight|help-do-xref|help-fns--autoloaded-p
@@ -3272,7 +3408,12 @@ repository:
 				|ibuffer-do-view|ibuffer-exchange-filters|ibuffer-expand-format-entry|ibuffer-filter-buffers|ibuffer-filter-by-content|ibuffer-filter-by-derived-mode
 				|ibuffer-filter-by-filename|ibuffer-filter-by-mode|ibuffer-filter-by-name|ibuffer-filter-by-predicate|ibuffer-filter-by-size-gt
 				|ibuffer-filter-by-size-lt|ibuffer-filter-by-used-mode|ibuffer-filter-disable|ibuffer-filters-to-filter-group|ibuffer-find-file
-				|ibuffer-format-column|ibuffer-forward-filter-group|ibuffer-forward-line|ibuffer-forward-next-marked|ibuffer-get-marked-buffers
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (26 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 ibuffer-format-column|ibuffer-forward-filter-group|ibuffer-forward-line|ibuffer-forward-next-marked|ibuffer-get-marked-buffers
 				|ibuffer-included-in-filters-p|ibuffer-insert-buffer-line|ibuffer-insert-filter-group|ibuffer-interactive-filter-by-mode|ibuffer-invert-sorting
 				|ibuffer-jump-to-buffer|ibuffer-jump-to-filter-group|ibuffer-kill-filter-group|ibuffer-kill-line|ibuffer-list-buffers|ibuffer-make-column-filename-and-process
 				|ibuffer-make-column-filename|ibuffer-make-column-process|ibuffer-map-deletion-lines|ibuffer-map-lines-nomodify|ibuffer-map-lines
@@ -3362,7 +3503,12 @@ repository:
 				|idlwave-shell-filter-sysvars|idlwave-shell-recenter-shell-window|idlwave-shell-run-region|idlwave-shell-save-and-run|idlwave-shell-send-command
 				|idlwave-shell-show-commentary|idlwave-shell-update-routine-info|idlwave-shell|idlwave-shorten-syntax|idlwave-show-begin-check
 				|idlwave-show-begin|idlwave-show-commentary|idlwave-show-matching-quote|idlwave-sintern-class-info|idlwave-sintern-class-tag|idlwave-sintern-class
-				|idlwave-sintern-dir|idlwave-sintern-keyword-list|idlwave-sintern-keyword|idlwave-sintern-libname|idlwave-sintern-method|idlwave-sintern-rinfo-list
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (27 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 idlwave-sintern-dir|idlwave-sintern-keyword-list|idlwave-sintern-keyword|idlwave-sintern-libname|idlwave-sintern-method|idlwave-sintern-rinfo-list
 				|idlwave-sintern-routine-or-method|idlwave-sintern-routine|idlwave-sintern-set|idlwave-sintern-sysvar-alist|idlwave-sintern-sysvar
 				|idlwave-sintern-sysvartag|idlwave-sintern|idlwave-skip-label-or-case|idlwave-skip-multi-commands|idlwave-skip-object|idlwave-special-lib-test
 				|idlwave-split-line|idlwave-split-link-target|idlwave-split-menu-emacs|idlwave-split-menu-xemacs|idlwave-split-string|idlwave-start-load-rinfo-timer
@@ -3452,7 +3598,12 @@ repository:
 				|imap-message-envelope-subject|imap-message-envelope-to|imap-message-flag-permanent-p|imap-message-flags-add|imap-message-flags-del
 				|imap-message-flags-set|imap-message-get|imap-message-map|imap-message-put|imap-namespace|imap-network-open|imap-network-p|imap-ok-p
 				|imap-open-1|imap-open|imap-opened|imap-parse-acl|imap-parse-address-list|imap-parse-address|imap-parse-astring|imap-parse-body-ext
-				|imap-parse-body-extension|imap-parse-body|imap-parse-data-list|imap-parse-envelope|imap-parse-fetch-body-section|imap-parse-fetch
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (28 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 imap-parse-body-extension|imap-parse-body|imap-parse-data-list|imap-parse-envelope|imap-parse-fetch-body-section|imap-parse-fetch
 				|imap-parse-flag-list|imap-parse-greeting|imap-parse-header-list|imap-parse-literal|imap-parse-mailbox|imap-parse-nil|imap-parse-nstring
 				|imap-parse-number|imap-parse-resp-text-code|imap-parse-resp-text|imap-parse-response|imap-parse-status|imap-parse-string-list
 				|imap-parse-string|imap-ping-server|imap-quote-specials|imap-range-to-message-set|imap-remassoc|imap-sasl-auth-p|imap-sasl-auth
@@ -3542,7 +3693,12 @@ repository:
 				|iswitchb-exit-minibuffer|iswitchb-find-common-substring|iswitchb-find-file|iswitchb-get-buffers-in-frames|iswitchb-get-bufname
 				|iswitchb-get-matched-buffers|iswitchb-ignore-buffername-p|iswitchb-init-XEmacs-trick|iswitchb-kill-buffer|iswitchb-make-buflist
 				|iswitchb-makealist|iswitchb-minibuffer-setup|iswitchb-mode|iswitchb-next-match|iswitchb-output-completion|iswitchb-possible-new-buffer
-				|iswitchb-post-command|iswitchb-pre-command|iswitchb-prev-match|iswitchb-read-buffer|iswitchb-rotate-list|iswitchb-select-buffer-text
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (29 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 iswitchb-post-command|iswitchb-pre-command|iswitchb-prev-match|iswitchb-read-buffer|iswitchb-rotate-list|iswitchb-select-buffer-text
 				|iswitchb-set-common-completion|iswitchb-set-matches|iswitchb-summaries-to-end|iswitchb-tidy|iswitchb-to-end|iswitchb-toggle-case
 				|iswitchb-toggle-ignore|iswitchb-toggle-regexp|iswitchb-visit-buffer|iswitchb-window-buffer-p|iswitchb-word-matching-substring
 				|iswitchb-xemacs-backspacekey|iswitchb|iwconfig|japanese-hankaku-region|japanese-hankaku|japanese-hiragana-region|japanese-hiragana
@@ -3632,7 +3788,12 @@ repository:
 				|lisp-font-lock-syntactic-face-function|lisp-get-old-input|lisp-indent-defform|lisp-indent-function|lisp-indent-line|lisp-indent-specform
 				|lisp-input-filter|lisp-interaction-mode|lisp-load-file|lisp-mode-auto-fill|lisp-mode-variables|lisp-mode|lisp-outline-level|lisp-show-arglist
 				|lisp-show-function-documentation|lisp-show-variable-documentation|lisp-string-after-doc-keyword-p|lisp-string-in-doc-position-p
-				|lisp-symprompt|lisp-var-at-pt|list\\*|list-abbrevs|list-all-completions-1|list-all-completions-by-hash-bucket-1|list-all-completions-by-hash-bucket
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (30 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 lisp-symprompt|lisp-var-at-pt|list\\*|list-abbrevs|list-all-completions-1|list-all-completions-by-hash-bucket-1|list-all-completions-by-hash-bucket
 				|list-all-completions|list-at-point|list-bookmarks|list-buffers--refresh|list-buffers-noselect|list-buffers|list-character-sets
 				|list-coding-categories|list-coding-systems|list-colors-display|list-colors-duplicates|list-colors-print|list-colors-redisplay
 				|list-colors-sort-key|list-command-history|list-directory|list-dynamic-libraries|list-faces-display|list-fontsets|list-holidays
@@ -3722,7 +3883,12 @@ repository:
 				|make-soap-binding--cmacro|make-soap-binding|make-soap-bound-operation--cmacro|make-soap-bound-operation|make-soap-element--cmacro
 				|make-soap-element|make-soap-message--cmacro|make-soap-message|make-soap-namespace--cmacro|make-soap-namespace-link--cmacro|make-soap-namespace-link
 				|make-soap-namespace|make-soap-operation--cmacro|make-soap-operation|make-soap-port--cmacro|make-soap-port-type--cmacro|make-soap-port-type
-				|make-soap-port|make-soap-sequence-element--cmacro|make-soap-sequence-element|make-soap-sequence-type--cmacro|make-soap-sequence-type
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (31 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 make-soap-port|make-soap-sequence-element--cmacro|make-soap-sequence-element|make-soap-sequence-type--cmacro|make-soap-sequence-type
 				|make-soap-simple-type--cmacro|make-soap-simple-type|make-soap-wsdl--cmacro|make-soap-wsdl|make-tar-header--cmacro|make-tar-header
 				|make-term|make-terminal-frame|make-url-queue--cmacro|make-url-queue|make-variable-frame-local|makefile-add-log-defun|makefile-append-backslash
 				|makefile-automake-mode|makefile-backslash-region|makefile-browse|makefile-browser-fill|makefile-browser-format-macro-line|makefile-browser-format-target-line
@@ -3812,7 +3978,12 @@ repository:
 				|message-tab|message-talkative-question|message-tamago-not-in-use-p|message-text-with-property|message-to-list-only|message-tokenize-header
 				|message-tool-bar-update|message-unbold-region|message-unique-id|message-unquote-tokens|message-use-alternative-email-as-from
 				|message-user-mail-address|message-wash-subject|message-wide-reply|message-widen-reply|message-with-reply-buffer|message-y-or-n-p
-				|message-yank-buffer|message-yank-original|messages-buffer-mode|meta-add-symbols|meta-beginning-of-defun|meta-car-string-lessp
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (32 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 message-yank-buffer|message-yank-original|messages-buffer-mode|meta-add-symbols|meta-beginning-of-defun|meta-car-string-lessp
 				|meta-comment-defun|meta-comment-indent|meta-comment-region|meta-common-mode|meta-complete-symbol|meta-completions-at-point|meta-end-of-defun
 				|meta-indent-buffer|meta-indent-calculate|meta-indent-current-indentation|meta-indent-current-nesting|meta-indent-defun|meta-indent-in-string-p
 				|meta-indent-level-count|meta-indent-line|meta-indent-looking-at-code|meta-indent-previous-line|meta-indent-region|meta-indent-unfinished-line
@@ -3902,7 +4073,12 @@ repository:
 				|mm-preferred-alternative-precedence|mm-preferred-alternative|mm-preferred-coding-system|mm-qp-or-base64|mm-read-charset|mm-read-coding-system
 				|mm-readable-p|mm-remove-part|mm-remove-parts|mm-replace-in-string|mm-safer-encoding|mm-save-part-to-file|mm-save-part|mm-set-buffer-file-coding-system
 				|mm-set-buffer-multibyte|mm-set-handle-multipart-parameter|mm-setup-codepage-ibm|mm-setup-codepage-iso-8859|mm-shr|mm-sort-coding-systems-predicate
-				|mm-special-display-p|mm-string-as-multibyte|mm-string-as-unibyte|mm-string-make-unibyte|mm-string-to-multibyte|mm-subst-char-in-string
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (33 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 mm-special-display-p|mm-string-as-multibyte|mm-string-as-unibyte|mm-string-make-unibyte|mm-string-to-multibyte|mm-subst-char-in-string
 				|mm-substring-no-properties|mm-temp-files-delete|mm-ucs-to-char|mm-url-decode-entities-nbsp|mm-url-decode-entities-string|mm-url-decode-entities
 				|mm-url-encode-multipart-form-data|mm-url-encode-www-form-urlencoded|mm-url-form-encode-xwfu|mm-url-insert-file-contents-external
 				|mm-url-insert-file-contents|mm-url-insert|mm-url-load-url|mm-url-remove-markup|mm-uu-dissect-text-parts|mm-uu-dissect|mm-valid-and-fit-image-p
@@ -3992,7 +4168,12 @@ repository:
 				|newsticker--cache-item-compare-by-title|newsticker--cache-mark-expired|newsticker--cache-read-feed|newsticker--cache-read-version1
 				|newsticker--cache-read|newsticker--cache-remove|newsticker--cache-replace-age|newsticker--cache-save-feed|newsticker--cache-save-version1
 				|newsticker--cache-save|newsticker--cache-set-preformatted-contents|newsticker--cache-set-preformatted-title|newsticker--cache-sort
-				|newsticker--cache-update|newsticker--count-grouped-feeds|newsticker--count-groups|newsticker--debug-msg|newsticker--decode-iso8601-date
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (34 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 newsticker--cache-update|newsticker--count-grouped-feeds|newsticker--count-groups|newsticker--debug-msg|newsticker--decode-iso8601-date
 				|newsticker--decode-rfc822-date|newsticker--desc|newsticker--display-jump|newsticker--display-scroll|newsticker--display-tick
 				|newsticker--do-forget-preformatted|newsticker--do-mark-item-at-point-as-read|newsticker--do-print-extra-element|newsticker--do-run-auto-mark-filter
 				|newsticker--do-xml-workarounds|newsticker--echo-area-clean-p|newsticker--enclosure|newsticker--extra|newsticker--forget-preformatted
@@ -4082,7 +4263,12 @@ repository:
 				|nsm-check-protocol|nsm-check-tls-connection|nsm-fingerprint-ok-p|nsm-fingerprint|nsm-format-certificate|nsm-host-settings|nsm-id
 				|nsm-level|nsm-new-fingerprint-ok-p|nsm-parse-subject|nsm-query-user|nsm-query|nsm-read-settings|nsm-remove-permanent-setting|nsm-remove-temporary-setting
 				|nsm-save-host|nsm-verify-connection|nsm-warnings-ok-p|nsm-write-settings|nsublis|nsubst-if-not|nsubst-if|nsubst|nsubstitute-if-not
-				|nsubstitute-if|nsubstitute|nth-value|ntlm-ascii2unicode|ntlm-build-auth-request|ntlm-build-auth-response|ntlm-get-password-hashes
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (35 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 nsubstitute-if|nsubstitute|nth-value|ntlm-ascii2unicode|ntlm-build-auth-request|ntlm-build-auth-response|ntlm-get-password-hashes
 				|ntlm-md4hash|ntlm-smb-des-e-p16|ntlm-smb-des-e-p24|ntlm-smb-dohash|ntlm-smb-hash|ntlm-smb-owf-encrypt|ntlm-smb-passwd-hash|ntlm-smb-str-to-key
 				|ntlm-string-lshift|ntlm-string-permute|ntlm-string-xor|ntlm-unicode2ascii|nullify-allout-prefix-data|number-at-point|number-to-register
 				|nunion|nxml-enable-unicode-char-name-sets|nxml-glyph-display-string|nxml-mode|obj-of-class-p|objc-font-lock-keywords-2|objc-font-lock-keywords-3
@@ -4172,7 +4358,12 @@ repository:
 				|org-check-running-clock|org-check-version|org-clean-visibility-after-subtree-move|org-clock-cancel|org-clock-display|org-clock-get-clocktable
 				|org-clock-goto|org-clock-in-last|org-clock-in|org-clock-is-active|org-clock-out|org-clock-persistence-insinuate|org-clock-remove-overlays
 				|org-clock-report|org-clock-sum|org-clock-update-time-maybe|org-clocktable-shift|org-clocktable-try-shift|org-clone-local-variables
-				|org-clone-subtree-with-time-shift|org-closest-date|org-columns-compute|org-columns-get-format-and-top-level|org-columns-number-to-string
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (36 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 org-clone-subtree-with-time-shift|org-closest-date|org-columns-compute|org-columns-get-format-and-top-level|org-columns-number-to-string
 				|org-columns-remove-overlays|org-columns|org-combine-plists|org-command-at-point|org-comment-line-break-function|org-comment-or-uncomment-region
 				|org-compatible-face|org-complete-expand-structure-template|org-completing-read-no-i|org-completing-read|org-compute-latex-and-related-regexp
 				|org-compute-property-at-point|org-content|org-context-p|org-context|org-contextualize-keys|org-contextualize-validate-key|org-convert-to-odd-levels
@@ -4262,7 +4453,12 @@ repository:
 				|org-match-any-p|org-match-line|org-match-sparse-tree|org-match-string-no-properties|org-matcher-time|org-maybe-intangible|org-md-convert-region-to-md
 				|org-md-export-as-markdown|org-md-export-to-markdown|org-meta-return|org-metadown|org-metaleft|org-metaright|org-metaup|org-minutes-to-clocksum-string
 				|org-minutes-to-hh:mm-string|org-mobile-pull|org-mobile-push|org-mode-flyspell-verify|org-mode-restart|org-mode|org-modifier-cursor-error
-				|org-modify-ts-extra|org-move-item-down|org-move-item-up|org-move-subtree-down|org-move-subtree-up|org-move-to-column|org-narrow-to-block
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (37 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 org-modify-ts-extra|org-move-item-down|org-move-item-up|org-move-subtree-down|org-move-subtree-up|org-move-to-column|org-narrow-to-block
 				|org-narrow-to-element|org-narrow-to-subtree|org-next-block|org-next-item|org-next-link|org-no-popups|org-no-properties|org-no-read-only
 				|org-no-warnings|org-normalize-color|org-not-nil|org-notes-order-reversed-p|org-number-sequence|org-occur-in-agenda-files|org-occur-link-in-agenda-files
 				|org-occur-next-match|org-occur|org-odt-convert|org-odt-export-as-odf-and-open|org-odt-export-as-odf|org-odt-export-to-odt|org-offer-links-in-entry
@@ -4352,7 +4548,12 @@ repository:
 				|package-desc-signed--cmacro|package-desc-signed|package-desc-status|package-desc-suffix|package-desc-summary--cmacro|package-desc-summary
 				|package-desc-version--cmacro|package-desc-version|package-disabled-p|package-download-transaction|package-generate-autoloads
 				|package-generate-description-file|package-import-keyring|package-install-button-action|package-install-file|package-install-from-archive
-				|package-install-from-buffer|package-install|package-installed-p|package-keyword-button-action|package-list-packages-no-fetch
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (38 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 package-install-from-buffer|package-install|package-installed-p|package-keyword-button-action|package-list-packages-no-fetch
 				|package-list-packages|package-load-all-descriptors|package-load-descriptor|package-make-ac-desc--cmacro|package-make-ac-desc
 				|package-make-builtin--cmacro|package-make-builtin|package-make-button|package-menu--archive-predicate|package-menu--description-predicate
 				|package-menu--find-upgrades|package-menu--generate|package-menu--name-predicate|package-menu--print-info|package-menu--refresh
@@ -4442,7 +4643,12 @@ repository:
 				|pr-rmail-print|pr-save-file-modes|pr-set-dir-args|pr-set-keymap-name|pr-set-keymap-parents|pr-set-n-up-and-filename|pr-set-outfilename
 				|pr-set-ps-dir-args|pr-setup|pr-show-lpr-setup|pr-show-pr-setup|pr-show-ps-setup|pr-show-setup|pr-standard-file-name|pr-switches-string
 				|pr-switches|pr-text2ps|pr-toggle-duplex-menu|pr-toggle-duplex|pr-toggle-faces-menu|pr-toggle-faces|pr-toggle-file-duplex-menu|pr-toggle-file-duplex
-				|pr-toggle-file-landscape-menu|pr-toggle-file-landscape|pr-toggle-file-tumble-menu|pr-toggle-file-tumble|pr-toggle-ghostscript-menu
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (39 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 pr-toggle-file-landscape-menu|pr-toggle-file-landscape|pr-toggle-file-tumble-menu|pr-toggle-file-tumble|pr-toggle-ghostscript-menu
 				|pr-toggle-ghostscript|pr-toggle-header-frame-menu|pr-toggle-header-frame|pr-toggle-header-menu|pr-toggle-header|pr-toggle-landscape-menu
 				|pr-toggle-landscape|pr-toggle-line-menu|pr-toggle-line|pr-toggle-lock-menu|pr-toggle-lock|pr-toggle-mode-menu|pr-toggle-mode|pr-toggle-region-menu
 				|pr-toggle-region|pr-toggle-spool-menu|pr-toggle-spool|pr-toggle-tumble-menu|pr-toggle-tumble|pr-toggle-upside-down-menu|pr-toggle-upside-down
@@ -4532,7 +4738,12 @@ repository:
 				|ps-run-send-string|ps-run-start|ps-screen-to-bit-face|ps-select-font|ps-selected-pages|ps-set-bg|ps-set-color|ps-set-face-attribute
 				|ps-set-face-bold|ps-set-face-italic|ps-set-face-underline|ps-set-font|ps-setup|ps-size-scale|ps-skip-newline|ps-space-width|ps-spool-buffer-with-faces
 				|ps-spool-buffer|ps-spool-region-with-faces|ps-spool-region|ps-spool-with-faces|ps-spool-without-faces|ps-time-stamp-hh:mm:ss|ps-time-stamp-iso8601
-				|ps-time-stamp-locale-default|ps-time-stamp-mon-dd-yyyy|ps-time-stamp-yyyy-mm-dd|ps-title-line-height|ps-value-string|ps-value
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (40 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 ps-time-stamp-locale-default|ps-time-stamp-mon-dd-yyyy|ps-time-stamp-yyyy-mm-dd|ps-title-line-height|ps-value-string|ps-value
 				|psetf|psetq|push-mark-command|pushnew|put-unicode-property-internal|pwd|python-check|python-comint-output-filter-function|python-comint-postoutput-scroll-to-bottom
 				|python-completion-at-point|python-completion-complete-at-point|python-define-auxiliary-skeleton|python-docstring-at-p|python-eldoc--get-doc-at-point
 				|python-eldoc-at-point|python-eldoc-function|python-electric-pair-string-delimiter|python-ffap-module-path|python-fill-comment
@@ -4622,97 +4833,12 @@ repository:
 				|recentf-filter-changer-select|recentf-filter-changer|recentf-hide-menu|recentf-include-p|recentf-indirect-mode-rule|recentf-keep-default-predicate
 				|recentf-keep-p|recentf-load-list|recentf-make-default-menu-element|recentf-make-menu-element|recentf-make-menu-item|recentf-make-menu-items
 				|recentf-match-rule|recentf-menu-bar|recentf-menu-customization-changed|recentf-menu-element-item|recentf-menu-element-value|recentf-menu-elements
-				|recentf-menu-value-shortcut|recentf-mode|recentf-open-files-action|recentf-open-files-item|recentf-open-files-items|recentf-open-files
-				|recentf-open-more-files|recentf-open-most-recent-file-0|recentf-open-most-recent-file-1|recentf-open-most-recent-file-2|recentf-open-most-recent-file-3
-				|recentf-open-most-recent-file-4|recentf-open-most-recent-file-5|recentf-open-most-recent-file-6|recentf-open-most-recent-file-7
-				|recentf-open-most-recent-file-8|recentf-open-most-recent-file-9|recentf-open-most-recent-file|recentf-push|recentf-relative-filter
-				|recentf-remove-if-non-kept|recentf-save-list|recentf-set-menu-element-item|recentf-set-menu-element-value|recentf-show-basenames-ascending
-				|recentf-show-basenames-descending|recentf-show-basenames|recentf-show-digit-shortcut-filter|recentf-show-menu|recentf-sort-ascending
-				|recentf-sort-basenames-ascending|recentf-sort-basenames-descending|recentf-sort-descending|recentf-sort-directories-ascending
-				|recentf-sort-directories-descending|recentf-string-equal|recentf-string-lessp|recentf-string-member|recentf-sub-menu-element-p
-				|recentf-track-closed-file|recentf-track-opened-file|recentf-trunc-list|recentf-unload-function|recode-file-name|recode-region
-				|recompile|record-window-buffer|recover-file|recover-session-finish|recover-session|recover-this-file|rectangle--\\*-char|rectangle--col-pos
-				|rectangle--crutches|rectangle--default-line-number-format|rectangle--extract-region|rectangle--highlight-for-redisplay|rectangle--insert-for-yank
-				|rectangle--place-cursor|rectangle--point-col|rectangle--pos-cols|rectangle--reset-crutches|rectangle--space-to|rectangle--string-erase-preview
-				|rectangle--string-flush-preview|rectangle--string-preview|rectangle--unhighlight-for-redisplay|rectangle-backward-char|rectangle-exchange-point-and-mark
-				|rectangle-forward-char|rectangle-left-char|rectangle-mark-mode|rectangle-next-line|rectangle-number-line-callback|rectangle-number-lines
-				|rectangle-previous-line|rectangle-right-char|redirect-debugging-output|redisplay--update-region-highlight|redisplay--update-region-highlights
-				|redraw-modeline|reduce|refer-convert-string-to-list-of-strings|refer-every|refer-expand-files|refer-find-entry-in-file|refer-find-entry-internal
-				|refer-find-entry|refer-find-next-entry|refer-get-bib-files|refer-yank-key|refill-adjust-ignorable-overlay|refill-after-change-function
-				|refill-fill-paragraph-at|refill-fill-paragraph|refill-mode|refill-post-command-function|refill-pre-command-function|reftex-TeX-master-file
-				|reftex-abbreviate-title|reftex-access-parse-file|reftex-access-scan-info|reftex-access-search-path|reftex-add-index-macros|reftex-add-label-environments
-				|reftex-add-section-levels|reftex-add-to-label-alist|reftex-all-assoc-string|reftex-all-assq|reftex-all-document-files|reftex-arg-cite
-				|reftex-arg-index-tag|reftex-arg-index|reftex-arg-label|reftex-auto-mode-alist|reftex-bib-or-thebib|reftex-change-label|reftex-check-parse-consistency
-				|reftex-check-recursive-edit|reftex-citation|reftex-citep|reftex-citet|reftex-compile-variables|reftex-convert-string|reftex-create-bibtex-file
-				|reftex-create-customize-menu|reftex-create-tags-file|reftex-customize|reftex-default-bibliography|reftex-delete-overlay|reftex-display-index
-				|reftex-do-parse|reftex-end-of-bib-entry|reftex-enlarge-to-fit|reftex-ensure-compiled-variables|reftex-ensure-index-support|reftex-erase-all-selection-and-index-buffers
-				|reftex-erase-buffer|reftex-everything-regexp|reftex-expand-path|reftex-fancyref-Fref|reftex-fancyref-fref|reftex-find-duplicate-labels
-				|reftex-find-file-externally|reftex-find-file-on-path|reftex-find-start-point|reftex-fontify-select-label-buffer|reftex-get-bibfile-list
-				|reftex-get-buffer-visiting|reftex-get-cite-format|reftex-get-file-buffer-force|reftex-get-offset|reftex-goto-label|reftex-grep-document
-				|reftex-highlight-shall-die|reftex-highlight|reftex-in-comment|reftex-index-complete-key|reftex-index-complete-tag|reftex-index-info-safe
-				|reftex-index-info|reftex-index-phrase-selection-or-word|reftex-index-phrases-mode|reftex-index-select-tag|reftex-index-selection-or-word
-				|reftex-index-show-entry|reftex-index-visit-phrases-buffer|reftex-index|reftex-info|reftex-init-section-numbers|reftex-insert-docstruct
-				|reftex-is-multi|reftex-isearch-minor-mode|reftex-kill-buffer-hook|reftex-kill-buffer|reftex-kill-emacs-hook|reftex-kill-temporary-buffers
-				|reftex-label-info-update|reftex-label-info|reftex-label-location|reftex-label|reftex-last-assoc-before-elt|reftex-locate-bibliography-files
-				|reftex-locate-file|reftex-make-cite-echo-string|reftex-make-index-buffer-name|reftex-make-overlay|reftex-make-regexp-allow-for-ctrl-m
-				|reftex-make-selection-buffer-name|reftex-match-string|reftex-mode-menu|reftex-mode|reftex-mouse-view-crossref|reftex-move-over-touching-args
-				|reftex-move-overlay|reftex-nearest-match|reftex-next-multifile-index|reftex-nicify-text|reftex-no-props|reftex-notice-new-section
-				|reftex-notice-new|reftex-nth-arg|reftex-number|reftex-overlay-put|reftex-parse-all|reftex-parse-args|reftex-parse-bibtex-entry
-				|reftex-parse-colon-path|reftex-parse-one|reftex-plug-into-AUCTeX|reftex-pop-to-bibtex-entry|reftex-process-string|reftex-query-label-type
-				|reftex-query-replace-document|reftex-recursive-directory-list|reftex-ref-style-activate|reftex-ref-style-list|reftex-ref-style-toggle
-				|reftex-reference|reftex-refontify|reftex-region-active-p|reftex-remove-if|reftex-remove-symbols-from-list|reftex-renumber-simple-labels
-				|reftex-report-bug|reftex-reset-mode|reftex-reset-scanning-information|reftex-save-all-document-buffers|reftex-scanning-info-available-p
-				|reftex-search-document|reftex-section-info|reftex-section-number|reftex-select-bib-mode|reftex-select-external-document|reftex-select-font-lock-fontify-region
-				|reftex-select-font-lock-unfontify|reftex-select-item|reftex-select-label-mode|reftex-select-with-char|reftex-set-cite-format
-				|reftex-set-dirty|reftex-short-context|reftex-show-commentary|reftex-show-label-location|reftex-silence-toc-markers|reftex-splice-symbols-into-list
-				|reftex-sublist-nth|reftex-this-word|reftex-tie-multifile-symbols|reftex-toc-recenter|reftex-toc|reftex-toggle-auto-toc-recenter
-				|reftex-toggle-auto-view-crossref|reftex-toggle-plug-into-AUCTeX|reftex-truncate|reftex-typekey-check|reftex-unhighlight|reftex-uniquify-by-car
-				|reftex-uniquify|reftex-untie-multifile-symbols|reftex-use-fonts|reftex-varioref-vref|reftex-verified-face|reftex-view-crossref-from-bibtex
-				|reftex-view-crossref|reftex-visited-files|reftex-what-environment|reftex-what-macro-safe|reftex-what-macro|reftex-what-special-env
-				|reftex-where-am-I|reftex-window-height|regexp-builder|regexp-opt-group|regexp-sans-escapes|regi-interpret|regi-mapcar|regi-pos|region-active-p
-				|region-exists-p|register-ccl-program|register-code-conversion-map|register-describe-oneline|register-input-method|register-preview-default
-				|register-preview|register-swap-out|register-to-point|registerv--make--cmacro|registerv--make|registerv-data--cmacro|registerv-data
-				|registerv-insert-func--cmacro|registerv-insert-func|registerv-jump-func--cmacro|registerv-jump-func|registerv-make|registerv-p--cmacro
-				|registerv-p|registerv-print-func--cmacro|registerv-print-func|rem\\*|remember-append-to-file|remember-buffer-desc|remember-buffer
-				|remember-clipboard|remember-destroy|remember-diary-convert-entry|remember-diary-extract-entries|remember-finalize|remember-mail-date
-				|remember-mode|remember-notes--kill-buffer-query|remember-notes-mode|remember-notes-save-and-bury-buffer|remember-notes|remember-other-frame
-				|remember-region|remember-store-in-files|remember-store-in-mailbox|remember|remf|remove\\*|remove-duplicates|remove-if-not|remove-if
-				|remove-yank-excluded-properties|remprop|rename-uniquely|repeat-complex-command|repeat-is-really-this-command|repeat-matching-complex-command
-				|repeat-message|repeat|replace-amp|replace-dehighlight|replace-eval-replacement|replace-highlight|replace-loop-through-replacements
-				|replace-match-data|replace-match-maybe-edit|replace-match-string-symbols|replace-quote|replace-rectangle|replace-regexp|replace-search
-				|replace-string|replace|report-calc-bug|report-emacs-bug|report-errors|reporter-beautify-list|reporter-bug-hook|reporter-compose-outgoing
-				|reporter-dump-state|reporter-dump-variable|reporter-lisp-indent|reporter-submit-bug-report|reporter-update-status|reposition-window
-				|repunctuate-sentences|reset-cdabbrev-window|reset-cdabbrev|reset-language-environment|reset-scheme|reset-this-command-lengths
-				|resize-mini-window-internal|resize-temp-buffer-window|rest|return-from|return-key-bib|return|revappend|reveal-close-old-overlays
-				|reveal-mode|reveal-open-new-overlays|reveal-post-command|reverse-region|revert-buffer--default|revert-buffer-insert-file-contents--default-function
-				|revert-buffer-with-coding-system|rfc2045-encode-string|rfc2047-b-encode-string|rfc2047-charset-to-coding-system|rfc2047-decode-address-region
-				|rfc2047-decode-address-string|rfc2047-decode-encoded-words|rfc2047-decode-region|rfc2047-decode-string|rfc2047-encodable-p|rfc2047-encode-1
-				|rfc2047-encode-message-header|rfc2047-encode-parameter|rfc2047-encode-region|rfc2047-encode-string|rfc2047-encode|rfc2047-field-value
-				|rfc2047-fold-field|rfc2047-fold-region|rfc2047-narrow-to-field|rfc2047-pad-base64|rfc2047-q-encode-string|rfc2047-qp-or-base64
-				|rfc2047-quote-special-characters-in-quoted-strings|rfc2047-strip-backslashes-in-quoted-strings|rfc2047-unfold-field|rfc2047-unfold-region
-				|rfc2104-hash|rfc2231-decode-encoded-string|rfc2231-encode-string|rfc2231-get-value|rfc2231-parse-qp-string|rfc2231-parse-string
-				|rfc2368-parse-mailto-url|rfc2368-unhexify-string|rfc822-addresses-1|rfc822-addresses|rfc822-bad-address|rfc822-goto-eoh|rfc822-looking-at
-				|rfc822-nuke-whitespace|rfc822-snarf-domain|rfc822-snarf-frob-list|rfc822-snarf-subdomain|rfc822-snarf-word|rfc822-snarf-words
-				|rfn-eshadow-setup-minibuffer|rfn-eshadow-sifn-equal|rfn-eshadow-update-overlay|rgrep|right-char|right-word|ring-convert-sequence-to-ring
-				|ring-extend|ring-index|ring-insert\\+extend|ring-member|ring-minus1|ring-next|ring-plus1|ring-previous|ring-remove\\+insert\\+extend
-				|rlogin-delchar-or-send-Ctrl-D|rlogin-directory-tracking-mode|rlogin-mode|rlogin-send-Ctrl-C|rlogin-send-Ctrl-D|rlogin-send-Ctrl-Z
-				|rlogin-send-Ctrl-backslash|rlogin-tab-or-complete|rlogin|rmail-add-label|rmail-add-mbox-headers|rmail-after-save-hook|rmail-apply-in-message
-				|rmail-auto-file|rmail-autodetect|rmail-beginning-of-message|rmail-buffers-swapped-p|rmail-bury|rmail-change-major-mode-hook|rmail-collect-deleted
-				|rmail-construct-io-menu|rmail-continue|rmail-convert-babyl-to-mbox|rmail-convert-file-maybe|rmail-copy-headers|rmail-count-new-messages
-				|rmail-decode-region|rmail-delete-backward|rmail-delete-forward|rmail-delete-headers|rmail-delete-message|rmail-digest-parse-mime
-				|rmail-digest-parse-rfc1153sloppy|rmail-digest-parse-rfc1153strict|rmail-digest-parse-rfc934|rmail-digest-rfc1153|rmail-display-labels
-				|rmail-dont-modify-format|rmail-dont-reply-to|rmail-duplicate-message|rmail-edit-current-message|rmail-encode-string|rmail-end-of-message
-				|rmail-ensure-blank-line|rmail-epa-decrypt|rmail-error-bad-format|rmail-expunge-and-save|rmail-expunge-confirmed|rmail-expunge
-				|rmail-find-all-files|rmail-first-message|rmail-first-unseen-message|rmail-fontify-buffer-function|rmail-fontify-message|rmail-forget-messages
-				|rmail-forward|rmail-generate-viewer-buffer|rmail-get-attr-names|rmail-get-attr-value|rmail-get-coding-system|rmail-get-header-1
-				|rmail-get-header|rmail-get-keywords|rmail-get-labels|rmail-get-new-mail-1|rmail-get-new-mail|rmail-get-remote-password|rmail-have-password
-				|rmail-highlight-headers|rmail-input|rmail-insert-inbox-text|rmail-install-speedbar-variables|rmail-is-text-p|rmail-kill-label
-				|rmail-last-message|rmail-list-to-menu|rmail-mail-return|rmail-mail|rmail-make-in-reply-to-field|rmail-mark-message|rmail-maybe-display-summary
-				|rmail-maybe-set-message-counters|rmail-message-attr-p|rmail-message-deleted-p|rmail-message-labels-p|rmail-message-unseen-p|rmail-mime-message-p
-				|rmail-mime|rmail-mode-1|rmail-mode-2|rmail-mode-kill-buffer-hook|rmail-mode-kill-summary|rmail-mode|rmail-modify-format|rmail-movemail-variant-p
-				|rmail-msg-is-pruned|rmail-msg-number-after-expunge|rmail-msgbeg|rmail-msgend|rmail-next-error-move|rmail-next-labeled-message
-				|rmail-next-message|rmail-next-same-subject|rmail-next-undeleted-message|rmail-no-mail-p|rmail-only-expunge|rmail-output-as-seen
-				|rmail-output-body-to-file|rmail-output-to-rmail-buffer|rmail-output|rmail-parse-url|rmail-perm-variables|rmail-pop-to-buffer|rmail-previous-labeled-message
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (41 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 rmail-output-body-to-file|rmail-output-to-rmail-buffer|rmail-output|rmail-parse-url|rmail-perm-variables|rmail-pop-to-buffer|rmail-previous-labeled-message
 				|rmail-previous-message|rmail-previous-same-subject|rmail-previous-undeleted-message|rmail-probe|rmail-quit|rmail-read-label|rmail-redecode-body
 				|rmail-reply|rmail-require-mime-maybe|rmail-resend|rmail-restore-desktop-buffer|rmail-retry-failure|rmail-revert|rmail-search-backwards
 				|rmail-search-message|rmail-search|rmail-select-summary|rmail-set-attribute-1|rmail-set-attribute|rmail-set-header-1|rmail-set-header
@@ -4802,7 +4928,12 @@ repository:
 				|semantic-complete-inline-project|semantic-complete-jump-local-members|semantic-complete-jump-local|semantic-complete-jump|semantic-complete-self-insert
 				|semantic-complete-symbol|semantic-create-imenu-index|semantic-create-tag-proxy|semantic-ctxt-current-mode|semantic-current-tag-parent
 				|semantic-current-tag|semantic-customize-system-include-path|semantic-debug|semantic-decoration-include-visit|semantic-decoration-unparsed-include-do-reset
-				|semantic-default-c-setup|semantic-default-elisp-setup|semantic-default-html-setup|semantic-default-make-setup|semantic-default-scheme-setup
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (42 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 semantic-default-c-setup|semantic-default-elisp-setup|semantic-default-html-setup|semantic-default-make-setup|semantic-default-scheme-setup
 				|semantic-default-texi-setup|semantic-delete-overlay-maybe|semantic-dependency-tag-file|semantic-describe-buffer-var-helper|semantic-describe-buffer
 				|semantic-describe-tag|semantic-desktop-ignore-this-minor-mode|semantic-documentation-for-tag|semantic-dump-parser-warnings|semantic-edits-incremental-parser
 				|semantic-elapsed-time|semantic-equivalent-tag-p|semantic-error-if-unparsed|semantic-event-window|semantic-exit-on-input|semantic-fetch-available-tags
@@ -4892,7 +5023,12 @@ repository:
 				|server-visit-files|server-with-environment|ses\\+|ses--advice-copy-region-as-kill|ses--advice-yank|ses--cell|ses--clean-!|ses--clean-_
 				|ses--letref|ses--local-printer|ses--locprn-compiled--cmacro|ses--locprn-compiled|ses--locprn-def--cmacro|ses--locprn-def|ses--locprn-local-printer-list--cmacro
 				|ses--locprn-local-printer-list|ses--locprn-number--cmacro|ses--locprn-number|ses--locprn-p--cmacro|ses--locprn-p|ses--metaprogramming
-				|ses--time-check|ses-adjust-print-width|ses-append-row-jump-first-column|ses-aset-with-undo|ses-average|ses-begin-change|ses-calculate-cell
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (43 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 ses--time-check|ses-adjust-print-width|ses-append-row-jump-first-column|ses-aset-with-undo|ses-average|ses-begin-change|ses-calculate-cell
 				|ses-call-printer|ses-cell--formula--cmacro|ses-cell--formula|ses-cell--printer--cmacro|ses-cell--printer|ses-cell--properties--cmacro
 				|ses-cell--properties|ses-cell--references--cmacro|ses-cell--references|ses-cell--symbol--cmacro|ses-cell--symbol|ses-cell-formula
 				|ses-cell-p|ses-cell-printer|ses-cell-property-pop|ses-cell-property|ses-cell-references|ses-cell-set-formula|ses-cell-symbol|ses-cell-value
@@ -4982,7 +5118,12 @@ repository:
 				|shr-color-set-minimum-interval|shr-color-visible|shr-colorize-region|shr-column-specs|shr-copy-url|shr-count|shr-descend|shr-dom-print
 				|shr-dom-to-xml|shr-encode-url|shr-ensure-newline|shr-ensure-paragraph|shr-expand-newlines|shr-expand-url|shr-find-fill-point|shr-fold-text
 				|shr-fontize-dom|shr-generic|shr-get-image-data|shr-heading|shr-image-displayer|shr-image-fetched|shr-image-from-data|shr-indent
-				|shr-insert-image|shr-insert-table-ruler|shr-insert-table|shr-insert|shr-make-table-1|shr-make-table|shr-max-columns|shr-mouse-browse-url
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (44 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 shr-insert-image|shr-insert-table-ruler|shr-insert-table|shr-insert|shr-make-table-1|shr-make-table|shr-max-columns|shr-mouse-browse-url
 				|shr-next-link|shr-parse-base|shr-parse-image-data|shr-parse-style|shr-previous-link|shr-previous-newline-padding-width|shr-pro-rate-columns
 				|shr-put-image|shr-remove-trailing-whitespace|shr-render-buffer|shr-render-region|shr-render-td|shr-rescale-image|shr-save-contents
 				|shr-show-alt-text|shr-store-contents|shr-table-widths|shr-tag-a|shr-tag-audio|shr-tag-b|shr-tag-base|shr-tag-blockquote|shr-tag-body
@@ -5072,7 +5213,12 @@ repository:
 				|speedbar-buffers-line-directory|speedbar-buffers-line-path|speedbar-buffers-tail-notes|speedbar-center-buffer-smartly|speedbar-change-expand-button-char
 				|speedbar-change-initial-expansion-list|speedbar-check-obj-this-line|speedbar-check-objects|speedbar-check-read-only|speedbar-check-vc-this-line
 				|speedbar-check-vc|speedbar-clear-current-file|speedbar-click|speedbar-contract-line-descendants|speedbar-contract-line|speedbar-create-directory
-				|speedbar-create-tag-hierarchy|speedbar-current-frame|speedbar-customize|speedbar-default-directory-list|speedbar-delete-overlay
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (45 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 speedbar-create-tag-hierarchy|speedbar-current-frame|speedbar-customize|speedbar-default-directory-list|speedbar-delete-overlay
 				|speedbar-delete-subblock|speedbar-dir-follow|speedbar-directory-buttons-follow|speedbar-directory-buttons|speedbar-directory-line
 				|speedbar-dired|speedbar-disable-update|speedbar-do-function-pointer|speedbar-edit-line|speedbar-enable-update|speedbar-expand-line-descendants
 				|speedbar-expand-line|speedbar-extension-list-to-regex|speedbar-extract-one-symbol|speedbar-fetch-dynamic-etags|speedbar-fetch-dynamic-imenu
@@ -5162,7 +5308,12 @@ repository:
 				|table-goto-bottom-left-corner|table-goto-bottom-right-corner|table-goto-top-left-corner|table-goto-top-right-corner|table-heighten-cell
 				|table-insert-column|table-insert-row-column|table-insert-row|table-insert-sequence|table-insert|table-justify-cell|table-justify-column
 				|table-justify-row|table-justify|table-narrow-cell|table-put-source-info|table-query-dimension|table-recognize-cell|table-recognize-region
-				|table-recognize-table|table-recognize|table-release|table-shorten-cell|table-span-cell|table-split-cell-horizontally|table-split-cell-vertically
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (46 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 table-recognize-table|table-recognize|table-release|table-shorten-cell|table-span-cell|table-split-cell-horizontally|table-split-cell-vertically
 				|table-split-cell|table-unrecognize-cell|table-unrecognize-region|table-unrecognize-table|table-unrecognize|table-widen-cell|table-with-cache-buffer
 				|tabulated-list--column-number|tabulated-list--sort-by-column-name|tabulated-list-col-sort|tabulated-list-delete-entry|tabulated-list-entry-size->
 				|tabulated-list-get-entry|tabulated-list-get-id|tabulated-list-print-col|tabulated-list-print-entry|tabulated-list-print-fake-header
@@ -5252,7 +5403,12 @@ repository:
 				|texinfo-delete-existing-pointers|texinfo-delete-from-print-queue|texinfo-delete-old-menu|texinfo-description|texinfo-discard-command-and-arg
 				|texinfo-discard-command|texinfo-discard-line-with-args|texinfo-discard-line|texinfo-do-flushright|texinfo-do-itemize|texinfo-end-alphaenumerate
 				|texinfo-end-capsenumerate|texinfo-end-defun|texinfo-end-direntry|texinfo-end-enumerate|texinfo-end-example|texinfo-end-flushleft
-				|texinfo-end-flushright|texinfo-end-ftable|texinfo-end-indextable|texinfo-end-itemize|texinfo-end-multitable|texinfo-end-table
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (47 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 texinfo-end-flushright|texinfo-end-ftable|texinfo-end-indextable|texinfo-end-itemize|texinfo-end-multitable|texinfo-end-table
 				|texinfo-end-vtable|texinfo-enumerate-item|texinfo-enumerate|texinfo-every-node-update|texinfo-filter|texinfo-find-higher-level-node
 				|texinfo-find-lower-level-node|texinfo-find-pointer|texinfo-footnotestyle|texinfo-format-\\.|texinfo-format-:|texinfo-format-French-OE-ligature
 				|texinfo-format-French-oe-ligature|texinfo-format-German-sharp-S|texinfo-format-Latin-Scandinavian-AE|texinfo-format-Latin-Scandinavian-ae
@@ -5342,7 +5498,12 @@ repository:
 				|todo-category-number|todo-category-select|todo-category-string-matcher-1|todo-category-string-matcher-2|todo-check-file|todo-check-filtered-items-file
 				|todo-check-format|todo-choose-archive|todo-clear-matches|todo-comment-string-matcher|todo-convert-legacy-date-time|todo-convert-legacy-files
 				|todo-current-category|todo-date-string-matcher|todo-delete-category|todo-delete-file|todo-delete-item|todo-desktop-save-buffer
-				|todo-diary-expired-matcher|todo-diary-goto-entry|todo-diary-item-p|todo-diary-nonmarking-matcher|todo-display-categories|todo-display-sorted
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (48 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 todo-diary-expired-matcher|todo-diary-goto-entry|todo-diary-item-p|todo-diary-nonmarking-matcher|todo-display-categories|todo-display-sorted
 				|todo-done-item-p|todo-done-item-section-p|todo-done-separator|todo-done-string-matcher|todo-edit-category-diary-inclusion|todo-edit-category-diary-nonmarking
 				|todo-edit-file|todo-edit-item--diary-inclusion|todo-edit-item--header|todo-edit-item--next-key|todo-edit-item--text|todo-edit-item
 				|todo-edit-mode|todo-edit-quit|todo-files|todo-filter-diary-items-multifile|todo-filter-diary-items|todo-filter-items-1|todo-filter-items-filename
@@ -5432,7 +5593,12 @@ repository:
 				|turkish-case-conversion-enable|turn-off-auto-fill|turn-off-flyspell|turn-off-follow-mode|turn-off-hideshow|turn-off-iimage-mode
 				|turn-off-xterm-mouse-tracking-on-terminal|turn-on-auto-fill|turn-on-auto-revert-mode|turn-on-auto-revert-tail-mode|turn-on-cwarn-mode-if-enabled
 				|turn-on-cwarn-mode|turn-on-eldoc-mode|turn-on-flyspell|turn-on-follow-mode|turn-on-font-lock-if-desired|turn-on-font-lock|turn-on-gnus-dired-mode
-				|turn-on-gnus-mailing-list-mode|turn-on-hi-lock-if-enabled|turn-on-iimage-mode|turn-on-org-cdlatex|turn-on-orgstruct\\+\\+|turn-on-orgstruct
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (49 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 turn-on-gnus-mailing-list-mode|turn-on-hi-lock-if-enabled|turn-on-iimage-mode|turn-on-org-cdlatex|turn-on-orgstruct\\+\\+|turn-on-orgstruct
 				|turn-on-orgtbl|turn-on-prettify-symbols-mode|turn-on-reftex|turn-on-visual-line-mode|turn-on-xterm-mouse-tracking-on-terminal
 				|type-break-alarm|type-break-cancel-function-timers|type-break-cancel-schedule|type-break-cancel-time-warning-schedule|type-break-catch-up-event
 				|type-break-check-keystroke-warning|type-break-check-post-command-hook|type-break-check|type-break-choose-file|type-break-demo-boring
@@ -5522,7 +5688,12 @@ repository:
 				|vc-hg-registered|vc-ignore|vc-incoming-outgoing-internal|vc-insert-file|vc-insert-headers|vc-kill-buffer-hook|vc-log-edit|vc-log-incoming
 				|vc-log-internal-common|vc-log-outgoing|vc-make-backend-sym|vc-make-version-backup|vc-mark-resolved|vc-maybe-resolve-conflicts
 				|vc-menu-map-filter|vc-menu-map|vc-merge|vc-mode-line|vc-modify-change-comment|vc-mtn-registered|vc-next-action|vc-next-comment|vc-parse-buffer
-				|vc-position-context|vc-possible-master|vc-previous-comment|vc-print-log-internal|vc-print-log-setup-buttons|vc-print-log|vc-print-root-log
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (50 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 vc-position-context|vc-possible-master|vc-previous-comment|vc-print-log-internal|vc-print-log-setup-buttons|vc-print-log|vc-print-root-log
 				|vc-process-filter|vc-pull|vc-rcs-registered|vc-read-backend|vc-read-revision|vc-region-history|vc-register-with|vc-register|vc-registered
 				|vc-rename-file|vc-resolve-conflicts|vc-responsible-backend|vc-restore-buffer-context|vc-resynch-buffer|vc-resynch-buffers-in-directory
 				|vc-resynch-window|vc-retrieve-tag|vc-revert-buffer-internal|vc-revert-buffer|vc-revert-file|vc-revert|vc-revision-other-window
@@ -5612,7 +5783,12 @@ repository:
 				|verilog-sk-prompt-name|verilog-sk-prompt-output|verilog-sk-prompt-reset|verilog-sk-prompt-state-selector|verilog-sk-prompt-width
 				|verilog-sk-reg|verilog-sk-repeat|verilog-sk-specify|verilog-sk-state-machine|verilog-sk-task|verilog-sk-uvm-component|verilog-sk-uvm-object
 				|verilog-sk-while|verilog-sk-wire|verilog-skip-backward-comment-or-string|verilog-skip-backward-comments|verilog-skip-forward-comment-or-string
-				|verilog-skip-forward-comment-p|verilog-star-comment|verilog-start-translate-off|verilog-stmt-menu|verilog-string-diff|verilog-string-match-fold
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (51 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 verilog-skip-forward-comment-p|verilog-star-comment|verilog-start-translate-off|verilog-stmt-menu|verilog-string-diff|verilog-string-match-fold
 				|verilog-string-remove-spaces|verilog-string-replace-matches|verilog-strip-comments|verilog-subdecls-get-inouts|verilog-subdecls-get-inputs
 				|verilog-subdecls-get-interfaced|verilog-subdecls-get-interfaces|verilog-subdecls-get-outputs|verilog-subdecls-new|verilog-submit-bug-report
 				|verilog-surelint-off|verilog-symbol-detick-denumber|verilog-symbol-detick-text|verilog-symbol-detick|verilog-syntax-ppss|verilog-typedef-name-p
@@ -5702,7 +5878,12 @@ repository:
 				|vhdl-template-procedure-hook|vhdl-template-procedure|vhdl-template-process-comb|vhdl-template-process-hook|vhdl-template-process-seq
 				|vhdl-template-process|vhdl-template-quantity-branch|vhdl-template-quantity-free|vhdl-template-quantity-hook|vhdl-template-quantity-source
 				|vhdl-template-quantity|vhdl-template-record|vhdl-template-replace-header-keywords|vhdl-template-report-hook|vhdl-template-report
-				|vhdl-template-return-hook|vhdl-template-return|vhdl-template-search-prompt|vhdl-template-selected-signal-asst-hook|vhdl-template-selected-signal-asst
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (52 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 vhdl-template-return-hook|vhdl-template-return|vhdl-template-search-prompt|vhdl-template-selected-signal-asst-hook|vhdl-template-selected-signal-asst
 				|vhdl-template-seq-process|vhdl-template-signal-hook|vhdl-template-signal|vhdl-template-standard-package|vhdl-template-subnature-hook
 				|vhdl-template-subnature|vhdl-template-subprogram-body|vhdl-template-subprogram-decl|vhdl-template-subtype-hook|vhdl-template-subtype
 				|vhdl-template-terminal-hook|vhdl-template-terminal|vhdl-template-type-hook|vhdl-template-type|vhdl-template-undo|vhdl-template-use-hook
@@ -5792,7 +5973,12 @@ repository:
 				|viper-special-ring-rotate1|viper-standard-value|viper-start-R-mode|viper-start-replace|viper-string-to-list|viper-submit-report
 				|viper-subseq|viper-substitute-line|viper-substitute|viper-surrounding-word|viper-switch-to-buffer-other-window|viper-switch-to-buffer
 				|viper-test-com-defun|viper-this-buffer-macros|viper-tmp-insert-at-eob|viper-toggle-case|viper-toggle-key-action|viper-toggle-parse-sexp-ignore-comments
-				|viper-toggle-search-style|viper-translate-all-ESC-keysequences|viper-trim-replace-chars-to-delete-if-necessary|viper-unbind-mouse-insert-key
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (53 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 viper-toggle-search-style|viper-translate-all-ESC-keysequences|viper-trim-replace-chars-to-delete-if-necessary|viper-unbind-mouse-insert-key
 				|viper-unbind-mouse-search-key|viper-uncatch-tty-ESC|viper-undisplayed-files|viper-undo-more|viper-undo-sentinel|viper-undo|viper-unrecord-kbd-macro
 				|viper-update-syntax-classes|viper-valid-marker|viper-valid-register|viper-version|viper-vi-command-p|viper-wildcard-to-regexp
 				|viper-window-bottom|viper-window-display-p|viper-window-middle|viper-window-top|viper-yank-defun|viper-yank-last-insertion|viper-yank-line
@@ -5882,7 +6068,12 @@ repository:
 				|woman-bookmark-jump|woman-bookmark-make-record|woman-break-table|woman-cached-data|woman-canonicalize-dir|woman-change-fonts|woman-decode-buffer
 				|woman-decode-region|woman-default-faces|woman-delete-following-space|woman-delete-line|woman-delete-match|woman-delete-whole-line
 				|woman-directory-files|woman-dired-define-key-maybe|woman-dired-define-key|woman-dired-define-keys|woman-dired-find-file|woman-display-extended-fonts
-				|woman-expand-directory-path|woman-expand-locale|woman-file-accessible-directory-p|woman-file-name-all-completions|woman-file-name
+			)(?=[\\s()]|$)"""
+		},{
+			# Extended standard library (54 / 55)
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 woman-expand-directory-path|woman-expand-locale|woman-file-accessible-directory-p|woman-file-name-all-completions|woman-file-name
 				|woman-file-readable-p|woman-find-file|woman-find-next-control-line-carefully|woman-find-next-control-line|woman-follow-word|woman-follow
 				|woman-forward-arg|woman-get-next-char|woman-get-numeric-arg|woman-get-tab-stop|woman-horizontal-escapes|woman-horizontal-line
 				|woman-if-body|woman-if-ignore|woman-imenu|woman-insert-file-contents|woman-interparagraph-space|woman-interpolate-macro|woman-leave-blank-lines
