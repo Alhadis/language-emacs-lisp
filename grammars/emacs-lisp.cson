@@ -106,7 +106,10 @@ repository:
 		end:   "$"
 		beginCaptures:
 			0: name: "punctuation.definition.comment.emacs.lisp"
-		patterns: [include: "#modeline"]
+		patterns: [
+			{include: "#modeline"}
+			{include: "#docvar"}
+		]
 
 
 	# def* statement
@@ -163,6 +166,15 @@ repository:
 			]
 			
 		}, include: "$self"]
+
+
+	# Strings quoted `like this'
+	docvar:
+		name:  "variable.other.literal.emacs.lisp"
+		match: "(`)[^\\s()]+(')"
+		captures:
+			1: name: "punctuation.definition.quote.begin.emacs.lisp"
+			2: name: "punctuation.definition.quote.end.emacs.lisp"
 
 
 	# Escape sequences
@@ -516,7 +528,8 @@ repository:
 			name: "constant.character.escape.emacs.lisp"
 			captures:
 				1: name: "punctuation.escape.backslash.emacs.lisp"
-		}]
+
+		}, include: "#docvar"]
 
 
 	# Symbols (at least the ones we care to highlight)

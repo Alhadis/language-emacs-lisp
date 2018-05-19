@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for "magic" autoloading comments
+* __Added:__ Support for strings using ASCII-style directional quotes
 
 
 
