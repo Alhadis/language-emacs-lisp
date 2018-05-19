@@ -40,6 +40,7 @@ repository:
 	# Top-level patterns
 	main:
 		patterns: [
+			{include: "#autoload"}
 			{include: "#comment"}
 			{include: "#lambda"}
 			{include: "#loop"}
@@ -70,6 +71,18 @@ repository:
 			name: "constant.language.$1.arguments.emacs.lisp"
 			match: "&(optional|rest)(?=\\s|\\))"
 		}]
+
+
+	# "Magic" comment for autoloading
+	autoload:
+		name:  "comment.line.semicolon.autoload.emacs.lisp"
+		begin: "^(;;;###)(autoload)"
+		end:   "$"
+		contentName: "string.unquoted.other.emacs.lisp"
+		beginCaptures:
+			1: name: "punctuation.definition.comment.emacs.lisp"
+			2: name: "storage.modifier.autoload.emacs.lisp"
+
 	
 	
 	# Binding

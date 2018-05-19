@@ -6,6 +6,12 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]: ../../compare/v1.2.0...HEAD
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* __Added:__ Highlighting for "magic" autoloading comments
+
+
+
 [v1.2.0]
 ------------------------------------------------------------------------
 **October 14th, 2017**  
