@@ -1,0 +1,95 @@
+name: "YASnippet"
+scopeName: "source.yasnippet"
+fileTypes: [
+	".yassnippet"
+	".yas"
+]
+firstLineMatch: """(?xi)
+	# Emacs modeline
+	-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)
+		(?:yasnippet|snippet)
+	(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-
+"""
+
+patterns: [include: "#main"]
+
+repository:
+	main:
+		patterns: [
+			{include: "#prologue"}
+			{include: "#raw-syntax"}
+		]
+	
+	prologue:
+		begin: "\\A"
+		end: "^\\s*(#)\\s*(--)\\s*$"
+		endCaptures:
+			0: name: "comment.line.number-sign.yasnippet"
+			1: name: "punctuation.definition.comment.number-sign.yasnippet"
+			2: name: "punctuation.terminator.end-of-header.yasnippet"
+		patterns: [{
+			name:  "comment.line.number-sign.yasnippet"
+			begin: "(#)(?!\\s*--\\s*$)"
+			end:   "$"
+			beginCaptures:
+				1: name: "punctuation.definition.comment.number-sign.yasnippet"
+			patterns: [
+				{include: "source.emacs.lisp#modeline"}
+				{include: "#directives"}
+			]
+		}]
+	
+	directives:
+		patterns: [{
+			# key: Snippet abbrev
+			name: "meta.directive.snippet-abbreviation.yasnippet"
+			match: "(?<=[\\s#])(key)\\s*(:)\\s*(\\S.*)\\s*$"
+			captures:
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: name: "string.unquoted.other.value.yasnippet"
+		},{
+			# name: Snippet name
+			name: "meta.directive.snippet-name.yasnippet"
+			match: "(?<=[\\s#])(name)\\s*(:)\\s*(\\S.*)\\s*$"
+			captures:
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: name: "string.unquoted.other.yasnippet"
+		},{
+			# condition: Snippet condition
+			name: "meta.directive.snippet-condition.yasnippet"
+			match: "(?<=[\\s#])(condition)\\s*(:)\\s*(\\S.*)$"
+			captures:
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: patterns: [include: "source.emacs.lisp"]
+		},{
+			# group: Snippet menu grouping
+			name: "meta.directive.snippet-group.yasnippet"
+			match: "(?<=[\\s#])(group)\\s*(:)\\s*(\\S.*)\\s*$"
+			captures:
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: name: "string.unquoted.other.yasnippet"
+		},{
+			# expand-env: Expand environment
+			name: "meta.directive.expand-env.yasnippet"
+			match: "(?<=[\\s#])(expand-env)\\s*(:)\\s*(\\S.*)$"
+			captures:
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: patterns: [include: "source.emacs.lisp"]
+		},{
+			# binding: Direct keybinding
+			name: "meta.directive.keybinding.yasnippet"
+			match: "(?<=[\\s#])(binding)\\s*(:)\\s*(\\S.*)$"
+			captures:
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: patterns: [include: "source.emacs.lisp#keybinding"] # TODO
+		}]
+	
+	"raw-syntax":
+		match: "^.+$"
+		name: "string.heredoc.other.raw.yasnippet"
