@@ -97,6 +97,14 @@ repository:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
 				3: name: "constant.language.type-specifier.yasnippet"
+		},{
+			# Miscellaneous directives
+			name: "meta.directive.other.yasnippet"
+			match: "(?<=[\\s#])([^:\\s#]+)\\s*(:)(?:\\s*(\\S.*))?"
+			captures:
+				1: name: "variable.assignment.custom.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: name: "string.unquoted.yasnippet"
 		}]
 
 	
