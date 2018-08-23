@@ -1,3 +1,7 @@
 ".source.emacs.lisp":
 	editor:
 		commentStart: ";; "
+
+".source.yasnippet":
+	editor:
+		commentStart: "# "
