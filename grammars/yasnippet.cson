@@ -125,7 +125,7 @@ repository:
 		]
 		
 	"tab-stops":
-		name: "variable.other.positional.$2-nth.tab-stop.yasnippet"
+		name: "variable.positional.$2-nth.tab-stop.yasnippet"
 		match: "(\\$)([0-9]+)"
 		captures:
 			1: name: "punctuation.definition.variable.sigil.dollar-sign.yasnippet"
