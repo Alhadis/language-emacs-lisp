@@ -366,6 +366,88 @@ repository:
 			1: name: "punctuation.definition.keyword.emacs.lisp"
 
 
+	# Patterns described in `edmacro.el' to match key-sequences (`C-M-x', `C-<down>' etc).
+	# Used by YASnippet's "binding" directive, but not by the Elisp grammar itself.
+	"key-notation":
+		patterns: [{
+			# Special words for control characters
+			name: "constant.control-character.key.emacs.lisp"
+			match: "\\b(DEL|ESC|LFD|NUL|RET|SPC|TAB)\\b"
+		},{
+			# Octal notation
+			name: "constant.character.escape.octal.codepoint.key.emacs.lisp"
+			match: "(\\\\)[0-7]{1,6}"
+			captures:
+				1: name: "punctuation.definition.escape.backslash.emacs.lisp"
+		},{
+			# Caret notation
+			name: "constant.character.escape.caret.control.key.emacs.lisp"
+			match: "(\\^)\\S"
+			captures:
+				1: name: "punctuation.definition.escape.caret.emacs.lisp"
+		},{
+			# Command name: <<next-line>>
+			name: "constant.command-name.key.emacs.lisp"
+			match: "(<<)[-A-Za-z0-9]+(>>)"
+			captures:
+				1: name: "punctuation.definition.double.angle.bracket.begin.emacs.lisp"
+				2: name: "punctuation.definition.double.angle.bracket.end.emacs.lisp"
+		},{
+			# Repetition: 3*<right> = <right> <right> <right>
+			name: "meta.key-repetition.emacs.lisp"
+			match: "([0-9]+)(\\*)(?=[\\S])"
+			captures:
+				1: name: "constant.numeric.integer.int.decimal.emacs.lisp"
+				2: name: "keyword.operator.arithmetic.multiply.emacs.lisp"
+		},{
+			# M--123 (only multicharacter word permitted with a prefix)
+			name: "meta.key-sequence.emacs.lisp"
+			match: "\\b(M-)(-?[0-9]+)\\b"
+			captures:
+				1: patterns: [include: "#key-notation-prefix"]
+				2: name: "constant.character.key.emacs.lisp"
+		},{
+			# Most common forms: C-x, C-M-x, S-TAB, S-<TAB>
+			name: "meta.key-sequence.emacs.lisp"
+			match: """(?x)
+				\\b((?:[MCSAHs]-)+)
+				(?: (<)(DEL|ESC|LFD|NUL|RET|SPC|TAB)(>)
+				|   (DEL|ESC|LFD|NUL|RET|SPC|TAB)\\b
+				|   ([!-_a-z]{2,})
+				|   ([!-_a-z])
+				)?"""
+			captures:
+				1: patterns: [include: "#key-notation-prefix"]
+				2: name: "punctuation.definition.angle.bracket.begin.emacs.lisp"
+				3: name: "constant.control-character.key.emacs.lisp"
+				4: name: "punctuation.definition.angle.bracket.end.emacs.lisp"
+				5: name: "constant.control-character.key.emacs.lisp"
+				6: name: "invalid.illegal.bad-prefix.emacs.lisp"
+				7: name: "constant.character.key.emacs.lisp"
+		},{
+			# <left>, C-<left>, <C-left>
+			name: "meta.function-key.emacs.lisp"
+			match: "([MCSAHs]-<|<[MCSAHs]-|<)([-A-Za-z0-9]+)(>)"
+			captures:
+				1: patterns: [{
+					match: "<"
+					name: "punctuation.definition.angle.bracket.begin.emacs.lisp"
+				}, include: "#key-notation-prefix"]
+				2: name: "constant.function-key.emacs.lisp"
+				3: name: "punctuation.definition.angle.bracket.end.emacs.lisp"
+		},{
+			# Single key not affixed to a modifier (C-x u)
+			name: "constant.character.key.emacs.lisp"
+			match: "(?<=\\s)(?![MCSAHs<>])[!-_a-z](?=\\s)"
+		}]
+
+	"key-notation-prefix":
+		match: "([MCSAHs])(-)"
+		captures:
+			1: name: "constant.character.key.modifier.emacs.lisp"
+			2: name: "punctuation.separator.modifier.dash.emacs.lisp"
+
+
 	# Lambda function
 	lambda:
 		name: "meta.lambda.expression.emacs.lisp"

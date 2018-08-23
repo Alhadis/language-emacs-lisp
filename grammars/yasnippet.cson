@@ -1,8 +1,8 @@
 name: "YASnippet"
 scopeName: "source.yasnippet"
 fileTypes: [
-	".yassnippet"
-	".yas"
+	"yasnippet"
+	"yas"
 ]
 firstLineMatch: """(?xi)
 	# Emacs modeline
@@ -17,131 +17,89 @@ repository:
 	main:
 		patterns: [
 			{include: "#prologue"}
-			{include: "#raw-syntax"}
+			{include: "#body"}
 		]
-	
+		
 	prologue:
+		name: "meta.prologue.yasnippet"
 		begin: "\\A"
-		end:   "^\\s*(#+)\\s*(--)\\s*$"
-		endCaptures:
-			0: name: "comment.line.number-sign.yasnippet"
-			1: name: "punctuation.definition.comment.number-sign.yasnippet"
-			2: name: "punctuation.terminator.end-of-header.yasnippet"
+		end:   "^(?=\\s*#+\\s*--\\s*$)"
 		patterns: [{
 			begin: "(#+)(?!\\s*--\\s*$)"
 			end:   "$"
 			beginCaptures:
 				1: name: "punctuation.definition.comment.number-sign.yasnippet"
-			patterns: [{
+			patterns: [
 				begin: "(?=-\\*-)"
 				end:   "$"
 				contentName: "comment.line.modeline.yasnippet"
 				patterns: [include: "source.emacs.lisp#modeline"]
-			},{
-				name: "comment.line.number-sign.yasnippet"
-				match: "^\\s*(#+)"
-			},{
-				include: "#directives"
-			},{
-				include: "#type-directive"
-			}]
+				
+				{name: "comment.line.number-sign.yasnippet", match: "^\\s*(#+)"}
+				{include: "#directives"}
+				{include: "#type-directive"}
+			]
 		}]
 	
 	directives:
 		patterns: [{
-			# key: Snippet abbrev
-			name: "meta.directive.snippet-abbreviation.yasnippet"
-			match: "(?<=[\\s#])(key)\\s*(:)\\s*(\\S.*)\\s*$"
+			# Simple keys
+			name:  "meta.directive.snippet-$1.yasnippet"
+			match: "(?<=[\\s#])(key|name|group|uuid|contributor)\\s*(:)(?:\\s*(\\S.*))?\\s*$"
 			captures:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: name: "string.unquoted.other.value.yasnippet"
+				3: name: "string.unquoted.yasnippet"
 		},{
-			# name: Snippet name
-			name: "meta.directive.snippet-name.yasnippet"
-			match: "(?<=[\\s#])(name)\\s*(:)\\s*(\\S.*)\\s*$"
+			# Keys which involve embedded lines of Lisp
+			name: "meta.directive.snippet-$1.yasnippet"
+			match: "(?<=[\\s#])(condition|expand-env)\\s*(:)(?:\\s*(\\S.*))?\\s*$"
 			captures:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: name: "string.unquoted.other.yasnippet"
+				3: name: "source.embedded.emacs.lisp", patterns: [include: "source.emacs.lisp"]
 		},{
-			# condition: Snippet condition
-			name: "meta.directive.snippet-condition.yasnippet"
-			match: "(?<=[\\s#])(condition)\\s*(:)\\s*(\\S.*)$"
-			captures:
-				1: name: "variable.assignment.$1.yasnippet"
-				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: patterns: [include: "source.emacs.lisp"]
-		},{
-			# group: Snippet menu grouping
-			name: "meta.directive.snippet-group.yasnippet"
-			match: "(?<=[\\s#])(group)\\s*(:)\\s*(\\S.*)\\s*$"
-			captures:
-				1: name: "variable.assignment.$1.yasnippet"
-				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: name: "string.unquoted.other.yasnippet"
-		},{
-			# expand-env: Expand environment
-			name: "meta.directive.expand-env.yasnippet"
-			match: "(?<=[\\s#])(expand-env)\\s*(:)\\s*(\\S.*)$"
-			captures:
-				1: name: "variable.assignment.$1.yasnippet"
-				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: patterns: [include: "source.emacs.lisp"]
-		},{
-			# binding: Direct keybinding
+			# Direct keybinding
 			name: "meta.directive.keybinding.yasnippet"
-			match: "(?<=[\\s#])(binding)\\s*(:)\\s*(\\S.*)$"
+			match: "(?<=[\\s#])(binding)\\s*(:)(?:\\s*(\\S.*))?\\s*$"
 			captures:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: patterns: [include: "source.emacs.lisp#keybinding"] # TODO
-		},{
-			# uuid: Unique identifier
-			name: "meta.directive.snippet-uuid.yasnippet"
-			match: "(?<=[\\s#])(uuid)\\s*(:)\\s*(\\S.*)\\s*$"
-			captures:
-				1: name: "variable.assignment.$1.yasnippet"
-				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: name: "constant.language.other.unique-identifier.yasnippet"
-		},{
-			# contributor: Snippet author
-			name: "meta.directive.contributor.yasnippet"
-			match: "(?<=[\\s#])(contributor)\\s*(:)\\s*(\\S.*)\\s*$"
-			captures:
-				1: name: "variable.assignment.$1.yasnippet"
-				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: name: "string.unquoted.other.yasnippet"
-		},{
-			# type: Ordinary snippet (not a command)
-			begin: "(?<=[\\s#])(type)\\s*(:)\\s*(?:(snippet)|([-\\w]+))\\s*$"
-			end:   "$"
-			beginCaptures:
-				0: name: "meta.directive.snippet-type.yasnippet"
-				1: name: "variable.assignment.$1.yasnippet"
-				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-				3: name: "language.constant.snippet.snippet-type.yasnippet"
+				3: patterns: [include: "source.emacs.lisp#key-notation"]
 		}]
+
 	
-	"type-directive":
-		begin: "(?<=[\\s#])(type)\\s*(:)\\s*(command)\\s*$"
+	body:
+		name:  "meta.snippet-source.yasnippet"
+		begin: "^\\s*(#+)\\s*(--)\\s*$\\n?"
 		end:   "(?=A)B"
 		beginCaptures:
-			0: name: "meta.directive.snippet-type.yasnippet"
-			1: name: "variable.assignment.$1.yasnippet"
-			2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
-			3: name: "language.constant.command.snippet-type.yasnippet"
-		patterns: [{
-			begin: "\\G"
-			end: "^\\s*(#)\\s*(--)\\s*$\\s*?"
-			endCaptures:
-				0: name: "preprocessor.directive.number-sign.yasnippet"
-				1: name: "punctuation.definition.directive.number-sign.yasnippet"
-				2: name: "punctuation.terminator.end-of-header.yasnippet"
-			patterns: [include: "#prologue"]
-		}, include: "source.emacs.lisp"]
-	
-	
-	"raw-syntax":
-		match: "^.+$"
-		name: "string.heredoc.other.raw.yasnippet"
+			0: name: "comment.line.number-sign.yasnippet.test-1"
+			1: name: "punctuation.definition.comment.number-sign.yasnippet"
+			2: name: "keyword.operator.terminator.yasnippet"
+		patterns: [
+			{include: "#tab-stops"}
+			{include: "#escaped-character"}
+			{include: "#embedded-lisp"}
+		]
+		
+	"tab-stops":
+		name: "variable.other.positional.$2-nth.tab-stop.yasnippet"
+		match: "(\\$)([0-9]+)"
+		captures:
+			1: name: "punctuation.definition.variable.sigil.dollar-sign.yasnippet"
+
+	"escaped-character":
+		match: "(\\\\)."
+		name: "constant.character.escape.backslash.yasnippet"
+		captures:
+			1: name: "punctuation.definition.escape.yasnippet"
+
+	"embedded-lisp":
+		name:  "string.interpolated.yasnippet"
+		begin: "`"
+		end:   "`"
+		contentName: "source.embedded.emacs.lisp"
+		patterns: [include: "source.emacs.lisp"]
+		beginCaptures: 0: name: "punctuation.section.begin.embedded.yasnippet"
+		endCaptures:   0: name: "punctuation.section.end.embedded.yasnippet"
