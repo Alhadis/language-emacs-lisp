@@ -25,27 +25,23 @@ repository:
 		begin: "\\A"
 		end:   "^(?=\\s*#+\\s*--\\s*$)"
 		patterns: [{
-			begin: "(#+)(?!\\s*--\\s*$)"
+			begin: "^\\s*(#+)(?!\\s*--\\s*$)"
 			end:   "$"
 			beginCaptures:
 				1: name: "punctuation.definition.comment.number-sign.yasnippet"
-			patterns: [
+			patterns: [{
 				begin: "(?=-\\*-)"
 				end:   "$"
 				contentName: "comment.line.modeline.yasnippet"
 				patterns: [include: "source.emacs.lisp#modeline"]
-				
-				{name: "comment.line.number-sign.yasnippet", match: "^\\s*(#+)"}
-				{include: "#directives"}
-				{include: "#type-directive"}
-			]
+			}, include: "#directives"]
 		}]
 	
 	directives:
 		patterns: [{
 			# Simple keys
 			name:  "meta.directive.snippet-$1.yasnippet"
-			match: "(?<=[\\s#])(key|name|group|uuid|contributor)\\s*(:)(?:\\s*(\\S.*))?\\s*$"
+			match: "(?<=[\\s#])(key|name|group|uuid|contributor)\\s*(:)(?:\\s*(\\S.*))?"
 			captures:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
@@ -53,7 +49,7 @@ repository:
 		},{
 			# Keys which involve embedded lines of Lisp
 			name: "meta.directive.snippet-$1.yasnippet"
-			match: "(?<=[\\s#])(condition|expand-env)\\s*(:)(?:\\s*(\\S.*))?\\s*$"
+			match: "(?<=[\\s#])(condition|expand-env)\\s*(:)(?:\\s*(\\S.*))?"
 			captures:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
@@ -61,7 +57,7 @@ repository:
 		},{
 			# Direct keybinding
 			name: "meta.directive.keybinding.yasnippet"
-			match: "(?<=[\\s#])(binding)\\s*(:)(?:\\s*(\\S.*))?\\s*$"
+			match: "(?<=[\\s#])(binding)\\s*(:)(?:\\s*(\\S.*))?"
 			captures:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
@@ -70,13 +66,13 @@ repository:
 
 	
 	body:
-		name:  "meta.snippet-source.yasnippet"
+		name:  "meta.snippet-body.yasnippet"
 		begin: "^\\s*(#+)\\s*(--)\\s*$\\n?"
 		end:   "(?=A)B"
 		beginCaptures:
-			0: name: "comment.line.number-sign.yasnippet.test-1"
+			0: name: "comment.line.number-sign.yasnippet"
 			1: name: "punctuation.definition.comment.number-sign.yasnippet"
-			2: name: "keyword.operator.terminator.yasnippet"
+			2: name: "punctuation.terminator.double-dash.yasnippet"
 		patterns: [
 			{include: "#tab-stops"}
 			{include: "#escaped-character"}
