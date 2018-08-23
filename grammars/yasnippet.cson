@@ -110,6 +110,8 @@ repository:
 			2: name: "punctuation.terminator.double-dash.yasnippet"
 		patterns: [
 			{include: "#tab-stops"}
+			{include: "#indentation-marker"}
+			{include: "#placeholder-fields"}
 			{include: "#escaped-characters"}
 			{include: "#embedded-lisp"}
 		]
@@ -117,6 +119,12 @@ repository:
 	"tab-stops":
 		name: "variable.other.positional.$2-nth.tab-stop.yasnippet"
 		match: "(\\$)([0-9]+)"
+		captures:
+			1: name: "punctuation.definition.variable.sigil.dollar-sign.yasnippet"
+	
+	"indentation-marker":
+		name: "keyword.operator.indentation-marker.yasnippet"
+		match: "(\\$)>"
 		captures:
 			1: name: "punctuation.definition.variable.sigil.dollar-sign.yasnippet"
 
@@ -149,3 +157,50 @@ repository:
 		patterns: [include: "source.emacs.lisp"]
 		beginCaptures: 0: name: "punctuation.section.begin.embedded.yasnippet"
 		endCaptures:   0: name: "punctuation.section.end.embedded.yasnippet"
+
+
+	"placeholder-fields":
+		patterns: [
+			{include: "#numbered-placeholder"}
+			{include: "#unnumbered-placeholder"}
+		]
+	
+	"numbered-placeholder":
+		name:  "meta.placeholder-field.numbered.$2-nth.yasnippet"
+		begin: "(\\${)([0-9]+)(:)"
+		end:   "}"
+		beginCaptures:
+			1: name: "punctuation.section.embedded.field.begin.yasnippet"
+			2: name: "constant.numeric.integer.int.decimal.yasnippet"
+			3: name: "punctuation.separator.colon.field.yasnippet"
+		endCaptures:
+			0: name: "punctuation.section.embedded.field.end.yasnippet"
+		contentName: "string.unquoted.default-text.yasnippet"
+		patterns: [include: "#placeholder-innards"]
+
+	"unnumbered-placeholder":
+		name:  "meta.placeholder-field.unnumbered.yasnippet"
+		begin: "(\\${)(:)"
+		end:   "}"
+		beginCaptures:
+			1: name: "punctuation.section.embedded.field.begin.yasnippet"
+			2: name: "punctuation.separator.colon.field.yasnippet"
+		endCaptures:
+			0: name: "punctuation.section.embedded.field.end.yasnippet"
+		contentName: "string.unquoted.default-text.yasnippet"
+		patterns: [include: "#placeholder-innards"]
+
+	"placeholder-innards":
+		patterns: [
+			{include: "#escaped-characters"}
+			{include: "#embedded-lisp"}
+			{include: "#placeholder-fields"}
+			
+			name:  "meta.transformation.yasnippet"
+			begin: "\\${1,2}(?=\\()"
+			end:   "(?<=\\))"
+			beginCaptures:
+				0: name: "keyword.operator.transformation.yasnippet"
+			contentName: "source.embedded.emacs.lisp"
+			patterns: [include: "source.emacs.lisp"]
+		]

@@ -14,3 +14,32 @@
 # contributor: snippet author
 # --
 __${init}__
+
+<div$1>
+	$0
+</div>
+
+${1:default value}
+${2:$(capitalize yas-text)}
+${2:foo}
+
+#ifndef ${1:_`(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`_H_}
+#define $1
+${1:$(capitalize (concat no yas-text))}
+$0
+
+#endif /* $1 */
+
+${1:$(make-string (string-width yas-text) ?\=)}
+${1:Title}
+${1:$(make-string (string-width yas-text) ?\=)}
+
+$0
+
+#define "${1:mydefine$(upcase yas-text)}"
+
+<div align="${2:$$(yas-choose-value '("right" "center" "left"))}">
+
+$>
+
+<div${1: id="${2:some_id}"}>$0</div>
