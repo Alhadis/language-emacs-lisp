@@ -24,18 +24,19 @@ repository:
 		name: "meta.prologue.yasnippet"
 		begin: "\\A"
 		end:   "^(?=\\s*#+\\s*--\\s*$)"
+		patterns: [include: "#prologue-lines"]
+	
+	"prologue-lines":
+		begin: "^\\s*(#+)(?!\\s*--\\s*$)"
+		end: "$"
+		beginCaptures:
+			1: name: "punctuation.definition.comment.number-sign.yasnippet"
 		patterns: [{
-			begin: "^\\s*(#+)(?!\\s*--\\s*$)"
+			begin: "(?=-\\*-)"
 			end:   "$"
-			beginCaptures:
-				1: name: "punctuation.definition.comment.number-sign.yasnippet"
-			patterns: [{
-				begin: "(?=-\\*-)"
-				end:   "$"
-				contentName: "comment.line.modeline.yasnippet"
-				patterns: [include: "source.emacs.lisp#modeline"]
-			}, include: "#directives"]
-		}]
+			contentName: "comment.line.modeline.yasnippet"
+			patterns: [include: "source.emacs.lisp#modeline"]
+		}, include: "#directives"]
 	
 	directives:
 		patterns: [{
@@ -62,6 +63,40 @@ repository:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
 				3: patterns: [include: "source.emacs.lisp#key-notation"]
+		},{
+			# Type specifier: Command
+			begin: "(?<=[\\s#])(type)\\s*(:)(?:\\s*(command))(?=\\s*$)"
+			beginCaptures:
+				0: name: "meta.directive.type.yasnippet"
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: name: "constant.language.type-specifier.yasnippet"
+			end: "(?=A)B"
+			patterns: [{
+				# Remainder of prologue
+				begin: "\\G"
+				end:   "^(?=\\s*#+\\s*--\\s*$)"
+				patterns: [include: "#prologue-lines"]
+			},{
+				# Replace usual `#body' rule with embedded Lisp source
+				name:  "meta.snippet-body.yasnippet"
+				begin: "^\\s*(#+)\\s*(--)\\s*$\\n?"
+				end:   "(?=A)B"
+				beginCaptures:
+					0: name: "comment.line.number-sign.yasnippet"
+					1: name: "punctuation.definition.comment.number-sign.yasnippet"
+					2: name: "punctuation.terminator.double-dash.yasnippet"
+				contentName: "source.embedded.emacs.lisp"
+				patterns: [include: "source.emacs.lisp"]
+			}]
+		},{
+			# Type specifier: Anything else
+			name:  "meta.directive.type.yasnippet"
+			match: "(?<=[\\s#])(type)\\s*(:)(?:\\s*(?!command\\s*$)(\\S.*))"
+			captures:
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: name: "constant.language.type-specifier.yasnippet"
 		}]
 
 	
