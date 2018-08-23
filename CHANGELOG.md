@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for "magic" autoloading comments
 * __Added:__ Support for strings using ASCII-style directional quotes
+* __Added:__ Syntax highlighting for [YASnippet][] files
 
 
 
@@ -66,3 +67,4 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 [v1.0.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.1
 [v1.0.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.0
 [2.3.3.2]: http://www.hep.by/gnu/elisp/General-Escape-Syntax.html
+[YASnippet]: http://joaotavora.github.io/yasnippet
