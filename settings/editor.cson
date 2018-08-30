@@ -5,3 +5,5 @@
 ".source.yasnippet":
 	editor:
 		commentStart: "# "
+	whitespace:
+		ensureSingleTrailingNewline: false
