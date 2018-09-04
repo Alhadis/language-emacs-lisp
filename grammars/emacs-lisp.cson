@@ -451,7 +451,7 @@ repository:
 	# Lambda function
 	lambda:
 		name: "meta.lambda.expression.emacs.lisp"
-		begin: "(\\()(lambda|function)\\s+"
+		begin: "(\\()(lambda|function)(?:\\s+|(?=[()]))"
 		end:   "\\)"
 		beginCaptures:
 			1: name: "punctuation.section.expression.begin.emacs.lisp"
