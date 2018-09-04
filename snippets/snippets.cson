@@ -1,0 +1,48 @@
+".source.yasnippet":
+	Snippet:
+		prefix: "snip"
+		leftLabel: "yas"
+		description: "File header containing the snippet's metadata."
+		descriptionMoreURL: "http://joaotavora.github.io/yasnippet/snippet-development.html"
+		body: """
+			# -*- mode: snippet -*-
+			# key: ${1:name}
+			# name: ${1:${2:name}}
+			# --
+			$3
+		"""
+	
+	Modeline1:
+		prefix: "mo"
+		body: "# -*- mode: snippet -*-"
+		leftLabel: "yas"
+		description: "Emacs modeline enabling <code>snippet-mode</code>."
+		descriptionMoreURL: "https://github.com/joaotavora/yasnippet"
+	
+	Modeline2:
+		prefix: "md"
+		body: "# -*- mode: snippet -*-"
+		leftLabel: "yas"
+		description: "Aliased form of <code>Modeline1</code>."
+		descriptionMoreURL: "https://github.com/joaotavora/yasnippet"
+	
+	Key:
+		prefix: "key"
+		body: "# key: ${1:prefix}"
+		leftLabel: "yas"
+		description: "Prefix used to trigger snippet expansion."
+		descriptionMoreURL: "http://joaotavora.github.io/yasnippet/snippet-reference.html#yas-expand"
+
+	Name:
+		prefix: "name"
+		body: "# name: ${1:Label}"
+		leftLabel: "yas"
+		description: "Optional human-readable label for snippet's menu entry."
+		descriptionMoreURL: "http://joaotavora.github.io/yasnippet/snippet-development.html#org592456a"
+	
+	AtomSelector:
+		prefix: "as"
+		body: "# atom-selector: ${1::not(*)}"
+		leftLabel: "yas"
+		description: "Atom-specific header used by <code>yas2atom</code>."
+		descriptionMoreURL: "https://github.com/Alhadis/YASR"
