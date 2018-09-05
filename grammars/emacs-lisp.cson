@@ -633,6 +633,12 @@ repository:
 			match: "(,@)([-+=*/\\w~!@$%^&:<>{}?]+)"
 			captures:
 				1: name: "punctuation.definition.spliced.symbol.emacs.lisp"
+		},{
+			# ,inserted-symbol
+			name: "constant.other.inserted.symbol.emacs.lisp"
+			match: "(,)([-+=*/\\w~!@$%^&:<>{}?]+)"
+			captures:
+				1: name: "punctuation.definition.inserted.symbol.emacs.lisp"
 		}]
 	
 	

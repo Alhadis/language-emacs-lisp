@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 * __Added:__ Support for strings using ASCII-style directional quotes
 * __Added:__ Syntax highlighting for [YASnippet][] files
 * __Fixed:__ Inconsistent highlighting of `(lambda())` and `(lambda ())`
+* __Fixed:__ Missing highlighting of `,` when inserting symbols
 
 
 
