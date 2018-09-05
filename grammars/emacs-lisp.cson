@@ -116,12 +116,13 @@ repository:
 	definition:
 		patterns: [{
 			name: "meta.function.definition.emacs.lisp"
-			begin: "(\\()(defun|defmacro|defsubst)(?!-)\\b(?:\\s*(?![-+\\d])([-+=*/\\w~!@$%^&:<>{}?]+))?"
+			begin: "(\\()(?:(cl-(defun|defmacro|defsubst))|(defun|defmacro|defsubst))(?!-)\\b(?:\\s*(?![-+\\d])([-+=*/\\w~!@$%^&:<>{}?]+))?"
 			end:   "\\)"
 			beginCaptures:
 				1: name: "punctuation.section.expression.begin.emacs.lisp"
-				2: name: "storage.type.$2.function.emacs.lisp"
-				3: name: "entity.function.name.emacs.lisp"
+				2: name: "storage.type.$3.function.cl-lib.emacs.lisp"
+				4: name: "storage.type.$4.function.emacs.lisp"
+				5: name: "entity.function.name.emacs.lisp"
 			endCaptures:
 				0: name: "punctuation.section.expression.end.emacs.lisp"
 			patterns: [include: "#defun-innards"]

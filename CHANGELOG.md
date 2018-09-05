@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* __Added:__ `defun` highlighting for `cl-{defun,defmacro,defsubst}`
 * __Added:__ Highlighting for "magic" autoloading comments
 * __Added:__ Support for strings using ASCII-style directional quotes
 * __Added:__ Syntax highlighting for [YASnippet][] files
