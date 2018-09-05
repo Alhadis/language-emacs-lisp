@@ -797,7 +797,7 @@ repository:
 	# Emacs standard library
 	stdlib:
 		patterns: [{
-			# 2018/09/06: Missing additions and updates for Emacs 26.2 [Part 1 / 6]
+			# 2018/09/06: Missing additions and updates for Emacs 26.2 [Part 1 / 7]
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
 				(`--pcase-macroexpander|Buffer-menu-unmark-all-buffers|Buffer-menu-unmark-all|Info-node-description|aa2u-mark-as-text|aa2u-mark-rectangle-as-text
@@ -840,7 +840,7 @@ repository:
 				|cl--generic-method-table|cl--generic-method-uses-cnm--cmacro|cl--generic-method-uses-cnm|cl--generic-name--cmacro|cl--generic-name)
 			(?=[\\s()]|$)"""
 		},{
-			# [Part 2 / 6]
+			# [Part 2 / 7]
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
 				(cl--generic-no-next-method-function|cl--generic-options--cmacro|cl--generic-options|cl--generic-search-method|cl--generic-specializers-apply-to-type-p
@@ -882,7 +882,7 @@ repository:
 				|eieio--class-name|eieio--class-object|eieio--class-option-assoc|eieio--class-options--cmacro|eieio--class-option|eieio--class-p--cmacro)
 			(?=[\\s()]|$)"""
 		},{ 
-			# [Part 3 / 6]
+			# [Part 3 / 7]
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
 				(eieio--class-parents--cmacro|eieio--class-parents|eieio--class-precedence-bfs|eieio--class-precedence-c3|eieio--class-precedence-dfs
@@ -937,7 +937,7 @@ repository:
 				|haskell-mode-goto-loc|haskell-mode-jump-to-def-or-tag|haskell-mode-jump-to-def|haskell-mode-jump-to-tag|haskell-mode-show-type-at)
 			(?=[\\s()]|$)"""
 		},{
-			# [Part 3 / 6]
+			# [Part 4 / 7]
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
 				(haskell-mode-stylish-buffer|haskell-mode-tag-find|haskell-mode-view-news|haskell-mode|haskell-move-nested-left|haskell-move-nested-right
@@ -992,7 +992,7 @@ repository:
 				|mouse-drag-top-right-corner|mouse-resize-frame|move-text--at-first-line-p)
 			(?=[\\s()]|$)"""
 		},{
-			# [Part 4 / 6]
+			# [Part 5 / 7]
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
 				(move-text--at-last-line-p|move-text--at-penultimate-line-p|move-text--last-line-is-just-newline|move-text--total-lines|move-text-default-bindings
@@ -1047,7 +1047,7 @@ repository:
 				|string-greaterp|string-version-lessp|string>|subr--with-wrapper-hook-no-warnings|switch-to-haskell|sxhash-eql|sxhash-equal|sxhash-eq|syntax-ppss--data)
 			(?=[\\s()]|$)"""
 		},{
-			# [Part 5 / 6]
+			# [Part 6 / 7]
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
 				(tabulated-list--col-local-max-widths|tabulated-list--get-sorter|tabulated-list-header-overlay-p|tabulated-list-line-number-width
@@ -1102,7 +1102,7 @@ repository:
 				|yas--make-snippet--cmacro|yas--make-snippet-table--cmacro|yas--make-snippet-table|yas--make-snippet|yas--make-template--cmacro|yas--make-template)
 			(?=[\\s()]|$)"""
 		},{
-			# [ Part 6 of 6 ]
+			# [Part 7 / 7]
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
 				(yas--mark-this-and-children-modified|yas--markers-to-points|yas--maybe-clear-field-filter|yas--maybe-expand-from-keymap-filter
