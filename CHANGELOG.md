@@ -3,11 +3,12 @@ Change Log
 
 This project adheres to [Semantic Versioning](http://semver.org).
 
-[Unpublished]: ../../compare/v1.2.0...HEAD
+[Unpublished]: ../../compare/v1.3.0...HEAD
 
 
-[Unpublished]
+[v1.3.0]
 ------------------------------------------------------------------------
+**September 6th, 2018**  
 * __Added:__ `defun` highlighting for `cl-{defun,defmacro,defsubst}`
 * __Added:__ Highlighting for "magic" autoloading comments
 * __Added:__ Highlighting for another 1,935 function names
@@ -65,6 +66,7 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 
 
 [Referenced links]:_____________________________________________________
+[v1.3.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.3.0
 [v1.2.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.2.0
 [v1.1.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.1.1
 [v1.1.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.1.0
