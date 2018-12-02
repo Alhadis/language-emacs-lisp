@@ -6,6 +6,12 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]: ../../compare/v1.3.0...HEAD
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* __Added:__ Highlighting for another 30 keywords used by [`mocha.el`][]
+
+
+
 [v1.3.0]
 ------------------------------------------------------------------------
 **September 6th, 2018**  
@@ -74,3 +80,4 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 [v1.0.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.0
 [2.3.3.2]: http://www.hep.by/gnu/elisp/General-Escape-Syntax.html
 [YASnippet]: http://joaotavora.github.io/yasnippet
+[`mocha.el`]: https://github.com/scottaj/mocha.el

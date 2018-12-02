@@ -985,11 +985,13 @@ repository:
 				|mc\\/sort-regions|mc\\/toggle-cursor-on-click|mc\\/unmark-next-like-this|mc\\/unmark-previous-like-this|mc\\/vertical-align-with-space
 				|mc\\/vertical-align|menu-bar-bottom-and-right-window-divider|menu-bar-bottom-window-divider|menu-bar-display-line-numbers-mode
 				|menu-bar-goto-uses-etags-p|menu-bar-no-window-divider|menu-bar-right-window-divider|menu-bar-window-divider-customize|mhtml-mode|midnight-mode
-				|minibuffer-maybe-quote-filename|minibuffer-prompt-properties--setter|mm-images-in-region-p|mocha-debug-at-point|mocha-debug-file|mocha-debug-project
-				|mocha-test-at-point|mocha-test-file|mocha-test-project|mocha-toggle-imenu-function|mode-line-default-help-echo|module-function-p|module-load
-				|mouse--click-1-maybe-follows-link|mouse-absolute-pixel-position|mouse-drag-and-drop-region|mouse-drag-bottom-edge|mouse-drag-bottom-left-corner
-				|mouse-drag-bottom-right-corner|mouse-drag-frame|mouse-drag-left-edge|mouse-drag-right-edge|mouse-drag-top-edge|mouse-drag-top-left-corner
-				|mouse-drag-top-right-corner|mouse-resize-frame|move-text--at-first-line-p)
+				|minibuffer-maybe-quote-filename|minibuffer-prompt-properties--setter|mm-images-in-region-p|mocha--get-callsite-name|mocha-attach-indium
+				|mocha-check-debugger|mocha-compilation-filter|mocha-debug-at-point|mocha-debug-file|mocha-debug-project|mocha-debugger-get|mocha-debugger-name-p
+				|mocha-debug|mocha-find-current-test|mocha-find-project-root|mocha-generate-command|mocha-list-of-strings-p|mocha-make-imenu-alist|mocha-opts-file
+				|mocha-realgud:nodejs-attach|mocha-run|mocha-test-at-point|mocha-test-file|mocha-test-project|mocha-toggle-imenu-function|mocha-walk-up-to-it
+				|mode-line-default-help-echo|module-function-p|module-load|mouse--click-1-maybe-follows-link|mouse-absolute-pixel-position|mouse-drag-and-drop-region
+				|mouse-drag-bottom-edge|mouse-drag-bottom-left-corner|mouse-drag-bottom-right-corner|mouse-drag-frame|mouse-drag-left-edge|mouse-drag-right-edge
+				|mouse-drag-top-edge|mouse-drag-top-left-corner|mouse-drag-top-right-corner|mouse-resize-frame|move-text--at-first-line-p)
 			(?=[\\s()]|$)"""
 		},{
 			# [Part 5 / 7]
@@ -1470,6 +1472,14 @@ repository:
 				|x-pointer-shape|x-popup-dialog|x-popup-menu|x-resource-class|x-resource-name|x-sensitive-text-pointer-shape|x-server-vendor|x-server-version
 				|x-set-selection|x-setup-function-keys|x-super-keysym|y-or-n-p|y-or-n-p-with-timeout|yank|yank-excluded-properties|yank-handled-properties
 				|yank-pop|yank-undo-function|yes-or-no-p|zerop|zlib-available-p|zlib-decompress-region)
+			(?=[\\s()]|$)"""
+		},{
+			
+			# Various support variables
+			name: "support.variable.emacs.lisp"
+			match: """(?x)(?<=[()]|^)(?:
+				 mocha--other-js2-imenu-function|mocha-command|mocha-debug-port|mocha-debuggers|mocha-debugger|mocha-environment-variables|mocha-imenu-functions
+				|mocha-options|mocha-project-test-directory|mocha-reporter|mocha-test-definition-nodes|mocha-which-node|node-error-regexp-alist|node-error-regexp)
 			(?=[\\s()]|$)"""
 		},{
 			
