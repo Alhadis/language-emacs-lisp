@@ -10,6 +10,7 @@ fileTypes: [
 	"emacs.desktop"
 	"abbrev_defs"
 	"Project.ede"
+	"Cask"
 	"gnus"
 	"viper"
 ]
@@ -59,10 +60,18 @@ repository:
 			{include: "#symbols"}
 			{include: "#vectors"}
 			{include: "#arg-values"}
+			{include: "#archive-sources"}
 			{include: "#boolean"}
 			{include: "#faces"}
 			{include: "#stdlib"}
 		]
+
+	"archive-sources":
+		match: """(?x)\\b(?<=[\\s()\\[]|^)
+			(SC|gnu|marmalade|melpa-stable|melpa|org)
+			(?=[\\s()]|$) \\b """
+		captures:
+			1: name: "support.language.constant.archive-source.emacs.lisp"
 	
 	
 	# Special keywords used in function/macro definitions
@@ -649,6 +658,21 @@ repository:
 			{match: "\\[", name: "punctuation.section.vector.begin.emacs.lisp"}
 			{match: "\\]", name: "punctuation.section.vector.end.emacs.lisp"}
 		]
+	
+	
+	# Project management tool for Emacs with a DSL that uses Emacs Lisp.
+	# Reference: https://cask.readthedocs.io/en/latest/guide/dsl.html
+	Cask:
+		patterns: [{
+			begin: "(\\()(files|source|development|depends-on|package|package-(?:file|descriptor))"
+			end:   "\\)"
+			beginCaptures:
+				1: name: "punctuation.section.expression.begin.emacs.lisp"
+				2: name: "keyword.control.function.$2.cask.emacs.lisp"
+			endCaptures:
+				0: name: "punctuation.section.expression.end.emacs.lisp"
+			patterns: [include: "$self"]
+		}]
 		
 	
 	# Text faces (Source: http://doc.endlessparentheses.com/faces.html)
