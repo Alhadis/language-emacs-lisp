@@ -63,6 +63,7 @@ repository:
 			{include: "#archive-sources"}
 			{include: "#boolean"}
 			{include: "#faces"}
+			{include: "#cask"}
 			{include: "#stdlib"}
 		]
 
@@ -662,17 +663,9 @@ repository:
 	
 	# Project management tool for Emacs with a DSL that uses Emacs Lisp.
 	# Reference: https://cask.readthedocs.io/en/latest/guide/dsl.html
-	Cask:
-		patterns: [{
-			begin: "(\\()(files|source|development|depends-on|package|package-(?:file|descriptor))"
-			end:   "\\)"
-			beginCaptures:
-				1: name: "punctuation.section.expression.begin.emacs.lisp"
-				2: name: "keyword.control.function.$2.cask.emacs.lisp"
-			endCaptures:
-				0: name: "punctuation.section.expression.end.emacs.lisp"
-			patterns: [include: "$self"]
-		}]
+	cask:
+		name: "support.function.emacs.lisp"
+		match: "\\b(?<=[\\s()\\[]|^)(?:files|source|development|depends-on|package-file|package-descriptor|package)(?=[\\s()]|$)\\b"
 		
 	
 	# Text faces (Source: http://doc.endlessparentheses.com/faces.html)
