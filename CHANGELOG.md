@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for another 30 keywords used by [`mocha.el`][]
+* __Added:__ Highlighting for the [`use-package`][] macro
 
 
 
@@ -81,3 +82,4 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 [2.3.3.2]: http://www.hep.by/gnu/elisp/General-Escape-Syntax.html
 [YASnippet]: http://joaotavora.github.io/yasnippet
 [`mocha.el`]: https://github.com/scottaj/mocha.el
+[`use-package`]: https://github.com/jwiegley/use-package
