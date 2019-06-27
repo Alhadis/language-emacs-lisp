@@ -11,21 +11,14 @@ firstLineMatch: """(?xi)
 	(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-
 """
 
-patterns: [include: "#main"]
+patterns: [{
+	name:  "meta.prologue.yasnippet"
+	begin: "\\A(?=\\s*(?:$|#))"
+	end:   "(?:^|\\G)(?=\\s*(?:[^\\s#]|#+\\s*--\\s*$))"
+	patterns: [include: "#prologue-lines"]
+}, include: "#body"]
 
 repository:
-	main:
-		patterns: [
-			{include: "#prologue"}
-			{include: "#body"}
-		]
-		
-	prologue:
-		name: "meta.prologue.yasnippet"
-		begin: "\\A"
-		end:   "^(?=\\s*#+\\s*--\\s*$)"
-		patterns: [include: "#prologue-lines"]
-	
 	"prologue-lines":
 		begin: "^\\s*(#+)(?!\\s*--\\s*$)"
 		end: "$"
@@ -110,12 +103,12 @@ repository:
 	
 	body:
 		name:  "meta.snippet-body.yasnippet"
-		begin: "^\\s*(#+)\\s*(--)\\s*$\\n?"
+		begin: "^\\s*((#+)\\s*(--)\\s*$\\n?|(?=[^\\s#]))"
 		end:   "(?=A)B"
 		beginCaptures:
-			0: name: "comment.line.number-sign.yasnippet"
-			1: name: "punctuation.definition.comment.number-sign.yasnippet"
-			2: name: "punctuation.terminator.double-dash.yasnippet"
+			1: name: "comment.line.number-sign.yasnippet"
+			2: name: "punctuation.definition.comment.number-sign.yasnippet"
+			3: name: "punctuation.terminator.double-dash.yasnippet"
 		patterns: [
 			{include: "#tab-stops"}
 			{include: "#indentation-marker"}

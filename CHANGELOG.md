@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for another 30 keywords used by [`mocha.el`][]
 * __Added:__ Highlighting for the [`use-package`][] macro
+* __Fixed:__ Highlighting of YASnippets without prologues
 
 
 
