@@ -3,11 +3,12 @@ Change Log
 
 This project adheres to [Semantic Versioning](http://semver.org).
 
-[Unpublished]: ../../compare/v1.3.0...HEAD
+[Unpublished]: ../../compare/v1.3.1...HEAD
 
 
-[Unpublished]
+[v1.3.1]
 ------------------------------------------------------------------------
+**July 1st, 2019**  
 * __Added:__ Highlighting for another 30 keywords used by [`mocha.el`][]
 * __Added:__ Highlighting for the [`use-package`][] macro
 * __Fixed:__ Highlighting of YASnippets without prologues
@@ -74,6 +75,7 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 
 
 [Referenced links]:_____________________________________________________
+[v1.3.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.3.1
 [v1.3.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.3.0
 [v1.2.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.2.0
 [v1.1.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.1.1
