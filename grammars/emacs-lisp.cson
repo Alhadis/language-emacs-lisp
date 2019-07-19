@@ -1034,7 +1034,7 @@ repository:
 				|pos-visible-in-window-group-p|pov-mode|powershell-mode|powershell|prefix-command-preserve-state|prefix-command-update
 				|prettify-symbols--post-command-hook|prettify-symbols-default-compose-p|print--preprocess|process-thread|prog-first-column|project-current
 				|project-find-file|project-find-regexp|project-or-external-find-file|project-or-external-find-regexp|proper-list-p|provided-mode-derived-p
-				|pulse-momentary-highlight-one-line|pulse-momentary-highlight-region|query-replace--split-string|radix-tree--insert|radix-tree--lookup
+				|pulse-momentary-highlight-one-line|pulse-momentary-highlight-region|quelpa|query-replace--split-string|radix-tree--insert|radix-tree--lookup
 				|radix-tree--prefixes|radix-tree--remove|radix-tree--subtree|radix-tree-count|radix-tree-from-map|radix-tree-insert|radix-tree-iter-mappings
 				|radix-tree-iter-subtrees|radix-tree-leaf--pcase-macroexpander|radix-tree-lookup|radix-tree-prefixes|radix-tree-subtree|read-answer|read-multiple-choice
 				|readable-foreground-color|recenter-window-group|recentf-mode|recode-file-name|recode-region|record-window-buffer|recordp|record|recover-file
@@ -2972,7 +2972,7 @@ repository:
 				|electric-nroff-mode|electric-nroff-newline|electric-pair-mode|electric-pascal-colon|electric-pascal-equal|electric-pascal-hash
 				|electric-pascal-semi-or-dot|electric-pascal-tab|electric-pascal-terminate-line|electric-perl-terminator|electric-verilog-backward-sexp
 				|electric-verilog-colon|electric-verilog-forward-sexp|electric-verilog-semi-with-comment|electric-verilog-semi|electric-verilog-tab
-				|electric-verilog-terminate-and-indent|electric-verilog-terminate-line|electric-verilog-tick|electric-view-lossage|elide-head-show
+				|electric-verilog-terminate-and-indent|electric-verilog-terminate-line|electric-verilog-tick|electric-view-lossage|el-get[-\\w]*|elide-head-show
 				|elide-head|elint-add-required-env|elint-check-cond-form|elint-check-condition-case-form|elint-check-conditional-form|elint-check-defalias-form
 				|elint-check-defcustom-form|elint-check-defun-form|elint-check-defvar-form|elint-check-function-form|elint-check-let-form|elint-check-macro-form
 				|elint-check-quote-form|elint-check-setq-form|elint-clear-log|elint-current-buffer|elint-defun|elint-directory|elint-display-log
@@ -5764,7 +5764,7 @@ repository:
 				|standard-display-cyrillic-translit|standard-display-default|standard-display-european-internal|standard-display-european|standard-display-g1
 				|standard-display-graphic|standard-display-underline|start-kbd-macro|start-of-paragraph-text|start-scheme|starttls-any-program-available
 				|starttls-available-p|starttls-negotiate-gnutls|starttls-negotiate|starttls-open-stream-gnutls|starttls-open-stream|starttls-set-process-query-on-exit-flag
-				|startup-echo-area-message|store-kbd-macro-event|string-blank-p|string-collate-equalp|string-collate-lessp|string-empty-p|string-insert-rectangle
+				|startup-echo-area-message|straight-use-package|store-kbd-macro-event|string-blank-p|string-collate-equalp|string-collate-lessp|string-empty-p|string-insert-rectangle
 				|string-join|string-make-multibyte|string-make-unibyte|string-rectangle-line|string-rectangle|string-remove-prefix|string-remove-suffix
 				|string-reverse|string-to-list|string-to-vector|string-trim-left|string-trim-right|string-trim|strokes-alphabetic-lessp|strokes-button-press-event-p
 				|strokes-button-release-event-p|strokes-click-p|strokes-compose-complex-stroke|strokes-decode-buffer|strokes-define-stroke|strokes-describe-stroke

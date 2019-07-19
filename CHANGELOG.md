@@ -6,6 +6,12 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]: ../../compare/v1.3.1...HEAD
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* __Added:__ Highlighting for [`el-get`], [`straight.el`] and [`quelpa`]
+
+
+
 [v1.3.1]
 ------------------------------------------------------------------------
 **July 1st, 2019**  
@@ -84,5 +90,8 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 [v1.0.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.0
 [2.3.3.2]: http://www.hep.by/gnu/elisp/General-Escape-Syntax.html
 [YASnippet]: http://joaotavora.github.io/yasnippet
+[`el-get`]: https://github.com/dimitri/el-get
 [`mocha.el`]: https://github.com/scottaj/mocha.el
+[`quelpa`]: https://github.com/quelpa/quelpa
+[`straight.el`]: https://github.com/raxod502/straight.el
 [`use-package`]: https://github.com/jwiegley/use-package
