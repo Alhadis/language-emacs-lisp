@@ -1,6 +1,8 @@
 ".source.emacs.lisp":
 	editor:
 		commentStart: ";; "
+	"bracket-matcher":
+		autocompleteCharacters: ["()", "[]", "{}", '""', "“”", "‘’", "«»", "‹›"]
 
 ".source.yasnippet":
 	editor:

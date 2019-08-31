@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for [`el-get`], [`straight.el`] and [`quelpa`]
+* __Fixed:__ Automatic insertion of closing backticks and single-quotes
 
 
 
