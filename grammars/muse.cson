@@ -1,0 +1,262 @@
+name: "Muse"
+scopeName: "text.muse"
+fileTypes: ["muse"]
+patterns: [include: "#main"]
+firstLineMatch: """(?ix)
+
+	# Emacs modeline
+	-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)
+		muse
+	(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-
+
+	|
+
+	# Vim modeline
+	(?:(?:\\s|^)vi(?:m[<=>]?\\d+|m)?|\\sex)(?=:(?=\\s*set?\\s[^\\n:]+:)|:(?!\\s* set?\\s))(?:(?:\\s|\\s*:\\s*)\\w*(?:\\s*=(?:[^\\n\\\\\\s]|\\\\.)*)?)*[\\s:](?:filetype|ft|syntax)\\s*=
+		muse
+	(?=\\s|:|$)
+"""
+
+repository:
+	main:
+		patterns: [
+			{include: "#heading"}
+			{include: "#pageBreak"}
+			{include: "#quote"}
+			{include: "#inline"}
+			{include: "#alignCentre"}
+			{include: "#alignRight"}
+			{include: "#alignLeft"}
+		]
+
+
+	# Left-aligned (ordinary) paragraph
+	alignLeft:
+		name: "meta.paragraph.align.left.muse"
+		begin: "^\\s?(?=\\S)"
+		end:   "(?=^\\s*$|^\\s{2,}\\S)"
+		patterns: [include: "#inline"]
+
+
+	# Centred paragraph
+	alignCentre:
+		name:  "meta.paragraph.align.center.muse"
+		begin: "^(\\s{6,19})(?=\\S)"
+		end:   "^(?!\\1|\\s*$)"
+		patterns: [include: "#inline"]
+
+
+	# Right-aligned paragraph
+	alignRight:
+		name: "meta.paragraph.align.right.muse"
+		begin: "^(\\s{20,})(?=\\S)"
+		end:   "^(?!\\1|\\s*$)"
+		patterns: [include: "#inline"]
+
+	
+
+	# Bold and/or italic text
+	emphasis:
+		patterns: [{
+			# ***Bold italic***
+			name:  "markup.bold.italic.strong.emphasis.muse"
+			begin: "(\\*{3})"
+			end:   "\\1|(?=^[ \\t]*$)"
+			beginCaptures: 1: name: "punctuation.definition.emphasis.begin.muse"
+			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
+			patterns: [include: "#inline"]
+		},{
+			# **Bold**
+			name:  "markup.bold.strong.emphasis.muse"
+			begin: "(\\*{2})"
+			end:   "\\1|(?=^[ \\t]*$)"
+			beginCaptures: 1: name: "punctuation.definition.emphasis.begin.muse"
+			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
+			patterns: [include: "#inline"]
+		},{
+			# *Italic*
+			name:  "markup.italic.emphasis.muse"
+			begin: "\\*"
+			end:   "\\*|(?=^[ \\t]*$)"
+			beginCaptures: 0: name: "punctuation.definition.emphasis.begin.muse"
+			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
+			patterns: [include: "#inline"]
+		}]
+
+
+	# {{{ … }}}
+	example:
+		name:  "meta.example.muse"
+		begin: "{{{"
+		end:   "}}}"
+		beginCaptures: 0: name: "keyword.operator.example.begin.muse"
+		endCaptures:   0: name: "keyword.operator.example.end.muse"
+		contentName: "markup.raw.code.muse"
+
+
+	# Bulleted headings
+	heading:
+		match: "^(\\*{1,5})( )(.*)"
+		captures:
+			1: name: "keyword.operator.heading.bullet.muse"
+			2: name: "punctuation.whitespace.separator.muse"
+			3: name: "markup.heading.muse"
+
+
+	# Stuff that's safe to nest
+	inline:
+		patterns: [
+			{include: "#tags"}
+			{include: "#example"}
+			{include: "#emphasis"}
+			{include: "#literal"}
+			{include: "#nbsp"}
+		]
+
+
+	# =literal=
+	literal:
+		name:  "markup.raw.literal.muse"
+		begin: "="
+		end:   "="
+		beginCaptures: 0: name: "punctuation.definition.literal.begin.muse"
+		endCaptures:   0: name: "punctuation.definition.literal.end.muse"
+	
+	
+	# Non-breaking space: `~~`
+	nbsp:
+		name: "constant.character.non-breaking-space.muse"
+		match: "~~"
+
+
+	# `* * * * *`
+	pageBreak:
+		match: "^(\\s{5})((?:\\s+\\*){5})"
+		captures:
+			1: name: "punctuation.whitespace.separator.muse"
+			2: name: "meta.separator.page-break.muse"
+
+
+	# Indented block-quote
+	quote:
+		name:  "markup.quote.paragraph.muse"
+		begin: "^(\\s{2,5})(?=\\S)"
+		end:   "^(?!\\1|\\s*$)"
+		patterns: [include: "#inline"]
+
+
+	# HTML-like tags
+	tags:
+		patterns: [{
+			# Line-break
+			name: "meta.tag.br.muse"
+			match: "(<)br(>)"
+			captures:
+				0: name: "entity.name.tag.br.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				3: name: "punctuation.definition.tag.end.muse"
+		},{
+			# Text alignment
+			name:  "meta.tag.$2.muse"
+			begin: "(<)(center|right)(>)"
+			end:   "(</)\\2(>)"
+			beginCaptures:
+				0: name: "entity.name.tag.$2.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				3: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.$2.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				3: name: "punctuation.definition.tag.end.muse"
+			contentName: "meta.paragraph.align.$2.muse"
+			patterns: [include: "#inline"]
+		},{
+			# Monospaced/verbatim content
+			name:  "meta.tag.$2.muse"
+			begin: "(<)(code|example|verbatim)(>)"
+			end:   "(</)\\2(>)"
+			beginCaptures:
+				0: name: "entity.name.tag.$2.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				3: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.$2.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				3: name: "punctuation.definition.tag.end.muse"
+			contentName: "markup.raw.code.muse"
+		},{
+			# Emphasised text
+			name:  "meta.tag.em.muse"
+			begin: "(<)em(>)"
+			end:   "(</)em(>)"
+			beginCaptures:
+				0: name: "entity.name.tag.em.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.em.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			contentName: "markup.italic.emphasis.muse"
+			patterns: [include: "#inline"]
+		},{
+			# Strongly-emphasised text
+			name:  "meta.tag.strong.muse"
+			begin: "(<)strong(>)"
+			end:   "(</)strong(>)"
+			beginCaptures:
+				0: name: "entity.name.tag.strong.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.strong.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			contentName: "markup.bold.strong.emphasis.muse"
+			patterns: [include: "#inline"]
+		},{
+			# Deleted content
+			name:  "meta.tag.del.muse"
+			begin: "(<)del(>)"
+			end:   "(</)del(>)"
+			beginCaptures:
+				0: name: "entity.name.tag.del.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.del.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			contentName: "markup.deleted.muse"
+			patterns: [include: "#inline"]
+		},{
+			# Superscript
+			name:  "meta.tag.sup.muse"
+			begin: "(<)sup(>)"
+			end:   "(</)sup(>)"
+			beginCaptures:
+				0: name: "entity.name.tag.sup.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.sup.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			contentName: "markup.superscript.muse"
+			patterns: [include: "#inline"]
+		},{
+			# Subscript
+			name:  "meta.tag.sub.muse"
+			begin: "(<)sub(>)"
+			end:   "(</)sub(>)"
+			beginCaptures:
+				0: name: "entity.name.tag.sub.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.sub.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			contentName: "markup.subscript.muse"
+			patterns: [include: "#inline"]
+		}]
