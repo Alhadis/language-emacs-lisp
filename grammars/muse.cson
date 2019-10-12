@@ -39,6 +39,8 @@ repository:
 		patterns: [
 			{include: "#heading"}
 			{include: "#pageBreak"}
+			{include: "#divider"}
+			{include: "#anchorLine"}
 			{include: "#quote"}
 			{include: "#inline"}
 			{include: "#alignCentre"}
@@ -46,13 +48,31 @@ repository:
 			{include: "#alignLeft"}
 		]
 
+	
+	# Muse's equivalent of <a name="…">…</a>
+	anchor:
+		match: "(?:\\G|^)\\s*((#)[a-zA-Z][-a-zA-Z0-9]*)"
+		captures:
+			1: name: "keyword.control.anchor.muse"
+			2: name: "punctuation.definition.anchor.muse"
+	
+	# A named anchor occupying a line by itself
+	anchorLine:
+		match: "^\\s*((#)[a-zA-Z][-a-zA-Z0-9]*)\\s*$"
+		captures:
+			1: name: "keyword.control.anchor.muse"
+			2: name: "punctuation.definition.anchor.muse"
+	
 
 	# Left-aligned (ordinary) paragraph
 	alignLeft:
 		name: "meta.paragraph.align.left.muse"
 		begin: "^\\s?(?=\\S)"
 		end:   "(?=^\\s*$|^\\s{2,}\\S)"
-		patterns: [include: "#inline"]
+		patterns: [
+			{include: "#anchor"}
+			{include: "#inline"}
+		]
 
 
 	# Centred paragraph
@@ -60,7 +80,10 @@ repository:
 		name:  "meta.paragraph.align.center.muse"
 		begin: "^(\\s{6,19})(?=\\S)"
 		end:   "^(?!\\1|\\s*$)"
-		patterns: [include: "#inline"]
+		patterns: [
+			{include: "#anchor"}
+			{include: "#inline"}
+		]
 
 
 	# Right-aligned paragraph
@@ -68,7 +91,10 @@ repository:
 		name: "meta.paragraph.align.right.muse"
 		begin: "^(\\s{20,})(?=\\S)"
 		end:   "^(?!\\1|\\s*$)"
-		patterns: [include: "#inline"]
+		patterns: [
+			{include: "#anchor"}
+			{include: "#inline"}
+		]
 
 	
 	# Metadata declared in document “prologue”
@@ -86,6 +112,13 @@ repository:
 				1: name: "constant.other.date.muse"
 		}, include: "#link"]
 	
+	
+	# Horizontal divider
+	divider:
+		match: "^\\s*(-{4,})\\s*$"
+		captures:
+			1: name: "constant.character.horizontal.line.muse"
+
 
 	# Bold and/or italic text
 	emphasis:
@@ -211,7 +244,10 @@ repository:
 		name:  "markup.quote.paragraph.muse"
 		begin: "^(\\s{2,5})(?=\\S)"
 		end:   "^(?!\\1|\\s*$)"
-		patterns: [include: "#inline"]
+		patterns: [
+			{include: "#anchor"}
+			{include: "#inline"}
+		]
 
 
 	# HTML-like tags
