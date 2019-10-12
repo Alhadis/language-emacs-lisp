@@ -4,6 +4,10 @@
 	"bracket-matcher":
 		autocompleteCharacters: ["()", "[]", "{}", '""', "“”", "‘’", "«»", "‹›"]
 
+".text.muse":
+	editor:
+		commentStart: "; "
+
 ".source.yasnippet":
 	editor:
 		commentStart: "# "

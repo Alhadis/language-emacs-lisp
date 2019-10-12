@@ -37,6 +37,7 @@ firstLineMatch: """(?ix)
 repository:
 	main:
 		patterns: [
+			{include: "#comment"}
 			{include: "#heading"}
 			{include: "#pageBreak"}
 			{include: "#divider"}
@@ -99,6 +100,15 @@ repository:
 			{include: "#anchor"}
 			{include: "#inline"}
 		]
+
+
+	# Comment line
+	comment:
+		name:  "comment.line.semicolon.muse"
+		begin: "^(;)\\s"
+		end:   "(?=$)"
+		beginCaptures:
+			1: name: "punctuation.definition.comment.begin.muse"
 
 	
 	# Metadata declared in document “prologue”
@@ -390,6 +400,20 @@ repository:
 				1: name: "punctuation.definition.tag.begin.muse"
 				3: name: "punctuation.definition.tag.end.muse"
 			contentName: "markup.raw.code.muse"
+		},{
+			# Comment
+			name: "meta.tag.comment-block.muse"
+			begin: "(<)comment(>)"
+			end:   "(</)comment(>)"
+			beginCaptures:
+				0: name: "entity.name.tag.comments.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.comments.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			contentName: "comment.block.muse"
 		},{
 			# Emphasised text
 			name:  "meta.tag.em.muse"
