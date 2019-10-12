@@ -41,6 +41,8 @@ repository:
 			{include: "#pageBreak"}
 			{include: "#divider"}
 			{include: "#anchorLine"}
+			{include: "#term"}
+			{include: "#list"}
 			{include: "#verse"}
 			{include: "#quote"}
 			{include: "#footnote"}
@@ -279,6 +281,41 @@ repository:
 		}]
 			
 
+	# Bulleted or numbered list
+	list:
+		name:  "markup.list.muse"
+		begin: "^(\\s+)(?=-|(?:\\d+|[a-z]+|[A-Z]+)\\.)"
+		end:   "^(?!\\1)(?!\\s*$)"
+		beginCaptures:
+			1: name: "punctuation.whitespace.leading.muse"
+		patterns: [{
+			# Needed for line-continuation
+			begin: "(?<=\\S)\\s*$\\s*"
+			end:   "(?=^\\s*$)"
+			patterns: [include: "#listInnards"]
+		}, include: "#listInnards"]
+	
+	# Stuff matched inside list entries
+	listInnards:
+		patterns: [
+			{include: "#listMarker"}
+			{include: "#term"}
+			{include: "#inline"}
+		]
+	
+	# Bullets or numbers prefixing a list entry
+	listMarker:
+		patterns: [{
+			match: "(?:\\G|^\\s+)(-)\\s"
+			captures:
+				1: name: "keyword.operator.list.unnumbered.marker.muse"
+		},{
+			match: "(?:\\G|^\\s+)((?:\\d+|[a-z]+|[A-Z]+)\\.)\\s"
+			captures:
+				1: name: "keyword.operator.list.numbered.marker.muse"
+		}]
+		
+
 
 	# =literal=
 	literal:
@@ -444,6 +481,14 @@ repository:
 			contentName: "markup.quote.verse.muse"
 			patterns: [include: "#inline"]
 		}]
+
+
+	# [term] :: [description]
+	term:
+		match: "^\\s+(\\S.*?)\\s+(::)\\s+"
+		captures:
+			1: name: "entity.name.term.muse"
+			2: name: "keyword.operator.key-value.separator.muse"
 
 
 	# Poetic stanza
