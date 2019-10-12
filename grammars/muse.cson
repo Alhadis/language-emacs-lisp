@@ -1,7 +1,24 @@
 name: "Muse"
 scopeName: "text.muse"
 fileTypes: ["muse"]
-patterns: [include: "#main"]
+patterns: [{
+	# Skip blank lines
+	name:  "meta.blank-links.muse"
+	begin: "\\A\\s*$"
+	end:   "^(?=#\\w)"
+},{
+	# Prologue (directive lines)
+	name:  "meta.prologue.muse"
+	begin: "^(?=#\\w+)"
+	end:   "^(?=\\s*$)"
+	patterns: [include: "#directives"]
+},{
+	# Remainder of document
+	name:  "meta.document.muse"
+	begin: "^(?=[^\\s#]|\\s+#)"
+	end:   "(?=A)B"
+	patterns: [include: "#main"]
+}]
 firstLineMatch: """(?ix)
 
 	# Emacs modeline
@@ -53,6 +70,21 @@ repository:
 		end:   "^(?!\\1|\\s*$)"
 		patterns: [include: "#inline"]
 
+	
+	# Metadata declared in document “prologue”
+	directives:
+		name:  "meta.directive.$3.muse"
+		begin: "^((#)([a-zA-Z]+))"
+		end:   "(?!\\G)(?=^(?:#|\\s*$))"
+		beginCaptures:
+			1: name: "variable.assignment.directive.muse"
+			2: name: "punctuation.definition.directive.muse"
+		contentName: "entity.other.$3.muse"
+		patterns: [{
+			match: "\\G(?<=#pubdate|#date)\\s+(\\d{4}(?:-\\d{2}-\\d{2})?)(?=\\s|$)"
+			captures:
+				1: name: "constant.other.date.muse"
+		}, include: "#link"]
 	
 
 	# Bold and/or italic text
@@ -110,8 +142,45 @@ repository:
 			{include: "#example"}
 			{include: "#emphasis"}
 			{include: "#literal"}
+			{include: "#link"}
 			{include: "#nbsp"}
 		]
+
+
+	# Hyperlink
+	link:
+		name:  "meta.link.muse"
+		begin: "(\\[)(?=\\[.*?\\]\\])"
+		end:   "\\]"
+		beginCaptures: 1: name: "punctuation.definition.link.begin.muse"
+		endCaptures:   0: name: "punctuation.definition.link.end.muse"
+		patterns: [{
+			name:  "meta.link.target.muse"
+			begin: "\\G(\\[)"
+			end:   "\\]"
+			beginCaptures: 1: name: "punctuation.definition.link.target.begin.muse"
+			endCaptures:   0: name: "punctuation.definition.link.target.end.muse"
+			patterns: [{
+				match: "\\G\\s*([^\\s\\]]+)"
+				captures:
+					1: name: "constant.other.reference.link.muse"
+			},{
+				match: "(?<=\\s)(?:([\\d.]+)([rlf])?|([rlf]))"
+				captures:
+					1: name: "constant.numeric.width.muse"
+					2: name: "storage.modifier.align.muse"
+					3: name: "storage.modifier.align.muse"
+			}]
+		},{
+			name:  "meta.link.label.muse"
+			begin: "(?<=\\])(\\[)"
+			end:   "\\]"
+			beginCaptures: 1: name: "punctuation.definition.link.label.begin.muse"
+			endCaptures:   0: name: "punctuation.definition.link.label.end.muse"
+			contentName: "entity.name.link.label.muse"
+			patterns: [include: "#inline"]
+		}]
+			
 
 
 	# =literal=
