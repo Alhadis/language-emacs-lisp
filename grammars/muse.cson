@@ -43,6 +43,7 @@ repository:
 			{include: "#anchorLine"}
 			{include: "#verse"}
 			{include: "#quote"}
+			{include: "#footnote"}
 			{include: "#inline"}
 			{include: "#alignCentre"}
 			{include: "#alignRight"}
@@ -160,6 +161,67 @@ repository:
 		contentName: "markup.raw.code.muse"
 
 
+	# Footnote references [1]
+	footnoteReference:
+		patterns: [{
+			# Primary footnote: [1]
+			name:  "entity.footnote.$2.primary.muse"
+			match: "(\\[)(\\d+)(\\])"
+			captures:
+				1: name: "punctuation.definition.footnote.begin.muse"
+				3: name: "punctuation.definition.footnote.end.muse"
+		},{
+			# Secondary footnote: {2}
+			name:  "entity.footnote.$2.secondary.muse"
+			match: "(\\{)(\\d+)(\\})"
+			captures:
+				1: name: "punctuation.definition.footnote.begin.muse"
+				3: name: "punctuation.definition.footnote.end.muse"
+		}]
+	
+	# Actual footnote definition
+	#
+	# Known limitation: there's no feasible way of suppressing quote
+	# highlighting immediately after an insufficiently indented line:
+	#
+	#     [1] Footnote
+	#         Footnote
+	#        Normal
+	#        Quoted
+	footnote:
+		patterns: [{
+			# Indexes 0-9
+			name:  "meta.footnote.muse"
+			begin: "^(\\[\\d\\]|\\{\\d\\})(\\s+)(?=\\S)"
+			end:   "^(?!\\s{3}\\2)(?:\\s*$|\\s*?(?=\\s\\S))"
+			contentName: "markup.list.footnote.muse"
+			beginCaptures:
+				1: patterns: [include: "#footnoteReference"]
+				2: name: "punctuation.whitespace.separator.muse"
+			patterns: [include: "#inline"]
+		},{
+			# Indexes: 10-99
+			name:  "meta.footnote.muse"
+			begin: "^(\\[\\d{2}\\]|\\{\\d{2}\\})(\\s+)(?=\\S)"
+			end:   "^(?!\\s{4}\\2)(?:\\s*$|\\s*?(?=\\s\\S))"
+			contentName: "markup.list.footnote.muse"
+			beginCaptures:
+				1: patterns: [include: "#footnoteReference"]
+				2: name: "punctuation.whitespace.separator.muse"
+			patterns: [include: "#inline"]
+		},{
+			# Indexes: 100-999
+			name:  "meta.footnote.muse"
+			begin: "^(\\[\\d{3}\\]|\\{\\d{3}\\})(\\s+)(?=\\S)"
+			end:   "^(?!\\s{5}\\2)(?:\\s*$|\\s*?(?=\\s\\S))"
+			contentName: "markup.list.footnote.muse"
+			beginCaptures:
+				1: patterns: [include: "#footnoteReference"]
+				2: name: "punctuation.whitespace.separator.muse"
+			patterns: [include: "#inline"]
+		}]
+
+
 	# Bulleted headings
 	heading:
 		match: "^(\\*{1,5})( )(.*)"
@@ -177,6 +239,7 @@ repository:
 			{include: "#emphasis"}
 			{include: "#literal"}
 			{include: "#link"}
+			{include: "#footnoteReference"}
 			{include: "#nbsp"}
 		]
 
