@@ -45,6 +45,7 @@ repository:
 			{include: "#term"}
 			{include: "#list"}
 			{include: "#verse"}
+			{include: "#table"}
 			{include: "#quote"}
 			{include: "#footnote"}
 			{include: "#inline"}
@@ -359,6 +360,58 @@ repository:
 			{include: "#anchor"}
 			{include: "#inline"}
 		]
+
+
+	# Table blocks
+	table:
+		name:  "markup.table.muse"
+		begin: "^(?=\\s+(?:\\|\\+.*?\\+\\||\\S.*?\\s\\|{1,3}\\s+\\S))"
+		end:   "(?=\\s*$)"
+		patterns: [{
+			name:  "markup.table.caption.muse"
+			match: "^\\s+(\\|\\+)(.*)(\\+\\|)"
+			captures:
+				1: name: "keyword.operator.caption.begin.muse"
+				2: name: "constant.other.caption.muse"
+				3: name: "keyword.operator.caption.end.muse"
+		},{
+			name: "markup.table.footer.muse"
+			match: "^\\s+(\\S.*?\\s\\|\\|\\|\\s.*)\\s*$"
+			captures:
+				0: patterns: [{
+					match: "\\s(\\|\\|\\|)\\s"
+					captures: 1: name: "keyword.operator.table.separator.muse"
+				},{
+					match: "(?:[^|\\s]|\\s(?!\\|))+"
+					name:  "constant.other.table.footer.muse"
+					captures: 0: patterns: [include: "#inline"]
+				}]
+		},{
+			name: "markup.table.header.muse"
+			match: "^\\s+(\\S.*?\\s\\|\\|\\s.*)\\s*$"
+			captures:
+				0: patterns: [{
+					match: "\\s(\\|\\|)\\s"
+					captures: 1: name: "keyword.operator.table.separator.muse"
+				},{
+					match: "(?:[^|\\s]|\\s(?!\\|))+"
+					name:  "markup.heading.table.muse"
+					captures: 0: patterns: [include: "#inline"]
+				}]
+		},{
+			name: "markup.table.body.muse"
+			match: "^\\s+(\\S.*?\\s\\|\\s.*)\\s*$"
+			captures:
+				0: patterns: [{
+					match: "\\s(\\|)\\s"
+					captures: 1: name: "keyword.operator.table.separator.muse"
+				},{
+					match: "(?:[^|\\s]|\\s(?!\\|))+"
+					name:  "constant.other.table.cell.muse"
+					captures: 0: patterns: [include: "#inline"]
+				}]
+		}]
+		
 
 
 	# HTML-like tags
