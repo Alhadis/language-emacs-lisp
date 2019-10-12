@@ -41,6 +41,7 @@ repository:
 			{include: "#pageBreak"}
 			{include: "#divider"}
 			{include: "#anchorLine"}
+			{include: "#verse"}
 			{include: "#quote"}
 			{include: "#inline"}
 			{include: "#alignCentre"}
@@ -364,4 +365,37 @@ repository:
 				2: name: "punctuation.definition.tag.end.muse"
 			contentName: "markup.subscript.muse"
 			patterns: [include: "#inline"]
+		},{
+			# Verse
+			name:  "meta.tag.verse.muse"
+			begin: "^\\s*((<)verse(>))"
+			end:   "(</)verse(>)"
+			beginCaptures:
+				1: name: "entity.name.tag.verse.muse"
+				2: name: "punctuation.definition.tag.begin.muse"
+				3: name: "punctuation.definition.tag.end.muse"
+			endCaptures:
+				0: name: "entity.name.tag.verse.muse"
+				1: name: "punctuation.definition.tag.begin.muse"
+				2: name: "punctuation.definition.tag.end.muse"
+			contentName: "markup.quote.verse.muse"
+			patterns: [include: "#inline"]
 		}]
+
+
+	# Poetic stanza
+	verse:
+		name:  "markup.quote.verse.muse"
+		begin: "^(\\s*)(>)(\\s)"
+		end:   "^(?!\\1\\2\\3)"
+		beginCaptures:
+			1: name: "punctuation.whitespace.leading.muse"
+			2: name: "keyword.operator.verse-line.muse"
+			3: name: "punctuation.whitespace.separator.muse"
+		patterns: [{
+			match: "^(\\s*)(>)(\\s)"
+			captures:
+				1: name: "punctuation.whitespace.leading.muse"
+				2: name: "keyword.operator.verse-line.muse"
+				3: name: "punctuation.whitespace.separator.muse"
+		}, include: "#inline"]
