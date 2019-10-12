@@ -3,9 +3,9 @@ scopeName: "text.muse"
 fileTypes: ["muse"]
 patterns: [{
 	# Skip blank lines
-	name:  "meta.blank-links.muse"
+	name:  "meta.blank-lines.muse"
 	begin: "\\A\\s*$"
-	end:   "^(?=#\\w)"
+	end:   "^(?=\\S)"
 },{
 	# Prologue (directive lines)
 	name:  "meta.prologue.muse"
