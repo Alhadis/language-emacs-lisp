@@ -332,7 +332,7 @@ repository:
 	literal:
 		name:  "markup.raw.literal.muse"
 		begin: "="
-		end:   "="
+		end:   "=|(?=^[ \\t]*$)"
 		beginCaptures: 0: name: "punctuation.definition.literal.begin.muse"
 		endCaptures:   0: name: "punctuation.definition.literal.end.muse"
 	
