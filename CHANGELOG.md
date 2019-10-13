@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 * __Added:__ Highlighting for [`el-get`], [`straight.el`] and [`quelpa`]
 * __Added:__ Syntax highlighting for [Emacs Muse][]/[Amusewiki][] markup
 * __Fixed:__ Automatic insertion of closing backticks and single-quotes
+* __Fixed:__ Unescaped and mangled output from evaluation commands
 
 
 

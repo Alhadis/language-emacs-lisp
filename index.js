@@ -107,14 +107,22 @@ class EmacsLisp{
 	 *
 	 * @param {String} text
 	 * @param {Boolean} error
+	 * @return {NotificationElement}
 	 * @internal
 	 */
 	showOutput(text, error = false){
-		const msg = "**Emacs:** " + text;
-		const opt = {dismissable: true};
-		error
+		const msg = "**Emacs:**";
+		const opt = {dismissable: true, detail: text};
+		const view = atom.views.getView(error
 			? atom.notifications.addError(msg, opt)
-			: atom.notifications.addInfo(msg, opt);
+			: atom.notifications.addInfo(msg, opt));
+		
+		// Select output when clicked to make copying easier
+		if(view && view.element){
+			const output = view.element.querySelector(".content > .detail.item");
+			output && Object.assign(output.style, {userSelect: "all", cursor: "text"});
+		}
+		return view;
 	}
 
 	
