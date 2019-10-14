@@ -1,0 +1,35 @@
+Foo =literal= bar
+
+Foo =literal literal= bar
+
+Foo =literal =literal= normal= bar
+
+Foo =literal *literal* literal= bar
+
+Foo =literal **literal literal** literal= bar
+
+Foo =literal ***literal literal*** literal= bar
+
+Foo === bar
+
+Foo ==literal literal= bar
+
+Foo =literal
+literal= bar
+
+=literal
+literal= bar
+
+=literal
+
+Foo= normal= baz
+
+Foo =literal=unclosed literal
+
+Foo =literal=literal= baz
+
+Foo =literal *literal
+literal* literal= baz
+
+Foo =literal =literal **literal
+literal** literal= normal= baz

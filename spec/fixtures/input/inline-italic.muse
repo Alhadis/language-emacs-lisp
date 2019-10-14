@@ -1,0 +1,29 @@
+Foo *italic* baz
+
+Foo *italic italic* baz
+
+Foo *italic *italic* italic* baz
+
+Foo *italic **bold italic** italic* baz
+
+Foo *italic ***bold italic*** italic* baz
+
+Foo *italic
+italic* bar
+
+*italic
+italic* bar
+
+*italic
+
+Foo* normal* baz
+
+Foo *italic*unclosed italic
+
+Foo *italic*italic* baz
+
+Foo *italic *italic
+italic* italic* baz
+
+Foo *italic *italic **bold
+bold** italic* italic* baz

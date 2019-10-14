@@ -1,0 +1,35 @@
+Foo ***bolditalic*** baz
+
+Foo ***bold italic*** baz
+
+Foo ***bolditalic *italic* bolditalic*** baz
+
+Foo ***bolditalic *italic italic* bolditalic*** baz
+
+Foo ***bolditalic **bold** bolditalic*** baz
+
+Foo ***bolditalic **bold bold** bolditalic*** baz
+
+Foo ***bolditalic ***bolditalic*** bolditalic*** baz
+
+Foo ***bolditalic ***bold italic*** bolditalic*** baz
+
+Foo ***bolditalic
+bolditalic*** bar
+
+***bolditalic
+bolditalic*** bar
+
+***bolditalic
+
+Foo* normal* baz
+
+Foo ***bolditalic*unclosed bolditalic
+
+Foo ***bolditalic*bolditalic*** baz
+
+Foo ***bolditalic ***bolditalic
+bolditalic*** bolditalic*** baz
+
+Foo ***bolditalic ***bolditalic *italic
+italic* bolditalic*** bolditalic*** baz

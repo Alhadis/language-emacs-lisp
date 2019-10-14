@@ -1,0 +1,127 @@
+[[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal =literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" normal= bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal *literal* literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal **literal literal** literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal ***literal literal*** literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["=literal literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"]
+],[
+["literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["=", "text.muse", "meta.document.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "markup.raw.literal.muse"]
+],[
+["literal", "text.muse", "meta.document.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" bar", "text.muse", "meta.document.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["=", "text.muse", "meta.document.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "markup.raw.literal.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo= normal= baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal=unclosed literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal=literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal *literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"]
+],[
+["literal* literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.begin.muse"],
+["literal =literal **literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"]
+],[
+["literal** literal", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse"],
+["=", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.raw.literal.muse", "punctuation.definition.literal.end.muse"],
+[" normal= baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+]]

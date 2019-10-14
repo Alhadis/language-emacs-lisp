@@ -559,11 +559,7 @@
 ["", "text.muse", "meta.document.muse"]
 ],[
 ["       ", "text.muse", "meta.document.muse", "meta.paragraph.align.center.muse"],
-["*", "text.muse", "meta.document.muse", "meta.paragraph.align.center.muse", "markup.italic.emphasis.muse", "punctuation.definition.emphasis.begin.muse"],
-[" ", "text.muse", "meta.document.muse", "meta.paragraph.align.center.muse", "markup.italic.emphasis.muse"],
-["*", "text.muse", "meta.document.muse", "meta.paragraph.align.center.muse", "markup.italic.emphasis.muse", "punctuation.definition.emphasis.end.muse"],
-[" ", "text.muse", "meta.document.muse", "meta.paragraph.align.center.muse"],
-["*", "text.muse", "meta.document.muse", "meta.paragraph.align.center.muse", "markup.italic.emphasis.muse", "punctuation.definition.emphasis.begin.muse"]
+["* * *", "text.muse", "meta.document.muse", "meta.paragraph.align.center.muse"]
 ],[
 ["", "text.muse", "meta.document.muse", "meta.paragraph.align.center.muse"]
 ],[

@@ -140,24 +140,24 @@ repository:
 		patterns: [{
 			# ***Bold italic***
 			name:  "markup.bold.italic.strong.emphasis.muse"
-			begin: "(\\*{3})"
-			end:   "\\1|(?=^[ \\t]*$)"
+			begin: "(?<=\\W|^)(\\*{3})(?=\\S)"
+			end:   "(?<=\\S)\\1(?=\\W|$)|(?=^[ \\t]*$)"
 			beginCaptures: 1: name: "punctuation.definition.emphasis.begin.muse"
 			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
 			patterns: [include: "#inline"]
 		},{
 			# **Bold**
 			name:  "markup.bold.strong.emphasis.muse"
-			begin: "(\\*{2})"
-			end:   "\\1|(?=^[ \\t]*$)"
+			begin: "(?<=\\W|^)(\\*{2})(?=\\S)"
+			end:   "(?<=\\S)\\1(?=\\W|$)|(?=^[ \\t]*$)"
 			beginCaptures: 1: name: "punctuation.definition.emphasis.begin.muse"
 			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
 			patterns: [include: "#inline"]
 		},{
 			# *Italic*
 			name:  "markup.italic.emphasis.muse"
-			begin: "\\*"
-			end:   "\\*|(?=^[ \\t]*$)"
+			begin: "(?<=\\W|^)\\*(?=\\S)"
+			end:   "(?<=\\S)\\*(?=\\W|$)|(?=^[ \\t]*$)"
 			beginCaptures: 0: name: "punctuation.definition.emphasis.begin.muse"
 			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
 			patterns: [include: "#inline"]
@@ -331,8 +331,8 @@ repository:
 	# =literal=
 	literal:
 		name:  "markup.raw.literal.muse"
-		begin: "="
-		end:   "(?!\\G)=|(?=^[ \\t]*$)"
+		begin: "(?<=\\W|^)=(?=\\S)"
+		end:   "(?!\\G)(?<=\\S)=(?=\\W|$)|(?=^[ \\t]*$)"
 		beginCaptures: 0: name: "punctuation.definition.literal.begin.muse"
 		endCaptures:   0: name: "punctuation.definition.literal.end.muse"
 	
