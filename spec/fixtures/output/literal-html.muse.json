@@ -25,4 +25,6 @@
 ["</", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
 ["literal", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse"],
 [">", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.end.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
 ]]

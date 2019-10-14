@@ -1,0 +1,7 @@
+<literal>
+No =style= attribute.
+</literal>
+
+<literal style="t">
+Unrecognised =style= attribute.
+</literal>

@@ -7,7 +7,8 @@
 	"license": "ISC",
 	"atomTestRunner": "atom-mocha",
 	"devDependencies": {
-		"atom-mocha": "v2.2.1"
+		"atom-mocha": "^2.2.1",
+		"language-texinfo": "^1.0.0"
 	},
 	"engines": {
 		"atom": "*"

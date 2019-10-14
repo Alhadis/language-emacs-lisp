@@ -75,10 +75,13 @@ describe("Muse grammar", () => {
 		before(async () => {
 			await atom.packages.activatePackage("language-html");
 			await atom.packages.activatePackage("language-hyperlink");
+			await atom.packages.activatePackage("language-xml");
+			await atom.packages.activatePackage(resolve(__dirname, "..", "node_modules", "language-texinfo"));
+			expect(atom.grammars.grammarForScopeName("text.texinfo")).to.be.ok;
 		});
 		
 		for(const filename of files){
-			const inputFile  = fs.readFileSync(join(inputDir, filename), "utf8").replace(/\n+$/, "");
+			const inputFile  = fs.readFileSync(join(inputDir, filename), "utf8");
 			const outputFile = fs.readFileSync(join(outputDir, filename + ".json"), "utf8");
 			
 			it(`tokenises ${filename}`, () => {

@@ -1,0 +1,232 @@
+[[
+["DocBook style:", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["<", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
+["literal ", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse"],
+["style", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
+["=", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "string.quoted.double.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "punctuation.definition.string.end.muse"],
+["docbook", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "string.quoted.single.muse"],
+[">", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse"]
+],[
+["<?", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "punctuation.definition.tag.xml"],
+["xml", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "entity.name.tag.xml"],
+[" version", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "entity.other.attribute-name.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["1.0", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[" encoding", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "entity.other.attribute-name.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["UTF-8", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+["?>", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "punctuation.definition.tag.xml"]
+],[
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["book", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[" ", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["xml", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.namespace.xml"],
+[":", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.xml", "punctuation.separator.namespace.xml"],
+["id", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.localname.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["simple_book", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[" ", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["xmlns", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.localname.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["http://docbook.org/ns/docbook", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "markup.underline.link.http.hyperlink"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[" ", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["version", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.localname.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["5.0", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["title", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["Very simple book", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["title", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["chapter", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[" ", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["xml", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.namespace.xml"],
+[":", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.xml", "punctuation.separator.namespace.xml"],
+["id", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.localname.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["chapter_1", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["title", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["Chapter 1", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["title", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["para", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["Hello world!", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["para", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["para", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["I hope that your day is proceeding ", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["emphasis", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["splendidly", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["emphasis", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["!", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["para", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["chapter", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["chapter", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[" ", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["xml", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.namespace.xml"],
+[":", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.xml", "punctuation.separator.namespace.xml"],
+["id", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.localname.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["chapter_2", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["title", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["Chapter 2", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["title", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["para", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["Hello again, world!", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["para", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["chapter", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["book", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["</", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse"],
+[">", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.end.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["XML style:", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["<", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
+["literal ", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse"],
+["style", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
+["=", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "string.quoted.double.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "punctuation.definition.string.end.muse"],
+["xml", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "string.quoted.single.muse"],
+[">", "text.muse", "meta.document.muse", "meta.tag.literal.xml-output.muse", "entity.name.tag.quote.muse"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<?", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "punctuation.definition.tag.xml"],
+["xml", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "entity.name.tag.xml"],
+[" version", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "entity.other.attribute-name.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["1.0", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[" encoding", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "entity.other.attribute-name.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["UTF-8", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+["?>", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.preprocessor.xml", "punctuation.definition.tag.xml"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["element", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[" ", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["attr", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.localname.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["value", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[" ", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["xmlns", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.other.attribute-name.localname.xml"],
+["=", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.begin.xml"],
+["http://www.w3.org/2000/svg", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "markup.underline.link.http.hyperlink"],
+["\"", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "string.quoted.double.xml", "punctuation.definition.string.end.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<![CDATA[", "text.muse", "meta.document.muse", "text.embedded.xml", "string.unquoted.cdata.xml", "punctuation.definition.string.begin.xml"],
+["foo", "text.muse", "meta.document.muse", "text.embedded.xml", "string.unquoted.cdata.xml"],
+["]]>", "text.muse", "meta.document.muse", "text.embedded.xml", "string.unquoted.cdata.xml", "punctuation.definition.string.end.xml"]
+],[
+["\t\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["child", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[" ", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml"],
+["/>", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["\t\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["<!--", "text.muse", "meta.document.muse", "text.embedded.xml", "comment.block.xml", "punctuation.definition.comment.xml"],
+[" Comment ", "text.muse", "meta.document.muse", "text.embedded.xml", "comment.block.xml"],
+["-->", "text.muse", "meta.document.muse", "text.embedded.xml", "comment.block.xml", "punctuation.definition.comment.xml"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.xml"],
+["</", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"],
+["element", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "entity.name.tag.localname.xml"],
+[">", "text.muse", "meta.document.muse", "text.embedded.xml", "meta.tag.xml", "punctuation.definition.tag.xml"]
+],[
+["</", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse"],
+[">", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.end.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+]]

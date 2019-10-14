@@ -1,0 +1,16 @@
+; Source:
+; https://github.com/github/linguist/blob/11bfea53b/samples/Texinfo/protocol-spec.texi
+
+<literal style="texi">
+@set RDEBUG_IDE @emph{ruby-debug-ide}
+@set RDEBUG_BASE @emph{ruby-debug-base}
+
+@titlepage
+@title ruby-debug-ide protocol
+@subtitle @value{EDITION} Edition
+@subtitle @value{UPDATED-MONTH}
+@author Markus Barchfeld and Martin Krauskopf
+@end titlepage
+
+This file contains specification of the protocol used by @value{RDEBUG_IDE}.
+</literal>
