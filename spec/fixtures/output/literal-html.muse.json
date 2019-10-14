@@ -1,0 +1,28 @@
+[[
+["<", "text.muse", "meta.document.muse", "meta.tag.literal.html-output.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
+["literal ", "text.muse", "meta.document.muse", "meta.tag.literal.html-output.muse", "entity.name.tag.quote.muse"],
+["style", "text.muse", "meta.document.muse", "meta.tag.literal.html-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
+["=", "text.muse", "meta.document.muse", "meta.tag.literal.html-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "string.quoted.double.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.tag.literal.html-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "punctuation.definition.string.end.muse"],
+["html", "text.muse", "meta.document.muse", "meta.tag.literal.html-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.tag.literal.html-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "string.quoted.single.muse"],
+[">", "text.muse", "meta.document.muse", "meta.tag.literal.html-output.muse", "entity.name.tag.quote.muse"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.html.basic"],
+["<", "text.muse", "meta.document.muse", "text.embedded.html.basic", "meta.tag.block.h1.html", "punctuation.definition.tag.begin.html"],
+["h1", "text.muse", "meta.document.muse", "text.embedded.html.basic", "meta.tag.block.h1.html", "entity.name.tag.block.h1.html"],
+[">", "text.muse", "meta.document.muse", "text.embedded.html.basic", "meta.tag.block.h1.html", "punctuation.definition.tag.end.html"],
+["Header", "text.muse", "meta.document.muse", "text.embedded.html.basic"],
+["</", "text.muse", "meta.document.muse", "text.embedded.html.basic", "meta.tag.block.h1.html", "punctuation.definition.tag.begin.html"],
+["h1", "text.muse", "meta.document.muse", "text.embedded.html.basic", "meta.tag.block.h1.html", "entity.name.tag.block.h1.html"],
+[">", "text.muse", "meta.document.muse", "text.embedded.html.basic", "meta.tag.block.h1.html", "punctuation.definition.tag.end.html"]
+],[
+["\t", "text.muse", "meta.document.muse", "text.embedded.html.basic"],
+["<!--", "text.muse", "meta.document.muse", "text.embedded.html.basic", "comment.block.html", "punctuation.definition.comment.html"],
+[" This is HTML ", "text.muse", "meta.document.muse", "text.embedded.html.basic", "comment.block.html"],
+["-->", "text.muse", "meta.document.muse", "text.embedded.html.basic", "comment.block.html", "punctuation.definition.comment.html"]
+],[
+["</", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse"],
+[">", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.end.muse"]
+]]

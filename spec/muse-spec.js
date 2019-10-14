@@ -55,6 +55,16 @@ describe("Muse grammar", () => {
 		});
 	});
 	
+	describe("Regression tests", () => {
+		it("tokenises `===` as a single entity", () => {
+			const {tokens} = muse.tokenizeLine("===");
+			const baseScopes = ["text.muse", "meta.document.muse", "markup.raw.literal.muse"];
+			expect(tokens[0]).to.eql({value: "=", scopes: [...baseScopes, "punctuation.definition.literal.begin.muse"]});
+			expect(tokens[1]).to.eql({value: "=", scopes: [...baseScopes]});
+			expect(tokens[2]).to.eql({value: "=", scopes: [...baseScopes, "punctuation.definition.literal.end.muse"]});
+		});
+	});
+	
 	describe("Fixture highlighting", function(){
 		const inputDir  = join(__dirname, "fixtures", "input");
 		const outputDir = join(__dirname, "fixtures", "output");
@@ -62,7 +72,10 @@ describe("Muse grammar", () => {
 		this.timeout(30000);
 		this.slow(2500);
 		
-		before(() => atom.packages.activatePackage("language-hyperlink"));
+		before(async () => {
+			await atom.packages.activatePackage("language-html");
+			await atom.packages.activatePackage("language-hyperlink");
+		});
 		
 		for(const filename of files){
 			const inputFile  = fs.readFileSync(join(inputDir, filename), "utf8").replace(/\n+$/, "");
