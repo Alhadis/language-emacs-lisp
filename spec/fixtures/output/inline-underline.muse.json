@@ -1,0 +1,160 @@
+[[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["under line", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline _ baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo _ underline_ baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo _ under line _ baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo _ under _ line _ baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["under_line", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo __underline__ baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo __under line__ baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo __under__line__ baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["under_line under_line", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["*", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.italic.emphasis.muse", "punctuation.definition.emphasis.begin.muse"],
+["italic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.italic.emphasis.muse"],
+["*", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.italic.emphasis.muse", "punctuation.definition.emphasis.end.muse"],
+[" underline", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["**", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.bold.strong.emphasis.muse", "punctuation.definition.emphasis.begin.muse"],
+["bold", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.bold.strong.emphasis.muse"],
+["**", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.bold.strong.emphasis.muse", "punctuation.definition.emphasis.end.muse"],
+[" underline", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["***", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.bold.italic.strong.emphasis.muse", "punctuation.definition.emphasis.begin.muse"],
+["bold italic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.bold.italic.strong.emphasis.muse"],
+["***", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "markup.bold.italic.strong.emphasis.muse", "punctuation.definition.emphasis.end.muse"],
+[" underline", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"]
+],[
+["underline", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["_", "text.muse", "meta.document.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline", "text.muse", "meta.document.muse", "constant.other.reference.link.muse"]
+],[
+["underline", "text.muse", "meta.document.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" bar", "text.muse", "meta.document.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["under line", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"]
+],[
+["under line", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" bar", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["_", "text.muse", "meta.document.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline", "text.muse", "meta.document.muse", "constant.other.reference.link.muse"]
+],[
+["underline", "text.muse", "meta.document.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" bar", "text.muse", "meta.document.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo_ underline_ baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline_unclosed italic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline_underline", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse"],
+["_", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.end.muse"],
+[" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["_", "text.muse", "meta.document.muse", "constant.other.reference.link.muse", "punctuation.definition.emphasis.begin.muse"],
+["underline", "text.muse", "meta.document.muse", "constant.other.reference.link.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+]]
