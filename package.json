@@ -5,6 +5,10 @@
 	"keywords": ["Emacs", "Lisp", "Elisp", "Scheme", "GNU", "FSF", "YASnippet", "YAS", "Muse", "AmuseWiki"],
 	"repository": "https://github.com/Alhadis/language-emacs-lisp",
 	"license": "ISC",
+	"atomTestRunner": "atom-mocha",
+	"devDependencies": {
+		"atom-mocha": "v2.2.1"
+	},
 	"engines": {
 		"atom": "*"
 	}
