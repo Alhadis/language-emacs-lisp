@@ -1,0 +1,6 @@
+# Don't convert line-endings on Windows
+/spec/fixtures/*/* binary
+
+# Exclude from package distribution
+/spec        export-ignore
+/.travis.yml export-ignore

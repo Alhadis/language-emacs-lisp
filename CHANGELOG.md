@@ -9,7 +9,6 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for [`el-get`], [`straight.el`] and [`quelpa`]
-* __Added:__ Syntax highlighting for [Emacs Muse][]/[Amusewiki][] markup
 * __Fixed:__ Automatic insertion of closing backticks and single-quotes
 * __Fixed:__ Unescaped and mangled output from evaluation commands
 
@@ -92,9 +91,7 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 [v1.0.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.1
 [v1.0.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.0
 [2.3.3.2]: http://www.hep.by/gnu/elisp/General-Escape-Syntax.html
-[Amusewiki]: https://amusewiki.org/
 [YASnippet]: http://joaotavora.github.io/yasnippet
-[Emacs Muse]: https://www.gnu.org/software/emacs-muse/manual/muse.html
 [`el-get`]: https://github.com/dimitri/el-get
 [`mocha.el`]: https://github.com/scottaj/mocha.el
 [`quelpa`]: https://github.com/quelpa/quelpa
