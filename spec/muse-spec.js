@@ -4,8 +4,11 @@ describe("Muse grammar", () => {
 	let muse = null;
 	
 	beforeEach(async () => {
-		await atom.packages.activatePackage("language-emacs-lisp");
+		const path = require("path");
+		await atom.packages.activatePackage(path.resolve(__dirname, ".."));
+		expect(atom.packages.activePackages["language-emacs-lisp"]).to.be.an("object");
 		muse = atom.grammars.grammarForScopeName("text.muse");
+		expect(muse).to.be.ok;
 	});
 	
 	describe("Comments", () => {
