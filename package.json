@@ -11,5 +11,8 @@
 	},
 	"engines": {
 		"atom": "*"
+	},
+	"scripts": {
+		"test": "atom -t spec/"
 	}
 }
