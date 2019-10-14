@@ -254,6 +254,7 @@ repository:
 			{include: "#link"}
 			{include: "#footnoteReference"}
 			{include: "#nbsp"}
+			{include: "#underline"}
 		]
 
 
@@ -793,6 +794,16 @@ repository:
 			1: name: "entity.name.term.muse"
 			2: name: "keyword.operator.key-value.separator.muse"
 
+
+	# Underlined text (not supported in AmuseWiki)
+	underline:
+		name:  "constant.other.reference.link.muse"
+		begin: "(?<=\\W|^)_(?=[^\\s_])"
+		end:   "(?<=[^\\s_])_(?=\\W|$)|(?=^[ \\t]*$)"
+		beginCaptures: 0: name: "punctuation.definition.emphasis.begin.muse"
+		endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
+		patterns: [include: "#inline"]
+		
 
 	# Poetic stanza
 	verse:

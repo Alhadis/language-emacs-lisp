@@ -81,8 +81,17 @@ describe("Muse grammar", () => {
 		});
 		
 		for(const filename of files){
-			const inputFile  = fs.readFileSync(join(inputDir, filename), "utf8");
-			const outputFile = fs.readFileSync(join(outputDir, filename + ".json"), "utf8");
+			const inputPath  = join(inputDir, filename);
+			const outputPath = join(outputDir, filename + ".json");
+			
+			// Ignore pending fixtures
+			if(!fs.existsSync(outputPath)){
+				it.skip(`tokenises ${filename}`);
+				continue;
+			}
+			
+			const inputFile  = fs.readFileSync(inputPath, "utf8");
+			const outputFile = fs.readFileSync(outputPath, "utf8");
 			
 			it(`tokenises ${filename}`, () => {
 				const input  = muse.tokenizeLines(inputFile);

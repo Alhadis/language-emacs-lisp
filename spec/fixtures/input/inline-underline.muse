@@ -1,0 +1,47 @@
+Foo _underline_ baz
+
+Foo _under line_ baz
+
+Foo _underline _ baz
+
+Foo _ underline_ baz
+
+Foo _ under line _ baz
+
+Foo _ under _ line _ baz
+
+Foo _under_line_ baz
+
+Foo __underline__ baz
+
+Foo __under line__ baz
+
+Foo __under__line__ baz
+
+Foo _under_line under_line_ baz
+
+Foo _underline *italic* underline_ baz
+
+Foo _underline **bold** underline_ baz
+
+Foo _underline ***bold italic*** underline_ baz
+
+Foo _underline
+underline_ bar
+
+_underline
+underline_ bar
+
+Foo _under line
+under line_ bar
+
+_underline
+underline_ bar
+
+Foo_ underline_ baz
+
+Foo _underline_unclosed italic
+
+Foo _underline_underline_ baz
+
+_underline
