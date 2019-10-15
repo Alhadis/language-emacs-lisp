@@ -1,0 +1,61 @@
+.Dd October 15, 2019
+.Dt BEMUSE 1
+.Os
+.Sh NAME
+.Nm bemuse
+.Nd quickly convert a Muse document to HTML
+.
+.Sh SYNOPSIS
+.Nm
+.Op Ar files
+.Pp
+.Nm
+.Op < Ar stdin
+.
+.Sh DESCRIPTION
+.Nm
+formats a list of Muse
+.Ar files
+using the
+.Xr Text::Amuse 3pm
+module from
+.Xr cpan 1 .
+Output is basic HTML with
+.Li .html
+replacing the file's
+.Li .muse
+extension.
+.
+.Pp
+If there are no files passed on the command-line,
+.Nm
+reads from stdin and writes to standard output.
+.
+.Sh FILES
+.Pa TEMP_FILE_LOL\.tmp\~
+Created in the executable's directory when reading from stdin.
+A limitation of
+.Xr Text::Amuse 3pm
+is that a filename is required to instantiate a new document.
+The aforementioned filename \(em unlikely to be in-use by the filesystem \(em
+is removed once the output has been generated.
+.
+.Sh EXIT STATUS
+.Ex -std
+.
+.Sh EXAMPLES
+Write converted HTML to stdout:
+.Bd -literal
+.Nm < Ar input
+.Ed
+.
+.Pp
+Create
+.Ar file.html :
+.Bd -literal
+.Nm Ar file.muse
+.Ed
+.
+.Sh SEE ALSO
+.Xr perl 1 ,
+.Xr Text::Amuse 3pm
