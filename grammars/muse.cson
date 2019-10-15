@@ -74,7 +74,7 @@ repository:
 	alignLeft:
 		name: "meta.paragraph.align.left.muse"
 		begin: "^\\s?(?=\\S)"
-		end:   "(?=^\\s*$|^\\s{2,}\\S)"
+		end:   "(?=^>\\s|^\\s*$|^\\s{2,}\\S|^\\s(?:-|(?:\\d+|[a-z]+|[A-Z]+)\\.\\s))"
 		patterns: [
 			{include: "#anchor"}
 			{include: "#inline"}
@@ -306,13 +306,13 @@ repository:
 	list:
 		name:  "markup.list.muse"
 		begin: "^(\\s+)(?=-|(?:\\d+|[a-z]+|[A-Z]+)\\.)"
-		end:   "(?=^(?!\\1)(?!\\s*$))"
+		end:   "(?=^(?!\\1)(?!\\s*$))|(?=^\\S)"
 		beginCaptures:
 			1: name: "punctuation.whitespace.leading.muse"
 		patterns: [{
 			# Needed for line-continuation
 			begin: "(?<=\\S)\\s*$\\s*"
-			end:   "(?=^\\s*$)"
+			end:   "(?=^\\s*$|^(?=\\S))"
 			patterns: [include: "#listInnards"]
 		}, include: "#listInnards"]
 	
