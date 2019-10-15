@@ -3,59 +3,84 @@
 .Os
 .Sh NAME
 .Nm bemuse
-.Nd quickly convert a Muse document to HTML
+.Nd convert Muse documents to HTML
 .
 .Sh SYNOPSIS
 .Nm
-.Op Ar files
-.Pp
-.Nm
-.Op < Ar stdin
+.Ar files \&\.\.\.\&
 .
 .Sh DESCRIPTION
 .Nm
 formats a list of Muse
 .Ar files
-using the
-.Xr Text::Amuse 3pm
-module from
-.Xr cpan 1 .
-Output is basic HTML with
-.Li .html
-replacing the file's
-.Li .muse
-extension.
+as plain HTML using
+.Xr Text::Amuse 3pm .
+Output is written to
+.Ar /path/to/input Ns No \.muse ,
+replacing
+.Ql \.muse
+with
+.Ql \.html .
 .
 .Pp
-If there are no files passed on the command-line,
+If no
+.Ar files
+are passed,
 .Nm
-reads from stdin and writes to standard output.
+reads from standard input and writes HTML to stdout.
 .
 .Sh FILES
-.Pa TEMP_FILE_LOL\.tmp\~
+.Pa TEMP_FILE_LOL\.tmp~
+.Bd -ragged -offset 4n -compact
 Created in the executable's directory when reading from stdin.
+Deleted after
+.Nm
+finishes producing output.
+.
+.Pp
 A limitation of
 .Xr Text::Amuse 3pm
 is that a filename is required to instantiate a new document.
-The aforementioned filename \(em unlikely to be in-use by the filesystem \(em
-is removed once the output has been generated.
+The aforementioned filename is unlikely to be used by the filesystem,
+in the same directory from which
+.Nm
+is running.
+.Ed
 .
 .Sh EXIT STATUS
 .Ex -std
 .
 .Sh EXAMPLES
-Write converted HTML to stdout:
-.Bd -literal
-.Nm < Ar input
-.Ed
+Write
+.Dq <strong>bold</strong>
+to standard output:
+.Dl $ Nm echo Ar \&'**bold**' No \&| Nm bemuse
 .
 .Pp
 Create
-.Ar file.html :
-.Bd -literal
-.Nm Ar file.muse
-.Ed
+.Ar A.html ,
+.Ar B.html ,
+and
+.Ar C.html :
+.Dl $ Nm Ar {A,B,C}.muse
 .
 .Sh SEE ALSO
+.Xr cpan 1 ,
 .Xr perl 1 ,
 .Xr Text::Amuse 3pm
+.
+.Pp
+The
+.Lk https://amusewiki.org/library/manual "AmuseWiki online documentation" .
+.
+.Sh AUTHORS
+.An -nosplit
+Smashed together in 30 minutes by
+.An Alhadis Aq Mt gardnerjohng\&@\&gmail.com .
+Admittedly, not his best work.
+.
+.Sh BUGS
+Despite the name,
+.Nm
+was a product of frustration and impatience.
+Its author used the first name which came to their head.
