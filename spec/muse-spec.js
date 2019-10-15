@@ -75,6 +75,18 @@ describe("Muse grammar", () => {
 			expect(tokens[5]).to.eql({value: "**",          scopes: [...baseScopes, "markup.bold.strong.emphasis.muse", "punctuation.definition.emphasis.end.muse"]});
 			expect(tokens[6]).to.eql({value: " qul",        scopes: [...baseScopes]});
 		});
+		
+		it("stops skipping blank-lines when encountering a list", () => {
+			const lines = muse.tokenizeLines("\n - list\n");
+			const baseScopes = ["text.muse", "meta.document.muse", "markup.list.muse"];
+			expect(lines[0][0]).to.eql({value: "",     scopes: ["text.muse", "meta.blank-lines.muse"]});
+			expect(lines[1][0]).to.eql({value: " ",    scopes: [...baseScopes, "punctuation.whitespace.leading.muse"]});
+			expect(lines[1][1]).to.eql({value: "-",    scopes: [...baseScopes, "keyword.operator.list.unnumbered.marker.muse"]});
+			expect(lines[1][2]).to.eql({value: " ",    scopes: [...baseScopes]});
+			expect(lines[1][3]).to.eql({value: "list", scopes: [...baseScopes]});
+			expect(lines[1][4]).to.eql({value: "",     scopes: [...baseScopes]});
+			expect(lines[2][0]).to.eql({value: "",     scopes: [...baseScopes]});
+		});
 	});
 	
 	describe("Fixture highlighting", function(){

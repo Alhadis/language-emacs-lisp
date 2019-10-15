@@ -5,7 +5,7 @@ patterns: [{
 	# Skip blank lines
 	name:  "meta.blank-lines.muse"
 	begin: "\\A\\s*$"
-	end:   "^(?=\\S)"
+	end:   "(?=^\\s*\\S)"
 },{
 	# Prologue (directive lines)
 	name:  "meta.prologue.muse"
@@ -15,7 +15,7 @@ patterns: [{
 },{
 	# Remainder of document
 	name:  "meta.document.muse"
-	begin: "^(?=[^\\s#]|\\s+#)"
+	begin: "^(?=[^\\s#]|\\s+\\S)"
 	end:   "(?=A)B"
 	patterns: [include: "#main"]
 }]
@@ -306,7 +306,7 @@ repository:
 	list:
 		name:  "markup.list.muse"
 		begin: "^(\\s+)(?=-|(?:\\d+|[a-z]+|[A-Z]+)\\.)"
-		end:   "^(?!\\1)(?!\\s*$)"
+		end:   "(?=^(?!\\1)(?!\\s*$))"
 		beginCaptures:
 			1: name: "punctuation.whitespace.leading.muse"
 		patterns: [{
