@@ -117,13 +117,17 @@
 ],[
 ["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
 ["***", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse", "punctuation.definition.emphasis.begin.muse"],
-["bolditalic*unclosed bolditalic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse"]
+["bolditalic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse"],
+["*", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse"],
+["unclosed bolditalic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse"]
 ],[
 ["", "text.muse", "meta.document.muse"]
 ],[
 ["Foo ", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"],
 ["***", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse", "punctuation.definition.emphasis.begin.muse"],
-["bolditalic*bolditalic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse"],
+["bolditalic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse"],
+["*", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse"],
+["bolditalic", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse"],
 ["***", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse", "markup.bold.italic.strong.emphasis.muse", "punctuation.definition.emphasis.end.muse"],
 [" baz", "text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"]
 ],[

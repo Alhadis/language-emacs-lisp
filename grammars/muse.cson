@@ -144,7 +144,7 @@ repository:
 			end:   "(?<=\\S)\\1(?=\\W|$)|(?=^[ \\t]*$)"
 			beginCaptures: 1: name: "punctuation.definition.emphasis.begin.muse"
 			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
-			patterns: [include: "#inline"]
+			patterns: [include: "#inlineInnards"]
 		},{
 			# **Bold**
 			name:  "markup.bold.strong.emphasis.muse"
@@ -152,7 +152,7 @@ repository:
 			end:   "(?<=\\S)\\1(?=\\W|$)|(?=^[ \\t]*$)"
 			beginCaptures: 1: name: "punctuation.definition.emphasis.begin.muse"
 			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
-			patterns: [include: "#inline"]
+			patterns: [include: "#inlineInnards"]
 		},{
 			# *Italic*
 			name:  "markup.italic.emphasis.muse"
@@ -160,7 +160,7 @@ repository:
 			end:   "(?<=\\S)\\*(?=\\W|$)|(?=^[ \\t]*$)"
 			beginCaptures: 0: name: "punctuation.definition.emphasis.begin.muse"
 			endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
-			patterns: [include: "#inline"]
+			patterns: [include: "#inlineInnards"]
 		}]
 
 
@@ -256,6 +256,15 @@ repository:
 			{include: "#nbsp"}
 			{include: "#underline"}
 		]
+
+	# Stuff matched inside an span of inline markup
+	inlineInnards:
+		patterns: [{
+			# Swallow asterisks embedded between word characters.
+			# See: Alhadis/language-emacs-lisp#5, jgm/pandoc#5821
+			match: "(?<=\\w)\\*+(?=\\w)"
+		
+		}, include: "#inline"]
 
 
 	# Hyperlink

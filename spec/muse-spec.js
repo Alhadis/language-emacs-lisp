@@ -63,6 +63,18 @@ describe("Muse grammar", () => {
 			expect(tokens[1]).to.eql({value: "=", scopes: [...baseScopes]});
 			expect(tokens[2]).to.eql({value: "=", scopes: [...baseScopes, "punctuation.definition.literal.end.muse"]});
 		});
+		
+		it("doesn't terminate emphasis at embedded asterisks", () => {
+			const {tokens} = muse.tokenizeLine("Foo **bold**bar baz qux** qul");
+			const baseScopes = ["text.muse", "meta.document.muse", "meta.paragraph.align.left.muse"];
+			expect(tokens[0]).to.eql({value: "Foo ",        scopes: [...baseScopes]});
+			expect(tokens[1]).to.eql({value: "**",          scopes: [...baseScopes, "markup.bold.strong.emphasis.muse", "punctuation.definition.emphasis.begin.muse"]});
+			expect(tokens[2]).to.eql({value: "bold",        scopes: [...baseScopes, "markup.bold.strong.emphasis.muse"]});
+			expect(tokens[3]).to.eql({value: "**",          scopes: [...baseScopes, "markup.bold.strong.emphasis.muse"]});
+			expect(tokens[4]).to.eql({value: "bar baz qux", scopes: [...baseScopes, "markup.bold.strong.emphasis.muse"]});
+			expect(tokens[5]).to.eql({value: "**",          scopes: [...baseScopes, "markup.bold.strong.emphasis.muse", "punctuation.definition.emphasis.end.muse"]});
+			expect(tokens[6]).to.eql({value: " qul",        scopes: [...baseScopes]});
+		});
 	});
 	
 	describe("Fixture highlighting", function(){
