@@ -14,3 +14,40 @@
 
 This file contains specification of the protocol used by @value{RDEBUG_IDE}.
 </literal>
+
+; Other variants
+
+<literal style="info">
+@c Commands
+@node Commands
+@section Commands
+
+@menu
+* Adding Breakpoint::
+* Deleting Breakpoint::
+* Enabling Breakpoint::
+* Disabling Breakpoint::
+* Condition::
+* Catchpoint::
+* Threads::
+* Frames::
+* Variables::
+@end menu
+</literal>
+
+
+<literal style="info-pdf">
+@c Adding Breakpoint
+@node Adding Breakpoint
+@subsection Adding Breakpoint
+
+@smallexample
+	break <script>:<line_no>
+@end smallexample
+
+Answer:
+
+@smallexample
+	<breakpointAdded no="<id>" location="<script>:<line_no>"/>
+@end smallexample
+</literal>

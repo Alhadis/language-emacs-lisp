@@ -1,29 +1,30 @@
 [[
-["<", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
-["literal>", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse"]
+["<", "text.muse", "meta.document.muse", "meta.unprocessed.-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "meta.unprocessed.-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
 ],[
-["No =style= attribute.", "text.muse", "meta.document.muse", "markup.raw.code.muse"]
+["No =style= attribute.", "text.muse", "meta.document.muse", "meta.unprocessed.-output.muse", "markup.raw.code.muse"]
 ],[
-["</", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
-["literal", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse"],
-[">", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.end.muse"]
+["</", "text.muse", "meta.document.muse", "meta.unprocessed.-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "meta.unprocessed.-output.muse", "entity.name.tag.literal.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
 ],[
 ["", "text.muse", "meta.document.muse"]
 ],[
-["<", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
-["literal ", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse"],
-["style", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
-["=", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "string.quoted.double.muse"],
-["\"", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "punctuation.definition.string.end.muse"],
-["t", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse"],
-["\"", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "string.quoted.single.muse"],
-[">", "text.muse", "meta.document.muse", "meta.tag.literal.other-output.muse", "entity.name.tag.quote.muse"]
+["<", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal ", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse"],
+["style", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "entity.other.attribute-name.style.muse"],
+["=", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse", "punctuation.definition.string.begin.muse"],
+["t", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse", "punctuation.definition.string.end.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
 ],[
-["Unrecognised =style= attribute.", "text.muse", "meta.document.muse", "markup.raw.code.muse"]
+["Unrecognised =style= attribute.", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "markup.raw.code.muse"]
 ],[
-["</", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
-["literal", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse"],
-[">", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.end.muse"]
+["</", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "entity.name.tag.literal.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.t-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
 ],[
 ["", "text.muse", "meta.document.muse"]
 ]]

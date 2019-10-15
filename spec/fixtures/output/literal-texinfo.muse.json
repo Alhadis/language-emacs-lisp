@@ -9,98 +9,232 @@
 ],[
 ["", "text.muse", "meta.document.muse"]
 ],[
-["<", "text.muse", "meta.document.muse", "meta.tag.literal.texinfo-output.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
-["literal ", "text.muse", "meta.document.muse", "meta.tag.literal.texinfo-output.muse", "entity.name.tag.quote.muse"],
-["style", "text.muse", "meta.document.muse", "meta.tag.literal.texinfo-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
-["=", "text.muse", "meta.document.muse", "meta.tag.literal.texinfo-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "string.quoted.double.muse"],
-["\"", "text.muse", "meta.document.muse", "meta.tag.literal.texinfo-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "punctuation.definition.string.end.muse"],
-["texi", "text.muse", "meta.document.muse", "meta.tag.literal.texinfo-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse"],
-["\"", "text.muse", "meta.document.muse", "meta.tag.literal.texinfo-output.muse", "entity.name.tag.quote.muse", "meta.attribute-with-value.style.muse", "punctuation.definition.string.begin.muse", "string.quoted.single.muse"],
-[">", "text.muse", "meta.document.muse", "meta.tag.literal.texinfo-output.muse", "entity.name.tag.quote.muse"]
+["<", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse"],
+["style", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "entity.other.attribute-name.style.muse"],
+["=", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse", "punctuation.definition.string.begin.muse"],
+["texi", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse", "punctuation.definition.string.end.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
 ],[
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "keyword.operator.command.set.texinfo", "punctuation.definition.function.texinfo"],
-["set", "text.muse", "meta.document.muse", "text.embedded.texinfo", "keyword.operator.command.set.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo"],
-["RDEBUG_IDE", "text.muse", "meta.document.muse", "text.embedded.texinfo", "entity.name.var.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo"],
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "keyword.operator.command.emph.texinfo", "punctuation.definition.function.texinfo"],
-["emph", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "keyword.operator.command.emph.texinfo"],
-["{", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
-["ruby-debug-ide", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "markup.italic.texinfo"],
-["}", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "punctuation.section.scope.end.texinfo"]
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "keyword.operator.command.set.texinfo", "punctuation.definition.function.texinfo"],
+["set", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "keyword.operator.command.set.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo"],
+["RDEBUG_IDE", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "entity.name.var.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo"],
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "keyword.operator.command.emph.texinfo", "punctuation.definition.function.texinfo"],
+["emph", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "keyword.operator.command.emph.texinfo"],
+["{", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
+["ruby-debug-ide", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "markup.italic.texinfo"],
+["}", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "punctuation.section.scope.end.texinfo"]
 ],[
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "keyword.operator.command.set.texinfo", "punctuation.definition.function.texinfo"],
-["set", "text.muse", "meta.document.muse", "text.embedded.texinfo", "keyword.operator.command.set.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo"],
-["RDEBUG_BASE", "text.muse", "meta.document.muse", "text.embedded.texinfo", "entity.name.var.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo"],
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "keyword.operator.command.emph.texinfo", "punctuation.definition.function.texinfo"],
-["emph", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "keyword.operator.command.emph.texinfo"],
-["{", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
-["ruby-debug-base", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "markup.italic.texinfo"],
-["}", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "punctuation.section.scope.end.texinfo"]
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "keyword.operator.command.set.texinfo", "punctuation.definition.function.texinfo"],
+["set", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "keyword.operator.command.set.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo"],
+["RDEBUG_BASE", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "entity.name.var.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo"],
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "keyword.operator.command.emph.texinfo", "punctuation.definition.function.texinfo"],
+["emph", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "keyword.operator.command.emph.texinfo"],
+["{", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
+["ruby-debug-base", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "markup.italic.texinfo"],
+["}", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.emph.braced.texinfo", "punctuation.section.scope.end.texinfo"]
 ],[
-["", "text.muse", "meta.document.muse", "text.embedded.texinfo"]
+["", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo"]
 ],[
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "keyword.operator.command.titlepage.texinfo", "punctuation.definition.function.texinfo"],
-["titlepage", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "keyword.operator.command.titlepage.texinfo"]
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "keyword.operator.command.titlepage.texinfo", "punctuation.definition.function.texinfo"],
+["titlepage", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "keyword.operator.command.titlepage.texinfo"]
 ],[
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "keyword.operator.command.title.texinfo", "punctuation.definition.function.texinfo"],
-["title", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "keyword.operator.command.title.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "markup.raw.texinfo"],
-["ruby-debug-ide", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "markup.raw.texinfo"],
-["protocol", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"]
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "keyword.operator.command.title.texinfo", "punctuation.definition.function.texinfo"],
+["title", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "keyword.operator.command.title.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "markup.raw.texinfo"],
+["ruby-debug-ide", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "markup.raw.texinfo"],
+["protocol", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.title.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"]
 ],[
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "keyword.operator.command.subtitle.texinfo", "punctuation.definition.function.texinfo"],
-["subtitle", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "keyword.operator.command.subtitle.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo"],
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo", "punctuation.definition.function.texinfo"],
-["value", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo"],
-["{", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
-["EDITION", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "variable.parameter.texinfo"],
-["}", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.end.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo"],
-["Edition", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"]
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "keyword.operator.command.subtitle.texinfo", "punctuation.definition.function.texinfo"],
+["subtitle", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "keyword.operator.command.subtitle.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo"],
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo", "punctuation.definition.function.texinfo"],
+["value", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo"],
+["{", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
+["EDITION", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "variable.parameter.texinfo"],
+["}", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.end.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo"],
+["Edition", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"]
 ],[
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "keyword.operator.command.subtitle.texinfo", "punctuation.definition.function.texinfo"],
-["subtitle", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "keyword.operator.command.subtitle.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo"],
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo", "punctuation.definition.function.texinfo"],
-["value", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo"],
-["{", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
-["UPDATED-MONTH", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "variable.parameter.texinfo"],
-["}", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.end.texinfo"]
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "keyword.operator.command.subtitle.texinfo", "punctuation.definition.function.texinfo"],
+["subtitle", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "keyword.operator.command.subtitle.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo"],
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo", "punctuation.definition.function.texinfo"],
+["value", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo"],
+["{", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
+["UPDATED-MONTH", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "variable.parameter.texinfo"],
+["}", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.subtitle.line.texinfo", "markup.raw.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.end.texinfo"]
 ],[
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "keyword.operator.command.author.texinfo", "punctuation.definition.function.texinfo"],
-["author", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "keyword.operator.command.author.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
-["Markus", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
-["Barchfeld", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
-["and", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
-["Martin", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
-[" ", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
-["Krauskopf", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"]
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "keyword.operator.command.author.texinfo", "punctuation.definition.function.texinfo"],
+["author", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "keyword.operator.command.author.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
+["Markus", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
+["Barchfeld", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
+["and", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
+["Martin", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo"],
+["Krauskopf", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "meta.command.author.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"]
 ],[
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "keyword.operator.command.end-$3.texinfo", "punctuation.definition.function.texinfo"],
-["end titlepage", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "keyword.operator.command.end-$3.texinfo"]
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "keyword.operator.command.end-$3.texinfo", "punctuation.definition.function.texinfo"],
+["end titlepage", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.titlepage.block.texinfo", "keyword.operator.command.end-$3.texinfo"]
 ],[
-["", "text.muse", "meta.document.muse", "text.embedded.texinfo"]
+["", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo"]
 ],[
-["This file contains specification of the protocol used by ", "text.muse", "meta.document.muse", "text.embedded.texinfo"],
-["@", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo", "punctuation.definition.function.texinfo"],
-["value", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo"],
-["{", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
-["RDEBUG_IDE", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "variable.parameter.texinfo"],
-["}", "text.muse", "meta.document.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.end.texinfo"],
-[".", "text.muse", "meta.document.muse", "text.embedded.texinfo"]
+["This file contains specification of the protocol used by ", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo"],
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo", "punctuation.definition.function.texinfo"],
+["value", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "keyword.operator.command.value.texinfo"],
+["{", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.begin.texinfo"],
+["RDEBUG_IDE", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "variable.parameter.texinfo"],
+["}", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo", "meta.command.braced.texinfo", "punctuation.section.scope.end.texinfo"],
+[".", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "text.embedded.texinfo"]
 ],[
-["</", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.begin.muse"],
-["literal", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse"],
-[">", "text.muse", "meta.document.muse", "entity.name.tag.quote.muse", "punctuation.definition.tag.end.muse"]
+["</", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "entity.name.tag.literal.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.texi-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+[";", "text.muse", "meta.document.muse", "comment.line.semicolon.muse", "punctuation.definition.comment.begin.muse"],
+[" ", "text.muse", "meta.document.muse", "comment.line.semicolon.muse"],
+["Other variants", "text.muse", "meta.document.muse", "comment.line.semicolon.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["<", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse"],
+["style", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "entity.other.attribute-name.style.muse"],
+["=", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse", "punctuation.definition.string.begin.muse"],
+["info", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse", "punctuation.definition.string.end.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "comment.line.at-sign.texinfo", "keyword.operator.command.start-comment.texinfo", "punctuation.definition.function.texinfo"],
+["c", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "comment.line.at-sign.texinfo", "keyword.operator.command.start-comment.texinfo"],
+[" Commands", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "comment.line.at-sign.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "keyword.operator.command.node.texinfo", "punctuation.definition.function.texinfo"],
+["node", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "keyword.operator.command.node.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "markup.raw.texinfo"],
+["Commands", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.section.line.texinfo", "markup.bold.texinfo", "keyword.operator.command.section.texinfo", "punctuation.definition.function.texinfo"],
+["section", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.section.line.texinfo", "markup.bold.texinfo", "keyword.operator.command.section.texinfo"],
+[" Commands", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.section.line.texinfo", "markup.heading.string.unquoted.texinfo"]
+],[
+["", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "keyword.operator.command.menu.texinfo", "punctuation.definition.function.texinfo"],
+["menu", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "keyword.operator.command.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Adding Breakpoint", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Deleting Breakpoint", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Enabling Breakpoint", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Disabling Breakpoint", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Condition", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Catchpoint", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Threads", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Frames", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["* ", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.definition.list.menu.texinfo"],
+["Variables", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "entity.name.tag.entry-name.texinfo"],
+["::", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "markup.list.texinfo", "punctuation.separator.key-value.menu.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "keyword.operator.command.end-$3.texinfo", "punctuation.definition.function.texinfo"],
+["end menu", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "text.embedded.texinfo", "meta.command.menu.block.texinfo", "keyword.operator.command.end-$3.texinfo"]
+],[
+["</", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "entity.name.tag.literal.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.info-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["", "text.muse", "meta.document.muse"]
+],[
+["<", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal ", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse"],
+["style", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "entity.other.attribute-name.style.muse"],
+["=", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "punctuation.separator.key-value.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse", "punctuation.definition.string.begin.muse"],
+["info-pdf", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse"],
+["\"", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "meta.attribute-with-value.style.muse", "string.quoted.muse", "punctuation.definition.string.end.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "meta.tag.literal.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "comment.line.at-sign.texinfo", "keyword.operator.command.start-comment.texinfo", "punctuation.definition.function.texinfo"],
+["c", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "comment.line.at-sign.texinfo", "keyword.operator.command.start-comment.texinfo"],
+[" Adding Breakpoint", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "comment.line.at-sign.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "keyword.operator.command.node.texinfo", "punctuation.definition.function.texinfo"],
+["node", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "keyword.operator.command.node.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "markup.raw.texinfo"],
+["Adding", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"],
+[" ", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "markup.raw.texinfo"],
+["Breakpoint", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.node.line.texinfo", "markup.raw.texinfo", "variable.parameter.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.subsection.line.texinfo", "markup.bold.texinfo", "keyword.operator.command.subsection.texinfo", "punctuation.definition.function.texinfo"],
+["subsection", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.subsection.line.texinfo", "markup.bold.texinfo", "keyword.operator.command.subsection.texinfo"],
+[" Adding Breakpoint", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.subsection.line.texinfo", "markup.heading.string.unquoted.texinfo"]
+],[
+["", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "keyword.operator.command.smallexample.texinfo", "punctuation.definition.function.texinfo"],
+["smallexample", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "keyword.operator.command.smallexample.texinfo"]
+],[
+["\tbreak <script>:<line_no>", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "markup.raw.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "keyword.operator.command.end-$3.texinfo", "punctuation.definition.function.texinfo"],
+["end smallexample", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "keyword.operator.command.end-$3.texinfo"]
+],[
+["", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo"]
+],[
+["Answer:", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo"]
+],[
+["", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "keyword.operator.command.smallexample.texinfo", "punctuation.definition.function.texinfo"],
+["smallexample", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "keyword.operator.command.smallexample.texinfo"]
+],[
+["\t<breakpointAdded no=\"<id>\" location=\"<script>:<line_no>\"/>", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "markup.raw.texinfo"]
+],[
+["@", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "keyword.operator.command.end-$3.texinfo", "punctuation.definition.function.texinfo"],
+["end smallexample", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "text.embedded.texinfo", "meta.command.smallexample.block.texinfo", "keyword.operator.command.end-$3.texinfo"]
+],[
+["</", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.begin.muse"],
+["literal", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "entity.name.tag.literal.muse"],
+[">", "text.muse", "meta.document.muse", "meta.unprocessed.info-pdf-output.muse", "entity.name.tag.literal.muse", "punctuation.definition.tag.end.muse"]
 ],[
 ["", "text.muse", "meta.document.muse"]
 ]]

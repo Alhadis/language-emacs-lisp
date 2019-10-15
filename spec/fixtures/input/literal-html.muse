@@ -2,3 +2,25 @@
 	<h1>Header</h1>
 	<!-- This is HTML -->
 </literal>
+
+<literal style="xhtml">
+	<h1>Header</h1>
+	<!-- This is XHTML -->
+</literal>
+
+; Other (assumed) variants
+
+<literal style="blosxom-html">
+	Whatever <em>this</em> is&hellip;<br>
+	<a href="https://www.gnu.org/software/emacs-muse/manual/muse.html#Blosxom-Options">Blosxom</a>
+</literal>
+
+<literal style="blosxom-xhtml">
+	<br/> Or <b>this</b>
+</literal>
+
+<literal style="journal-html">
+	<h1>Dear diary,</h1>
+	<p>Today sucked.</p>
+	<footer>&mdash; Me</footer>
+</literal>

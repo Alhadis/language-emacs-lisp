@@ -603,188 +603,7 @@ repository:
 				2: name: "punctuation.definition.tag.end.muse"
 			contentName: "markup.quote.block.muse"
 			patterns: [include: "#inline"]
-		},{
-			# Unprocessed source: LaTeX
-			name: "meta.tag.literal.latex-output.muse"
-			begin: """(?x) ^\\s*(
-				(<) literal \\s+
-				(
-					(style) \\s*
-					(=)     \\s*
-					
-					(?: ((")latex("))
-					|   ((')latex('))
-					|      (latex)
-					)
-				)
-				\\s* (>))
-			"""
-			end: "(</)literal(>)"
-			beginCaptures:
-				1:  name: "entity.name.tag.quote.muse"
-				2:  name: "punctuation.definition.tag.begin.muse"
-				3:  name: "meta.attribute-with-value.style.muse"
-				4:  name: "punctuation.separator.key-value.muse"
-				5:  name: "string.quoted.double.muse"
-				6:  name: "punctuation.definition.string.begin.muse"
-				7:  name: "punctuation.definition.string.end.muse"
-				8:  name: "string.quoted.single.muse"
-				9:  name: "punctuation.definition.string.begin.muse"
-				10: name: "punctuation.definition.string.end.muse"
-				11: name: "string.unquoted.muse"
-				12: name: "punctuation.definition.tag.end.muse"
-			endCaptures:
-				0: name: "entity.name.tag.quote.muse"
-				1: name: "punctuation.definition.tag.begin.muse"
-				2: name: "punctuation.definition.tag.end.muse"
-			contentName: "text.embedded.latex"
-			patterns: [include: "text.tex.latex"]
-		},{
-			# Unprocessed source: HTML
-			begin: """(?x) ^\\s*(
-				(<) literal \\s+
-				(
-					(style) \\s*
-					(=)     \\s*
-					
-					(?: ((")html("))
-					|   ((')html('))
-					|      (html)
-					)
-				)
-				\\s* (>))
-			"""
-			end: "(</)literal(>)"
-			beginCaptures:
-				0:  name: "meta.tag.literal.html-output.muse"
-				1:  name: "entity.name.tag.quote.muse"
-				2:  name: "punctuation.definition.tag.begin.muse"
-				3:  name: "meta.attribute-with-value.style.muse"
-				4:  name: "punctuation.separator.key-value.muse"
-				5:  name: "string.quoted.double.muse"
-				6:  name: "punctuation.definition.string.begin.muse"
-				7:  name: "punctuation.definition.string.end.muse"
-				8:  name: "string.quoted.single.muse"
-				9:  name: "punctuation.definition.string.begin.muse"
-				10: name: "punctuation.definition.string.end.muse"
-				11: name: "string.unquoted.muse"
-				12: name: "punctuation.definition.tag.end.muse"
-			endCaptures:
-				0: name: "entity.name.tag.quote.muse"
-				1: name: "punctuation.definition.tag.begin.muse"
-				2: name: "punctuation.definition.tag.end.muse"
-			contentName: "text.embedded.html.basic"
-			patterns: [include: "text.html.basic"]
-		},{
-			# Unprocessed source: XML
-			begin: """(?x) ^\\s*(
-				(<) literal \\s+
-				(
-					(style) \\s*
-					(=)     \\s*
-					
-					(?: ((")(?:docbook|xml)("))
-					|   ((')(?:docbook|xml)('))
-					|      ((?:docbook|xml))
-					)
-				)
-				\\s* (>))
-			"""
-			end: "(</)literal(>)"
-			beginCaptures:
-				0:  name: "meta.tag.literal.xml-output.muse"
-				1:  name: "entity.name.tag.quote.muse"
-				2:  name: "punctuation.definition.tag.begin.muse"
-				3:  name: "meta.attribute-with-value.style.muse"
-				4:  name: "punctuation.separator.key-value.muse"
-				5:  name: "string.quoted.double.muse"
-				6:  name: "punctuation.definition.string.begin.muse"
-				7:  name: "punctuation.definition.string.end.muse"
-				8:  name: "string.quoted.single.muse"
-				9:  name: "punctuation.definition.string.begin.muse"
-				10: name: "punctuation.definition.string.end.muse"
-				11: name: "string.unquoted.muse"
-				12: name: "punctuation.definition.tag.end.muse"
-			endCaptures:
-				0: name: "entity.name.tag.quote.muse"
-				1: name: "punctuation.definition.tag.begin.muse"
-				2: name: "punctuation.definition.tag.end.muse"
-			contentName: "text.embedded.xml"
-			patterns: [include: "text.xml"]
-		},{
-			# Unprocessed source: Texinfo
-			begin: """(?x) ^\\s*(
-				(<) literal \\s+
-				(
-					(style) \\s*
-					(=)     \\s*
-					
-					(?: ((")(?:texi|info|info-pdf)("))
-					|   ((')(?:texi|info|info-pdf)('))
-					|      ((?:texi|info|info-pdf))
-					)
-				)
-				\\s* (>))
-			"""
-			end: "(</)literal(>)"
-			beginCaptures:
-				0:  name: "meta.tag.literal.texinfo-output.muse"
-				1:  name: "entity.name.tag.quote.muse"
-				2:  name: "punctuation.definition.tag.begin.muse"
-				3:  name: "meta.attribute-with-value.style.muse"
-				4:  name: "punctuation.separator.key-value.muse"
-				5:  name: "string.quoted.double.muse"
-				6:  name: "punctuation.definition.string.begin.muse"
-				7:  name: "punctuation.definition.string.end.muse"
-				8:  name: "string.quoted.single.muse"
-				9:  name: "punctuation.definition.string.begin.muse"
-				10: name: "punctuation.definition.string.end.muse"
-				11: name: "string.unquoted.muse"
-				12: name: "punctuation.definition.tag.end.muse"
-			endCaptures:
-				0: name: "entity.name.tag.quote.muse"
-				1: name: "punctuation.definition.tag.begin.muse"
-				2: name: "punctuation.definition.tag.end.muse"
-			contentName: "text.embedded.texinfo"
-			patterns: [include: "text.texinfo"]
-		},{
-			# Unprocessed source: Anything else
-			begin: """(?x) ^\\s*(
-				(<) literal
-				(?:
-					\\s+
-					(
-						(style) \\s*
-						(=)     \\s*
-						
-						(?: ((")[^"]*("))
-						|   ((')[^']*('))
-						|      ([^>\\s]+)
-						)
-					)
-				)? \\s* (>))
-			"""
-			end: "(</)literal(>)"
-			beginCaptures:
-				0:  name: "meta.tag.literal.other-output.muse"
-				1:  name: "entity.name.tag.quote.muse"
-				2:  name: "punctuation.definition.tag.begin.muse"
-				3:  name: "meta.attribute-with-value.style.muse"
-				4:  name: "punctuation.separator.key-value.muse"
-				5:  name: "string.quoted.double.muse"
-				6:  name: "punctuation.definition.string.begin.muse"
-				7:  name: "punctuation.definition.string.end.muse"
-				8:  name: "string.quoted.single.muse"
-				9:  name: "punctuation.definition.string.begin.muse"
-				10: name: "punctuation.definition.string.end.muse"
-				11: name: "string.unquoted.muse"
-				12: name: "punctuation.definition.tag.end.muse"
-			endCaptures:
-				0: name: "entity.name.tag.quote.muse"
-				1: name: "punctuation.definition.tag.begin.muse"
-				2: name: "punctuation.definition.tag.end.muse"
-			contentName: "markup.raw.code.muse"
-		}]
+		}, include: "#unprocessed"]
 
 
 	# [term] :: [description]
@@ -804,6 +623,208 @@ repository:
 		endCaptures:   0: name: "punctuation.definition.emphasis.end.muse"
 		patterns: [include: "#inline"]
 		
+	
+	# <literal style="…">…</literal> blocks
+	unprocessed:
+		patterns: [
+			{include: "#unprocessedLatex"}
+			{include: "#unprocessedHTML"}
+			{include: "#unprocessedXML"}
+			{include: "#unprocessedTexinfo"}
+			{include: "#unprocessedDefault"}
+		]
+	
+	
+	# Unprocessed block fallback
+	unprocessedDefault:
+		name:  "meta.unprocessed.$8-output.muse"
+		begin: "^\\s*((<)literal(?:\\s+((style)\\s*(=)\\s*((\"|'|\\b)([^>\\s]+)(\\7))))?\\s*(>))"
+		end:   "(</)literal(>)"
+		beginCaptures:
+			0:  name: "meta.tag.literal.muse"
+			1:  name: "entity.name.tag.literal.muse"
+			2:  name: "punctuation.definition.tag.begin.muse"
+			3:  name: "meta.attribute-with-value.style.muse"
+			4:  name: "entity.other.attribute-name.style.muse"
+			5:  name: "punctuation.separator.key-value.muse"
+			6:  name: "string.quoted.muse"
+			7:  name: "punctuation.definition.string.begin.muse"
+			9:  name: "punctuation.definition.string.end.muse"
+			10: name: "punctuation.definition.tag.end.muse"
+		endCaptures:
+			0: name: "entity.name.tag.literal.muse"
+			1: name: "punctuation.definition.tag.begin.muse"
+			2: name: "punctuation.definition.tag.end.muse"
+		contentName: "markup.raw.code.muse"
+	
+	
+	# Unprocessed source: HTML
+	unprocessedHTML:
+		name: "meta.unprocessed.$8-output.muse"
+		begin: """(?x) ^\\s* (
+			(<) literal \\s+
+			(
+				(style) \\s* (=) \\s*
+				(
+					("|'|\\b)
+					( blosxom-html
+					| blosxom-xhtml
+					| journal-html
+					| html
+					| xhtml
+					) (\\7)
+				)
+			) \\s* (>)
+		)"""
+		end: "(</)literal(>)"
+		beginCaptures:
+			0:  name: "meta.tag.literal.muse"
+			1:  name: "entity.name.tag.literal.muse"
+			2:  name: "punctuation.definition.tag.begin.muse"
+			3:  name: "meta.attribute-with-value.style.muse"
+			4:  name: "entity.other.attribute-name.style.muse"
+			5:  name: "punctuation.separator.key-value.muse"
+			6:  name: "string.quoted.muse"
+			7:  name: "punctuation.definition.string.begin.muse"
+			9:  name: "punctuation.definition.string.end.muse"
+			10: name: "punctuation.definition.tag.end.muse"
+		endCaptures:
+			0: name: "entity.name.tag.literal.muse"
+			1: name: "punctuation.definition.tag.begin.muse"
+			2: name: "punctuation.definition.tag.end.muse"
+		contentName: "text.embedded.html.basic"
+		patterns: [include: "text.html.basic"]
+	
+	
+	# Unprocessed source: LaTeX
+	unprocessedLatex:
+		name: "meta.unprocessed.$8-output.muse"
+		begin: """(?x) ^\\s* (
+			(<) literal \\s+
+			(
+				(style) \\s* (=) \\s*
+				(
+					("|'|\\b)
+					( book-latex
+					| book-pdf
+					| chapbook-latex
+					| chapbook-pdf
+					| context-pdf
+					| context-slides-pdf
+					| context-slides
+					| context
+					| journal-book-latex
+					| journal-book-pdf
+					| journal-latex
+					| journal-pdf
+					| journal-xhtml
+					| latexcjk
+					| latex
+					| lecture-notes-pdf
+					| lecture-notes
+					| pdfcjk
+					| pdf
+					| poem-latex
+					| poem-pdf
+					| slides-pdf
+					| slides
+					) (\\7)
+				)
+			) \\s* (>)
+		)"""
+		end: "(</)literal(>)"
+		beginCaptures:
+			0:  name: "meta.tag.literal.muse"
+			1:  name: "entity.name.tag.literal.muse"
+			2:  name: "punctuation.definition.tag.begin.muse"
+			3:  name: "meta.attribute-with-value.style.muse"
+			4:  name: "entity.other.attribute-name.style.muse"
+			5:  name: "punctuation.separator.key-value.muse"
+			6:  name: "string.quoted.muse"
+			7:  name: "punctuation.definition.string.begin.muse"
+			9:  name: "punctuation.definition.string.end.muse"
+			10: name: "punctuation.definition.tag.end.muse"
+		endCaptures:
+			0: name: "entity.name.tag.literal.muse"
+			1: name: "punctuation.definition.tag.begin.muse"
+			2: name: "punctuation.definition.tag.end.muse"
+		contentName: "text.embedded.latex"
+		patterns: [include: "text.tex.latex"]
+
+
+	# Unprocessed source: Texinfo
+	unprocessedTexinfo:
+		name: "meta.unprocessed.$8-output.muse"
+		begin: """(?x) ^\\s* (
+			(<) literal \\s+
+			(
+				(style) \\s* (=) \\s*
+				(
+					("|'|\\b)
+					( info-pdf
+					| info
+					| texi
+					) (\\7)
+				)
+			) \\s* (>)
+		)"""
+		end: "(</)literal(>)"
+		beginCaptures:
+			0:  name: "meta.tag.literal.muse"
+			1:  name: "entity.name.tag.literal.muse"
+			2:  name: "punctuation.definition.tag.begin.muse"
+			3:  name: "meta.attribute-with-value.style.muse"
+			4:  name: "entity.other.attribute-name.style.muse"
+			5:  name: "punctuation.separator.key-value.muse"
+			6:  name: "string.quoted.muse"
+			7:  name: "punctuation.definition.string.begin.muse"
+			9:  name: "punctuation.definition.string.end.muse"
+			10: name: "punctuation.definition.tag.end.muse"
+		endCaptures:
+			0: name: "entity.name.tag.literal.muse"
+			1: name: "punctuation.definition.tag.begin.muse"
+			2: name: "punctuation.definition.tag.end.muse"
+		contentName: "text.embedded.texinfo"
+		patterns: [include: "text.texinfo"]
+
+
+	# Unprocessed source: XML
+	unprocessedXML:
+		name: "meta.unprocessed.$8-output.muse"
+		begin: """(?x) ^\\s* (
+			(<) literal \\s+
+			(
+				(style) \\s* (=) \\s*
+				(
+					("|'|\\b)
+					( docbook
+					| journal-rdf
+					| journal-rss-entry
+					| journal-rss
+					| xml
+					) (\\7)
+				)
+			) \\s* (>)
+		)"""
+		end: "(</)literal(>)"
+		beginCaptures:
+			0:  name: "meta.tag.literal.muse"
+			1:  name: "entity.name.tag.literal.muse"
+			2:  name: "punctuation.definition.tag.begin.muse"
+			3:  name: "meta.attribute-with-value.style.muse"
+			4:  name: "entity.other.attribute-name.style.muse"
+			5:  name: "punctuation.separator.key-value.muse"
+			6:  name: "string.quoted.muse"
+			7:  name: "punctuation.definition.string.begin.muse"
+			9:  name: "punctuation.definition.string.end.muse"
+			10: name: "punctuation.definition.tag.end.muse"
+		endCaptures:
+			0: name: "entity.name.tag.literal.muse"
+			1: name: "punctuation.definition.tag.begin.muse"
+			2: name: "punctuation.definition.tag.end.muse"
+		contentName: "text.embedded.xml"
+		patterns: [include: "text.xml"]
+
 
 	# Poetic stanza
 	verse:

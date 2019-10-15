@@ -1,0 +1,222 @@
+; This uses a third-party package that's not installable via NPM, so
+; to keep the tests simple, we'll avoid testing the embedded content.
+
+<literal style="latex">
+</literal>
+
+<literal style='latex'>
+</literal>
+
+<literal style=latex>
+</literal>
+
+<literal style = "latex">
+</literal>
+
+<literal style = 'latex'>
+</literal>
+
+<literal style = latex>
+</literal>
+
+
+; Other LaTeX-based styles:
+
+<literal style="book-latex">
+</literal>
+
+<literal style="book-pdf">
+</literal>
+
+<literal style="chapbook-latex">
+</literal>
+
+<literal style="chapbook-pdf">
+</literal>
+
+<literal style="context-pdf">
+</literal>
+
+<literal style="context-slides-pdf">
+</literal>
+
+<literal style="context-slides">
+</literal>
+
+<literal style="context">
+</literal>
+
+<literal style="journal-book-latex">
+</literal>
+
+<literal style="journal-book-pdf">
+</literal>
+
+<literal style="journal-latex">
+</literal>
+
+<literal style="journal-pdf">
+</literal>
+
+<literal style="journal-xhtml">
+</literal>
+
+<literal style="latexcjk">
+</literal>
+
+<literal style="lecture-notes-pdf">
+</literal>
+
+<literal style="lecture-notes">
+</literal>
+
+<literal style="pdfcjk">
+</literal>
+
+<literal style="pdf">
+</literal>
+
+<literal style="poem-latex">
+</literal>
+
+<literal style="poem-pdf">
+</literal>
+
+<literal style="slides-pdf">
+</literal>
+
+<literal style="slides">
+</literal>
+
+<literal style='book-latex'>
+</literal>
+
+<literal style='book-pdf'>
+</literal>
+
+<literal style='chapbook-latex'>
+</literal>
+
+<literal style='chapbook-pdf'>
+</literal>
+
+<literal style='context-pdf'>
+</literal>
+
+<literal style='context-slides-pdf'>
+</literal>
+
+<literal style='context-slides'>
+</literal>
+
+<literal style='context'>
+</literal>
+
+<literal style='journal-book-latex'>
+</literal>
+
+<literal style='journal-book-pdf'>
+</literal>
+
+<literal style='journal-latex'>
+</literal>
+
+<literal style='journal-pdf'>
+</literal>
+
+<literal style='journal-xhtml'>
+</literal>
+
+<literal style='latexcjk'>
+</literal>
+
+<literal style='lecture-notes-pdf'>
+</literal>
+
+<literal style='lecture-notes'>
+</literal>
+
+<literal style='pdfcjk'>
+</literal>
+
+<literal style='pdf'>
+</literal>
+
+<literal style='poem-latex'>
+</literal>
+
+<literal style='poem-pdf'>
+</literal>
+
+<literal style='slides-pdf'>
+</literal>
+
+<literal style='slides'>
+</literal>
+
+
+<literal style=book-latex>
+</literal>
+
+<literal style=book-pdf>
+</literal>
+
+<literal style=chapbook-latex>
+</literal>
+
+<literal style=chapbook-pdf>
+</literal>
+
+<literal style=context-pdf>
+</literal>
+
+<literal style=context-slides-pdf>
+</literal>
+
+<literal style=context-slides>
+</literal>
+
+<literal style=context>
+</literal>
+
+<literal style=journal-book-latex>
+</literal>
+
+<literal style=journal-book-pdf>
+</literal>
+
+<literal style=journal-latex>
+</literal>
+
+<literal style=journal-pdf>
+</literal>
+
+<literal style=journal-xhtml>
+</literal>
+
+<literal style=latexcjk>
+</literal>
+
+<literal style=lecture-notes-pdf>
+</literal>
+
+<literal style=lecture-notes>
+</literal>
+
+<literal style=pdfcjk>
+</literal>
+
+<literal style=pdf>
+</literal>
+
+<literal style=poem-latex>
+</literal>
+
+<literal style=poem-pdf>
+</literal>
+
+<literal style=slides-pdf>
+</literal>
+
+<literal style=slides>
+</literal>
