@@ -3,11 +3,13 @@ Change Log
 
 This project adheres to [Semantic Versioning](http://semver.org).
 
-[Unpublished]: ../../compare/v1.3.1...HEAD
+[Unpublished]: ../../compare/v1.4.0...HEAD
 
 
-[Unpublished]
+[v1.4.0]
 ------------------------------------------------------------------------
+**October 17th, 2019**  
+* __Added:__ Syntax highlighting for [Emacs Muse] and [AmuseWiki] markup
 * __Added:__ Highlighting for [`el-get`], [`straight.el`] and [`quelpa`]
 * __Fixed:__ Automatic insertion of closing backticks and single-quotes
 * __Fixed:__ Unescaped and mangled output from evaluation commands
@@ -83,6 +85,7 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 
 
 [Referenced links]:_____________________________________________________
+[v1.4.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.4.0
 [v1.3.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.3.1
 [v1.3.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.3.0
 [v1.2.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.2.0
@@ -91,6 +94,8 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 [v1.0.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.1
 [v1.0.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.0.0
 [2.3.3.2]: http://www.hep.by/gnu/elisp/General-Escape-Syntax.html
+[AmuseWiki]: https://amusewiki.org/library/manual
+[Emacs Muse]: https://gnu.org/software/emacs-muse/manual/muse.html
 [YASnippet]: http://joaotavora.github.io/yasnippet
 [`el-get`]: https://github.com/dimitri/el-get
 [`mocha.el`]: https://github.com/scottaj/mocha.el
