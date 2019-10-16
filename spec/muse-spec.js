@@ -87,6 +87,16 @@ describe("Muse grammar", () => {
 			expect(lines[1][4]).to.eql({value: "",     scopes: [...baseScopes]});
 			expect(lines[2][0]).to.eql({value: "",     scopes: [...baseScopes]});
 		});
+		
+		it("tokenises `**foo***bar**` correctly", () => {
+			const {tokens} = muse.tokenizeLine("**foo***bar**");
+			const baseScopes = ["text.muse", "meta.document.muse", "markup.bold.strong.emphasis.muse"];
+			expect(tokens[0]).to.eql({value: "**",  scopes: [...baseScopes, "punctuation.definition.emphasis.begin.muse"]});
+			expect(tokens[1]).to.eql({value: "foo", scopes: [...baseScopes]});
+			expect(tokens[2]).to.eql({value: "***", scopes: [...baseScopes]});
+			expect(tokens[3]).to.eql({value: "bar", scopes: [...baseScopes]});
+			expect(tokens[4]).to.eql({value: "**",  scopes: [...baseScopes, "punctuation.definition.emphasis.end.muse"]});
+		});
 	});
 	
 	describe("Fixture highlighting", function(){
