@@ -33,7 +33,14 @@ firstLineMatch: """(?x)
 		(?=\\s|:|$)
 	)
 """
-patterns: [include: "#main"]
+patterns: [{
+	# Interpreter directive
+	name:  "comment.line.hashbang.emacs.lisp"
+	begin: "\\A(#!)"
+	end:   "$"
+	beginCaptures:
+		1: name: "punctuation.definition.comment.hashbang.emacs.lisp"
+}, include: "#main"]
 
 
 repository:

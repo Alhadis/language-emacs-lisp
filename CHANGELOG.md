@@ -6,6 +6,12 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]: ../../compare/v1.4.0...HEAD
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* __Added:__ Comment highlighting for interpreter directives (hashbangs)
+
+
+
 [v1.4.0]
 ------------------------------------------------------------------------
 **October 17th, 2019**  
