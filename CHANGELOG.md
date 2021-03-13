@@ -9,6 +9,9 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]
 ------------------------------------------------------------------------
 * __Added:__ Comment highlighting for interpreter directives (hashbangs)
+* __Fixed:__ [Various inaccuracies][1] related to modeline matching
+
+[1]: https://github.com/github/linguist/pull/5271
 
 
 

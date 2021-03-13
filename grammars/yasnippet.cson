@@ -4,11 +4,11 @@ fileTypes: [
 	"yasnippet"
 	"yas"
 ]
-firstLineMatch: """(?xi)
+firstLineMatch: """(?x)
 	# Emacs modeline
-	-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)
-		(?:yasnippet|snippet)
-	(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-
+	-\\*-(?i:[ \\t]*(?=[^:;\\s]+[ \\t]*-\\*-)|(?:.*?[ \\t;]|(?<=-\\*-))[ \\t]*mode[ \\t]*:[ \\t]*)
+		(?i:yasnippet|snippet)
+	(?=[ \\t;]|(?<![-*])-\\*-).*?-\\*-
 """
 
 patterns: [{
