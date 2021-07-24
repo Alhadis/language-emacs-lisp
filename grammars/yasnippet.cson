@@ -35,7 +35,7 @@ repository:
 		patterns: [{
 			# Simple keys
 			name:  "meta.directive.snippet-$1.yasnippet"
-			match: "(?<=[\\s#])(key|name|group|uuid|contributor)\\s*(:)(?:\\s*(\\S.*))?"
+			match: "(?<=[\\s#])(key|name|group|uuid)\\s*(:)(?:\\s*(\\S.*))?"
 			captures:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
@@ -90,6 +90,40 @@ repository:
 				1: name: "variable.assignment.$1.yasnippet"
 				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
 				3: name: "constant.language.type-specifier.yasnippet"
+		},{
+			# Directives that look better rendered with underlines
+			name:  "meta.directive.$1.yasnippet"
+			match: "(?<=[\\s#])(contributor|atom-description-more-url)\\s*(:)(?:\\s*(\\S.*))"
+			captures:
+				1: name: "variable.assignment.$1.yasnippet"
+				2: name: "punctuation.separator.dictionary.key-value.colon.yasnippet"
+				3: patterns: [{
+					# URL
+					contentName: "constant.other.reference.link"
+					begin: "(?:^|\\G)\\s*(?=(?:[a-z][-+a-z0-9]*:\\S))"
+					end:   "\\s|$"
+				},{
+					# Author <email@address>
+					match: "([^\\s<>,](?:[^\\s<>,]|\\s[^<>,])*+)(?:\\s+((<)([^@>\\s]+@[^<>@\\s]+)(>)))?"
+					captures:
+						1: name: "entity.name.author.yasnippet"
+						2: name: "meta.email-address.yasnippet"
+						3: name: "punctuation.definition.bracket.angle.begin.yasnippet"
+						4: name: "constant.other.reference.link.underline.email.yasnippet"
+						5: name: "punctuation.definition.bracket.angle.end.yasnippet"
+				},{
+					# <email@address>
+					name: "meta.email-address.yasnippet"
+					match: "(<)([^@>\\s]+@[^<>@\\s]+)(>)"
+					captures:
+						1: name: "punctuation.definition.bracket.angle.begin.yasnippet"
+						2: name: "constant.other.reference.link.underline.email.yasnippet"
+						3: name: "punctuation.definition.bracket.angle.end.yasnippet"
+				},{
+					# E-mail separators
+					name: "punctuation.separator.comma.yasnippet"
+					match: ","
+				}]
 		},{
 			# Miscellaneous directives
 			name: "meta.directive.other.yasnippet"
