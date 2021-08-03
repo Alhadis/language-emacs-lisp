@@ -3,11 +3,12 @@ Change Log
 
 This project adheres to [Semantic Versioning](http://semver.org).
 
-[Unpublished]: ../../compare/v1.4.0...HEAD
+[Unpublished]: ../../compare/v1.4.1...HEAD
 
 
-[Unpublished]
+[v1.4.1]
 ------------------------------------------------------------------------
+**August 4th, 2021**  
 * __Added:__ Comment highlighting for interpreter directives (hashbangs)
 * __Added:__ Snippets for [YASnippet][] metadata and placeholders
 * __Fixed:__ [Various inaccuracies][1] related to modeline matching
@@ -95,6 +96,7 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 
 
 [Referenced links]:_____________________________________________________
+[v1.4.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.4.1
 [v1.4.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.4.0
 [v1.3.1]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.3.1
 [v1.3.0]: https://github.com/Alhadis/language-emacs-lisp/releases/v1.3.0
