@@ -6,6 +6,12 @@ This project adheres to [Semantic Versioning](http://semver.org).
 [Unpublished]: ../../compare/v1.4.1...HEAD
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* __Fixed:__ Escaped brackets and quotes not recognised in YASnippets
+
+
+
 [v1.4.1]
 ------------------------------------------------------------------------
 **August 4th, 2021**  

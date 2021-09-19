@@ -163,6 +163,7 @@ repository:
 		captures:
 			1: name: "punctuation.definition.variable.sigil.dollar-sign.yasnippet"
 
+	# NOTE: This list should be kept in sync with `yas--escaped-characters`
 	"escaped-characters":
 		patterns: [{
 			# Escaped backslash
@@ -180,6 +181,30 @@ repository:
 			# \`
 			name: "constant.character.escape.backtick.yasnippet"
 			match: "(\\\\)`"
+			captures:
+				1: name: "punctuation.definition.escape.yasnippet"
+		},{
+			# \'
+			name: "constant.character.escape.quote.single.yasnippet"
+			match: "(\\\\)'"
+			captures:
+				1: name: "punctuation.definition.escape.yasnippet"
+		},{
+			# \"
+			name: "constant.character.escape.quote.double.yasnippet"
+			match: '(\\\\)"'
+			captures:
+				1: name: "punctuation.definition.escape.yasnippet"
+		},{
+			# \{ \}
+			name: "constant.character.escape.bracket.curly.brace.yasnippet"
+			match: "(\\\\)[{}]"
+			captures:
+				1: name: "punctuation.definition.escape.yasnippet"
+		},{
+			# \( \)
+			name: "constant.character.escape.bracket.round.parenthesis.yasnippet"
+			match: "(\\\\)[\\(\\)]"
 			captures:
 				1: name: "punctuation.definition.escape.yasnippet"
 		}]
