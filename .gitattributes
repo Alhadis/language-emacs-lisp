@@ -1,3 +1,6 @@
+# Include CSON files in GitHub's language breakdown graph
+*.cson linguist-detectable
+
 # Don't convert line-endings on Windows
 /spec/fixtures/*/* binary
 
