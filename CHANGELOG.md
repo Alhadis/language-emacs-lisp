@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* __Added:__ Cross-reference highlighting in comments and docstrings
 * __Fixed:__ Escaped brackets and quotes not recognised in YASnippets
 
 

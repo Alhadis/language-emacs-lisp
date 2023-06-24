@@ -127,7 +127,7 @@ repository:
 			0: name: "punctuation.definition.comment.emacs.lisp"
 		patterns: [
 			{include: "#modeline"}
-			{include: "#docvar"}
+			{include: "#eldoc"}
 		]
 
 
@@ -186,6 +186,25 @@ repository:
 			]
 			
 		}, include: "$self"]
+
+
+
+	# Stuff matched inside docstrings and comments
+	eldoc:
+		patterns: [
+			{include: "#docvar"}
+			{include: "#docref"}
+		]
+
+
+	# Cross-references marked up like \\[this].
+	docref:
+		name:  "variable.other.reference.emacs.lisp"
+		match: "(\\x5C{2}\\[)((?:[^\\s\\\\]|\\\\.)+)(\\])"
+		captures:
+			1: name: "punctuation.definition.reference.begin.emacs.lisp"
+			2: name: "constant.other.reference.link.emacs.lisp"
+			3: name: "punctuation.definition.reference.end.emacs.lisp"
 
 
 	# Strings quoted `like this'
@@ -618,7 +637,7 @@ repository:
 
 	# Escape sequences within double-quoted strings
 	"string-innards":
-		patterns: [{
+		patterns: [include: "#eldoc", {
 			
 			# Concealed newline
 			name: "constant.character.escape.newline.emacs.lisp"
@@ -630,8 +649,7 @@ repository:
 			name: "constant.character.escape.emacs.lisp"
 			captures:
 				1: name: "punctuation.escape.backslash.emacs.lisp"
-
-		}, include: "#docvar"]
+		}]
 
 
 	# Symbols (at least the ones we care to highlight)
