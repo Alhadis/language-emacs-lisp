@@ -203,8 +203,8 @@ repository:
 	# ElDoc-specific escape sequences: \\=…, \\+…
 	docesc:
 		patterns: [
-			{match: "\\x5C{2}=", name: "constant.character.escape.key-sequence.emacs.lisp"}
-			{match: "\\x5C{2}+", name: "constant.character.escape.suppress-link.emacs.lisp"}
+			{match: "\\x5C{2}=", name: "constant.escape.character.key-sequence.emacs.lisp"}
+			{match: "\\x5C{2}+", name: "constant.escape.character.suppress-link.emacs.lisp"}
 		]
 
 
@@ -672,13 +672,13 @@ repository:
 		patterns: [include: "#eldoc", {
 			
 			# Concealed newline
-			name: "constant.character.escape.newline.emacs.lisp"
+			name: "constant.escape.character.newline.emacs.lisp"
 			match: "(\\\\)$\\n?"
 		},{
 			
 			# Escaped character, any
 			match: '(\\\\).'
-			name: "constant.character.escape.emacs.lisp"
+			name: "constant.escape.character.emacs.lisp"
 			captures:
 				1: name: "punctuation.escape.backslash.emacs.lisp"
 		}]

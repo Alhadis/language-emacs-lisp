@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 * __Added:__ Highlighting for [key binding substitution sequences][2] in
 Elisp comments and docstrings, introduced (or changed) circa Emacs 28.1.
 * __Fixed:__ Escaped brackets and quotes not recognised in YASnippets
+* __Improved:__ Highlighting of escape sequences in strings on GitHub
 
 [2]: https://bit.ly/44MSmgO
 
