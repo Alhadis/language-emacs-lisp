@@ -8,9 +8,11 @@ This project adheres to [Semantic Versioning](http://semver.org).
 
 [Unpublished]
 ------------------------------------------------------------------------
-* __Added:__ Cross-reference highlighting in comments and docstrings
+* __Added:__ Highlighting for [key binding substitution sequences][2] in
+Elisp comments and docstrings, introduced (or changed) circa Emacs 28.1.
 * __Fixed:__ Escaped brackets and quotes not recognised in YASnippets
 
+[2]: https://bit.ly/44MSmgO
 
 
 [v1.4.1]

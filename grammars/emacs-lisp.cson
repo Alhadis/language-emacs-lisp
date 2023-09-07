@@ -190,21 +190,53 @@ repository:
 
 
 	# Stuff matched inside docstrings and comments
+	# See: “(elisp)Keys in Documentation” node in Texinfo manual
 	eldoc:
 		patterns: [
+			{include: "#docesc"}
 			{include: "#docvar"}
-			{include: "#docref"}
+			{include: "#dockey"}
+			{include: "#docmap"}
 		]
 
 
-	# Cross-references marked up like \\[this].
-	docref:
-		name:  "variable.other.reference.emacs.lisp"
+	# ElDoc-specific escape sequences: \\=…, \\+…
+	docesc:
+		patterns: [
+			{match: "\\x5C{2}=", name: "constant.character.escape.key-sequence.emacs.lisp"}
+			{match: "\\x5C{2}+", name: "constant.character.escape.suppress-link.emacs.lisp"}
+		]
+
+
+	# Key sequence placeholder that executes \[command]
+	dockey:
+		name:  "variable.other.reference.key-sequence.emacs.lisp"
 		match: "(\\x5C{2}\\[)((?:[^\\s\\\\]|\\\\.)+)(\\])"
 		captures:
 			1: name: "punctuation.definition.reference.begin.emacs.lisp"
 			2: name: "constant.other.reference.link.emacs.lisp"
 			3: name: "punctuation.definition.reference.end.emacs.lisp"
+
+
+	# Keymap placeholders
+	docmap:
+		patterns: [{
+			# Summary of keymap named by \{mapvar}
+			name: "meta.keymap.summary.emacs.lisp"
+			match: "(\\x5C{2}{)((?:[^\\s\\\\]|\\\\.)+)(})"
+			captures:
+				1: name: "punctuation.definition.reference.begin.emacs.lisp"
+				2: name: "entity.name.tag.keymap.emacs.lisp"
+				3: name: "punctuation.definition.reference.end.emacs.lisp"
+		},{
+			# \<mapvar> overrides value of \{mapvar} for subsequent \[…] sequences.
+			name: "meta.keymap.specifier.emacs.lisp"
+			match: "(\\x5C{2}<)((?:[^\\s\\\\]|\\\\.)+)(>)"
+			captures:
+				1: name: "punctuation.definition.reference.begin.emacs.lisp"
+				2: name: "entity.name.tag.keymap.emacs.lisp"
+				3: name: "punctuation.definition.reference.end.emacs.lisp"
+		}]
 
 
 	# Strings quoted `like this'
