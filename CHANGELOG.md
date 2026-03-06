@@ -10,10 +10,15 @@ This project adheres to [Semantic Versioning](http://semver.org).
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for [key binding substitution sequences][2] in
 Elisp comments and docstrings, introduced (or changed) circa Emacs 28.1.
+* __Added:__ Filename support for [`Eask` and `Easkfile` manifests][3]
+* __Added:__ Modeline recognition of [`cask`][4] and [`eask`][5] modes
 * __Fixed:__ Escaped brackets and quotes not recognised in YASnippets
 * __Improved:__ Highlighting of escape sequences in strings on GitHub
 
 [2]: https://bit.ly/44MSmgO
+[3]: https://emacs-eask.github.io/DSL/
+[4]: https://melpa.org/#/cask-mode
+[5]: https://melpa.org/#/eask-mode
 
 
 [v1.4.1]
