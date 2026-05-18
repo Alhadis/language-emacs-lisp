@@ -591,14 +591,18 @@ repository:
 	# Numeric literals
 	number:
 		patterns: [{
-			
 			# #b10010110: Binary notation
 			name: "constant.numeric.integer.binary.emacs.lisp"
 			match: "(?<=[\\s()\\[]|^)(#)[Bb][01]+"
 			captures: 1: name: "punctuation.definition.binary.emacs.lisp"
 		},{
-			# 0xFFFF: Hexadecimal notation
-			name: "constant.numeric.integer.hex.viml"
+			# #o777: Octal notation
+			name: "constant.numeric.integer.octal.emacs.lisp"
+			match: "(?<=[\\s()\\[]|^)(#)[Oo][0-7]+"
+			captures: 1: name: "punctuation.definition.oct.emacs.lisp"
+		},{
+			# #xFFFF: Hexadecimal notation
+			name: "constant.numeric.integer.hex.emacs.lisp"
 			match: "(?<=[\\s()\\[]|^)(#)[Xx][0-9A-Fa-f]+"
 			captures: 1: name: "punctuation.definition.hex.emacs.lisp"
 		},{

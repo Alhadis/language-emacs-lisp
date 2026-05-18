@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 Elisp comments and docstrings, introduced (or changed) circa Emacs 28.1.
 * __Added:__ Filename support for [`Eask` and `Easkfile` manifests][3]
 * __Added:__ Modeline recognition of [`cask`][4] and [`eask`][5] modes
+* __Fixed:__ Missing support for numbers using octal notation (`#o777`)
 * __Fixed:__ Escaped brackets and quotes not recognised in YASnippets
 * __Improved:__ Highlighting of escape sequences in strings on GitHub
 
