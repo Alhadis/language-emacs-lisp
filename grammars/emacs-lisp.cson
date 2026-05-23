@@ -879,6 +879,74 @@ repository:
 	# Emacs standard library
 	stdlib:
 		patterns: [{
+			# 2026/05/24: Updates for Emacs 30.2
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)
+				(?:recentf-menu-value-shortcut|recentf-open-files-action|recentf-open-files-items|recentf-open-files-item|recentf-open-files|recentf-open-more-files
+				|recentf-open-most-recent-file(?:-\\d)?|recentf-push|recentf-relative-filter|recentf-remove-if-non-kept|recentf-save-list|recentf-set-menu-element-item
+				|recentf-set-menu-element-value|recentf-(?:sort|show)-(?:basenames|directories)-(?:ascending|descending)|recentf-show-basenames|recentf-show-digit-shortcut-filter
+				|recentf-show-menu|recentf-sort-ascending|recentf-sort-descending|recentf-string-equal|recentf-string-lessp|recentf-string-member|recentf-sub-menu-element-p
+				|recentf-track-closed-file|recentf-track-opened-file|recentf-trunc-list|recentf-unload-function|recompile|rectangle--*-char|rectangle--col-pos|rectangle--crutches
+				|rectangle--default-line-number-format|rectangle--extract-region|rectangle--highlight-for-redisplay|rectangle--insert-for-yank|rectangle--place-cursor
+				|rectangle--point-col|rectangle--pos-cols|rectangle--reset-crutches|rectangle--space-to|rectangle--string-erase-preview|rectangle--string-flush-preview
+				|rectangle--string-preview|rectangle--unhighlight-for-redisplay|rectangle-backward-char|rectangle-exchange-point-and-mark|rectangle-forward-char
+				|rectangle-left-char|rectangle-next-line|rectangle-number-line-callback|rectangle-previous-line|rectangle-right-char|redisplay--update-region-highlights
+				|reduce|refer-convert-string-to-list-of-strings|refer-every|refer-expand-files|refer-find-entry-in-file|refer-find-entry-internal|refer-find-entry
+				|refer-find-next-entry|refer-get-bib-files|refer-yank-key|refill-adjust-ignorable-overlay|refill-after-change-function|refill-fill-paragraph-at
+				|refill-fill-paragraph|refill-post-command-function|refill-pre-command-function|reftex-TeX-master-file|reftex-abbreviate-title|reftex-access-parse-file
+				|reftex-access-scan-info|reftex-access-search-path|reftex-add-index-macros|reftex-add-label-environments|reftex-add-section-levels|reftex-add-to-label-alist
+				|reftex-all-assoc-string|reftex-all-assq|reftex-arg-cite|reftex-arg-index-tag|reftex-arg-index|reftex-arg-label|reftex-auto-mode-alist|reftex-bib-or-thebib
+				|reftex-change-label|reftex-check-parse-consistency|reftex-check-recursive-edit|reftex-citep|reftex-citet|reftex-compile-variables|reftex-convert-string
+				|reftex-create-bibtex-file|reftex-create-customize-menu|reftex-create-tags-file|reftex-customize|reftex-default-bibliography|reftex-delete-overlay
+				|reftex-display-index|reftex-do-parse|reftex-end-of-bib-entry|reftex-enlarge-to-fit|reftex-ensure-compiled-variables|reftex-ensure-index-support
+				|reftex-erase-all-selection-and-index-buffers|reftex-erase-buffer|reftex-everything-regexp|reftex-expand-path|reftex-fancyref-Fref|reftex-fancyref-fref
+				|reftex-find-duplicate-labels|reftex-find-file-externally|reftex-find-file-on-path|reftex-find-start-point|reftex-fontify-select-label-buffer
+				|reftex-get-bibfile-list|reftex-get-buffer-visiting|reftex-get-cite-format|reftex-get-file-buffer-force|reftex-get-offset|reftex-goto-label
+				|reftex-grep-document|reftex-highlight-shall-die|reftex-highlight|reftex-in-comment|reftex-index-complete-key|reftex-index-complete-tag
+				|reftex-index-info-safe|reftex-index-info|reftex-index-phrase-selection-or-word|reftex-index-select-tag|reftex-index-selection-or-word|reftex-index-show-entry
+				|reftex-index-visit-phrases-buffer|reftex-index|reftex-info|reftex-init-section-numbers|reftex-insert-docstruct|reftex-is-multi|reftex-kill-buffer-hook
+				|reftex-kill-buffer|reftex-kill-emacs-hook|reftex-kill-temporary-buffers|reftex-label-info-update|reftex-label-info|reftex-label-location|reftex-label
+				|reftex-last-assoc-before-elt|reftex-locate-bibliography-files|reftex-locate-file|reftex-make-cite-echo-string|reftex-make-index-buffer-name|reftex-make-overlay
+				|reftex-make-regexp-allow-for-ctrl-m|reftex-make-selection-buffer-name|reftex-match-string|reftex-mode-menu|reftex-mouse-view-crossref|reftex-move-over-touching-args
+				|reftex-move-overlay|reftex-nearest-match|reftex-next-multifile-index|reftex-nicify-text|reftex-no-props|reftex-notice-new-section|reftex-notice-new|reftex-nth-arg
+				|reftex-number|reftex-overlay-put|reftex-parse-all|reftex-parse-args|reftex-parse-bibtex-entry|reftex-parse-colon-path|reftex-parse-one|reftex-plug-into-AUCTeX
+				|reftex-pop-to-bibtex-entry|reftex-process-string|reftex-query-label-type|reftex-query-replace-document|reftex-recursive-directory-list|reftex-ref-style-activate
+				|reftex-ref-style-list|reftex-ref-style-toggle|reftex-reference|reftex-refontify|reftex-region-active-p|reftex-remove-if|reftex-remove-symbols-from-list
+				|reftex-renumber-simple-labels|reftex-report-bug|reftex-reset-mode|reftex-save-all-document-buffers|reftex-scanning-info-available-p|reftex-search-document
+				|reftex-section-info|reftex-section-number|reftex-select-bib-mode|reftex-select-external-document|reftex-select-font-lock-fontify-region|reftex-select-font-lock-unfontify
+				|reftex-select-item|reftex-select-label-mode|reftex-select-with-char|reftex-set-cite-format|reftex-set-dirty|reftex-short-context|reftex-show-commentary|reftex-show-label-location
+				|reftex-silence-toc-markers|reftex-splice-symbols-into-list|reftex-sublist-nth|reftex-this-word|reftex-tie-multifile-symbols|reftex-toc-recenter|reftex-toc
+				|reftex-toggle-auto-toc-recenter|reftex-toggle-auto-view-crossref|reftex-toggle-plug-into-AUCTeX|reftex-truncate|reftex-typekey-check|reftex-unhighlight
+				|reftex-uniquify-by-car|reftex-uniquify|reftex-untie-multifile-symbols|reftex-use-fonts|reftex-varioref-vref|reftex-verified-face|reftex-view-crossref-from-bibtex
+				|reftex-view-crossref|reftex-visited-files|reftex-what-environment|reftex-what-macro-safe|reftex-what-macro|reftex-what-special-env|reftex-where-am-I|reftex-window-height
+				|regexp-sans-escapes|regi-interpret|regi-mapcar|regi-pos|region-exists-p|rem*|remember-append-to-file|remember-buffer-desc|remember-buffer|remember-destroy
+				|remember-diary-convert-entry|remember-finalize|remember-mail-date|remember-mode|remember-notes--kill-buffer-query|remember-notes-mode|remember-notes-save-and-bury-buffer
+				|remember-region|remember-store-in-files|remember-store-in-mailbox|remf|remove*|remove-duplicates|remove-if-not|remove-if|remprop|repeat-is-really-this-command|repeat-message
+				|replace-amp|replace|report-calc-bug|reporter-beautify-list|reporter-bug-hook|reporter-compose-outgoing|reporter-dump-state|reporter-dump-variable|reporter-lisp-indent
+				|reporter-update-status|reset-cdabbrev-window|reset-cdabbrev|reset-scheme|rest|return-from|return-key-bib|return|revappend|reveal-close-old-overlays|reveal-open-new-overlays
+				|reveal-post-command|rfc2045-encode-string|rfc2047-b-encode-string|rfc2047-charset-to-coding-system|rfc2047-decode-address-region|rfc2047-decode-address-string
+				|rfc2047-decode-encoded-words|rfc2047-decode-region|rfc2047-decode-string|rfc2047-encodable-p|rfc2047-encode-1|rfc2047-encode-message-header|rfc2047-encode-parameter
+				|rfc2047-encode-region|rfc2047-encode-string|rfc2047-encode|rfc2047-field-value|rfc2047-fold-field|rfc2047-fold-region|rfc2047-narrow-to-field|rfc2047-pad-base64
+				|rfc2047-q-encode-string|rfc2047-qp-or-base64|rfc2047-quote-special-characters-in-quoted-strings|rfc2047-strip-backslashes-in-quoted-strings|rfc2047-unfold-field
+				|rfc2047-unfold-region|rfc2231-decode-encoded-string|rfc2231-encode-string|rfc2231-get-value|rfc2231-parse-qp-string|rfc2231-parse-string|rfc2368-parse-mailto-url
+				|rfc2368-unhexify-string|rfc822-addresses-1|rfc822-addresses|rfc822-bad-address|rfc822-looking-at|rfc822-nuke-whitespace|rfc822-snarf-domain|rfc822-snarf-frob-list
+				|rfc822-snarf-subdomain|rfc822-snarf-words|rfc822-snarf-word|ring-convert-sequence-to-ring|ring-extend|ring-index|ring-insert+extend|ring-member|ring-minus1|ring-next
+				|ring-plus1|ring-previous|ring-remove+insert+extend|rlogin-delchar-or-send-Ctrl-D|rlogin-directory-tracking-mode|rlogin-mode|rlogin-send-Ctrl-C|rlogin-send-Ctrl-D
+				|rlogin-send-Ctrl-Z|rlogin-send-Ctrl-backslash|rlogin-tab-or-complete|rmail-add-label|rmail-add-mbox-headers|rmail-after-save-hook|rmail-apply-in-message|rmail-auto-file
+				|rmail-autodetect|rmail-beginning-of-message|rmail-buffers-swapped-p|rmail-bury|rmail-change-major-mode-hook|rmail-collect-deleted|rmail-construct-io-menu|rmail-continue
+				|rmail-convert-babyl-to-mbox|rmail-convert-file-maybe|rmail-copy-headers|rmail-count-new-messages|rmail-decode-region|rmail-delete-backward|rmail-delete-forward
+				|rmail-delete-headers|rmail-delete-message|rmail-digest-parse-mime|rmail-digest-parse-rfc1153sloppy|rmail-digest-parse-rfc1153strict|rmail-digest-parse-rfc934
+				|rmail-digest-rfc1153|rmail-display-labels|rmail-dont-modify-format|rmail-dont-reply-to|rmail-duplicate-message|rmail-edit-current-message|rmail-encode-string
+				|rmail-end-of-message|rmail-ensure-blank-line|rmail-epa-decrypt|rmail-error-bad-format|rmail-expunge-and-save|rmail-expunge-confirmed|rmail-expunge|rmail-find-all-files
+				|rmail-first-message|rmail-first-unseen-message|rmail-fontify-buffer-function|rmail-fontify-message|rmail-forget-messages|rmail-forward|rmail-generate-viewer-buffer
+				|rmail-get-attr-names|rmail-get-attr-value|rmail-get-coding-system|rmail-get-header-1|rmail-get-header|rmail-get-keywords|rmail-get-labels|rmail-get-new-mail-1
+				|rmail-get-new-mail|rmail-get-remote-password|rmail-have-password|rmail-highlight-headers|rmail-insert-inbox-text|rmail-install-speedbar-variables|rmail-is-text-p
+				|rmail-kill-label|rmail-last-message|rmail-list-to-menu|rmail-mail-return|rmail-mail|rmail-make-in-reply-to-field|rmail-mark-message|rmail-maybe-display-summary
+				|rmail-maybe-set-message-counters|rmail-message-attr-p|rmail-message-deleted-p|rmail-message-labels-p|rmail-message-unseen-p|rmail-mime-message-p|rmail-mime|rmail-mode-1
+				|rmail-mode-2|rmail-mode-kill-buffer-hook|rmail-mode-kill-summary|rmail-modify-format|rmail-msg-is-pruned|rmail-msg-number-after-expunge|rmail-msgbeg|rmail-msgend
+				|rmail-next-error-move|rmail-next-labeled-message|rmail-next-message|rmail-next-same-subject|rmail-next-undeleted-message|rmail-no-mail-p|rmail-only-expunge)
+			(?=[\\s()]|$)"""
+		},{
 			# 2018/09/06: Missing additions and updates for Emacs 26.2 [Part 1 / 7]
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)
