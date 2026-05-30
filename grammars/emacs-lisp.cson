@@ -939,7 +939,8 @@ repository:
 				|rmail-kill-label|rmail-last-message|rmail-list-to-menu|rmail-mail-return|rmail-mail|rmail-make-in-reply-to-field|rmail-mark-message|rmail-maybe-display-summary
 				|rmail-maybe-set-message-counters|rmail-message-attr-p|rmail-message-deleted-p|rmail-message-labels-p|rmail-message-unseen-p|rmail-mime-message-p|rmail-mime|rmail-mode-1
 				|rmail-mode-2|rmail-mode-kill-buffer-hook|rmail-mode-kill-summary|rmail-modify-format|rmail-msg-is-pruned|rmail-msg-number-after-expunge|rmail-msgbeg|rmail-msgend
-				|rmail-next-error-move|rmail-next-labeled-message|rmail-next-message|rmail-next-same-subject|rmail-next-undeleted-message|rmail-no-mail-p|rmail-only-expunge)
+				|rmail-next-error-move|rmail-next-labeled-message|rmail-next-message|rmail-next-same-subject|rmail-next-undeleted-message|rmail-no-mail-p|rmail-only-expunge
+				|font-use-system-font)
 			(?=[\\s()]|$)"""
 		},{
 			# 2018/09/06: Missing additions and updates for Emacs 26.2 [Part 1 / 7]
