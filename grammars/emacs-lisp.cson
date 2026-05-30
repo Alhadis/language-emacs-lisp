@@ -650,17 +650,12 @@ repository:
 		}]
 
 
-	# Argument-quoting
+	# 'Quoted symbol
 	quote:
-		patterns: [{
-			
-			# 'value
-			name: "constant.other.symbol.emacs.lisp"
-			match: "(')([-+=*/\\w~!@$%^&:<>{}?]+)"
-			captures:
-				1: name: "punctuation.definition.quote.emacs.lisp"
-				2: patterns: [include: "$self"]
-		}]
+		name: "constant.other.quoted.symbol.emacs.lisp"
+		match: "(')(?:[-+=*/\\w~!@$%^&:<>{}?]+)"
+		captures:
+			1: name: "punctuation.definition.quoted.symbol.emacs.lisp"
 
 	
 	# "Double-quoted" string
@@ -714,7 +709,7 @@ repository:
 			name: "constant.other.inserted.symbol.emacs.lisp"
 			match: "(,)([-+=*/\\w~!@$%^&:<>{}?]+)"
 			captures:
-				1: name: "punctuation.definition.inserted.symbol.emacs.lisp"
+				1: name: "punctuation.definition.insert.symbol.emacs.lisp"
 		}]
 	
 	

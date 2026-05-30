@@ -15,6 +15,7 @@ Elisp comments and docstrings, introduced (or changed) circa Emacs 28.1.
 * __Added:__ Modeline recognition of [`cask`][4] and [`eask`][5] modes
 * __Fixed:__ Missing support for numbers using octal notation (`#o777`)
 * __Fixed:__ Escaped brackets and quotes not recognised in YASnippets
+* __Fixed:__ Inconsistent highlighting of quoted symbols
 * __Improved:__ Highlighting of escape sequences in strings on GitHub
 
 [2]: https://bit.ly/44MSmgO
