@@ -13,6 +13,7 @@ Elisp comments and docstrings, introduced (or changed) circa Emacs 28.1.
 * __Added:__ Highlighting for 458 functions added since Emacs 29.4
 * __Added:__ Filename support for [`Eask` and `Easkfile` manifests][3]
 * __Added:__ Modeline recognition of [`cask`][4] and [`eask`][5] modes
+* __Added:__ Modeline recognition of `lisp-data` mode, used by [Tramp]
 * __Fixed:__ Missing support for numbers using octal notation (`#o777`)
 * __Fixed:__ Escaped brackets and quotes not recognised in YASnippets
 * __Fixed:__ Inconsistent highlighting of quoted symbols
@@ -22,6 +23,7 @@ Elisp comments and docstrings, introduced (or changed) circa Emacs 28.1.
 [3]: https://emacs-eask.github.io/DSL/
 [4]: https://melpa.org/#/cask-mode
 [5]: https://melpa.org/#/eask-mode
+[6]: https://www.gnu.org/software/tramp/
 
 
 [v1.4.1]
@@ -126,6 +128,7 @@ Initial release. Adds editor commands and highlighting for Emacs Lisp.
 [2.3.3.2]: http://www.hep.by/gnu/elisp/General-Escape-Syntax.html
 [AmuseWiki]: https://amusewiki.org/library/manual
 [Emacs Muse]: https://gnu.org/software/emacs-muse/manual/muse.html
+[Tramp]: https://www.gnu.org/software/tramp/
 [YASnippet]: http://joaotavora.github.io/yasnippet
 [`el-get`]: https://github.com/dimitri/el-get
 [`mocha.el`]: https://github.com/scottaj/mocha.el
