@@ -4,6 +4,7 @@ fileTypes: [
 	"el"
 	"elc"
 	"eld"
+	"dynvars"
 	"spacemacs"
 	"_emacs"
 	"emacs"
