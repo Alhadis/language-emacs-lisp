@@ -877,6 +877,82 @@ repository:
 	# Emacs standard library
 	stdlib:
 		patterns: [{
+			# 2026/08/24: Updates for Emacs 31.1 [Part 1 / 2]
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)
+				(?:ada-case-read-exceptions|ada-case|ada-change-prj|ada-check-current|ada-check-defun-name|ada-check-matching-start|ada-compile-application|ada-compile-current
+				|ada-compile-goto-error|ada-compile-mouse-goto-error|ada-complete-identifier|ada-contextual-menu|ada-create-case-exception-substring|ada-create-case-exception
+				|ada-create-keymap|ada-create-menu|ada-customize|ada-declare-block|ada-else|ada-elsif|ada-exception-block|ada-exception|ada-exit|ada-ff-other-window
+				|ada-fill-comment-paragraph-justify|ada-fill-comment-paragraph-postfix|ada-fill-comment-paragraph|ada-find-any-references|ada-find-local-references
+				|ada-find-references|ada-find-src-file-in-dir|ada-for-loop|ada-format-paramlist|ada-function-spec|ada-gdb-application|ada-gen-treat-proc|ada-get-body-name
+				|ada-get-current-indent|ada-get-indent-block-label|ada-get-indent-block-start|ada-get-indent-case|ada-get-indent-end|ada-get-indent-goto-label|ada-get-indent-if
+				|ada-get-indent-loop|ada-get-indent-nochange|ada-get-indent-noindent|ada-get-indent-open-paren|ada-get-indent-paramlist|ada-get-indent-subprog|ada-get-indent-type
+				|ada-get-indent-when|ada-gnat-style|ada-goto-decl-start|ada-goto-declaration-other-frame|ada-goto-declaration|ada-goto-matching-end|ada-goto-matching-start
+				|ada-goto-next-non-ws|ada-goto-next-word|ada-goto-parent|ada-goto-previous-word|ada-goto-stmt-end|ada-goto-stmt-start|ada-if|ada-in-comment-p|ada-in-decl-p
+				|ada-in-numeric-literal-p|ada-in-open-paren-p|ada-in-paramlist-p|ada-in-string-or-comment-p|ada-in-string-p|ada-indent-current-function|ada-indent-current
+				|ada-indent-newline-indent-conditional|ada-indent-newline-indent|ada-indent-on-previous-lines|ada-indent-region|ada-insert-paramlist|ada-justified-indent-current
+				|ada-looking-at-semi-or|ada-looking-at-semi-private|ada-loop|ada-loose-case-word|ada-make-body-gnatstub|ada-make-body|ada-make-filename-from-adaname
+				|ada-make-subprogram-body|ada-mode-menu|ada-mode-version|ada-move-to-end|ada-move-to-start|ada-narrow-to-defun|ada-next-package|ada-next-procedure
+				|ada-no-auto-case|ada-other-file-name|ada-outline-level|ada-package-body|ada-package-spec|ada-point-and-xref|ada-popup-menu|ada-previous-package
+				|ada-previous-procedure|ada-private|ada-prj-edit|ada-prj-new|ada-prj-save|ada-procedure-spec|ada-record|ada-region-selected|ada-remove-trailing-spaces
+				|ada-reread-prj-file|ada-run-application|ada-save-exceptions-to-file|ada-scan-paramlist|ada-search-ignore-complex-boolean|ada-search-ignore-string-comment
+				|ada-search-prev-end-stmt|ada-set-default-project-file|ada-set-main-compile-application|ada-set-point-accordingly|ada-show-current-main|ada-subprogram-body
+				|ada-subtype|ada-tab-hard|ada-tabsize|ada-tab|ada-task-body|ada-task-spec|ada-type|ada-uncomment-region|ada-untab-hard|ada-untab|ada-use|ada-when
+				|ada-which-function-are-we-in|ada-which-function|ada-while-loop|ada-with|ada-xref-goto-previous-reference|add-completion-to-head|add-completion-to-tail-if-new
+				|add-completions-from-buffer|add-completions-from-c-buffer|add-completions-from-file|add-completions-from-lisp-buffer|add-completions-from-tags-table|add-completion
+				|add-log-edit-next-comment|add-log-edit-prev-comment|add-log-file-name|add-log-iso8601-time-string|add-log-iso8601-time-zone|add-log-tcl-defun|add-new-page
+				|add-permanent-completion|addbib|adjoin|advertised-widget-backward|advertised-xscheme-send-previous-expression|align--set-marker|align-adjust-col-for-rule)
+			(?=[\\s()]|$)"""
+		},{
+			# 2026/08/24: Updates for Emacs 31.1 [Part 2 / 2]
+			name: "support.function.emacs.lisp"
+			match: """(?x)(?<=[()]|^)
+				(?:align-areas|align-column|align-match-tex-pattern|align-new-section-p|align-regions|align-region|align-set-vhdl-rules|allout-aberrant-container-p|allout-add-resumptions
+				|allout-adjust-file-variable|allout-after-saves-handler|allout-annotate-hidden|allout-ascend-to-depth|allout-ascend|allout-auto-fill|allout-back-to-current-heading
+				|allout-back-to-heading|allout-back-to-visible-text|allout-backward-current-level|allout-before-change-handler|allout-beginning-of-current-entry|allout-beginning-of-current-line
+				|allout-beginning-of-level|allout-beginning-of-line|allout-body-modification-handler|allout-bullet-for-depth|allout-bullet-isearch|allout-called-interactively-p
+				|allout-chart-exposure-contour-by-icon|allout-chart-siblings|allout-chart-subtree|allout-chart-to-reveal|allout-compose-and-institute-keymap|allout-copy-exposed-to-buffer
+				|allout-copy-line-as-kill|allout-copy-topic-as-kill|allout-current-bullet-pos|allout-current-bullet|allout-current-decorated-p|allout-current-depth|allout-current-topic-collapsed-p
+				|allout-deannotate-hidden|allout-decorate-item-and-context|allout-decorate-item-body|allout-decorate-item-cue|allout-decorate-item-guides|allout-decorate-item-icon
+				|allout-decorate-item-span|allout-depth|allout-descend-to-depth|allout-distinctive-bullet|allout-do-doublecheck|allout-do-resumptions|allout-e-o-prefix-p|allout-elapsed-time-seconds
+				|allout-encrypt-decrypted|allout-encrypt-string|allout-encrypted-topic-p|allout-encrypted-type-prefix|allout-end-of-current-heading|allout-end-of-current-line
+				|allout-end-of-current-subtree|allout-end-of-entry|allout-end-of-heading|allout-end-of-level|allout-end-of-line|allout-end-of-prefix|allout-end-of-subtree|allout-expose-topic
+				|allout-fetch-icon-image|allout-file-vars-section-data|allout-find-file-hook|allout-find-image|allout-flag-current-subtree|allout-flag-region|allout-flatten-exposed-to-buffer
+				|allout-flatten|allout-format-quote|allout-forward-current-level|allout-frame-property|allout-get-body-text|allout-get-bullet|allout-get-configvar-values|allout-get-current-prefix
+				|allout-get-invisibility-overlay|allout-get-item-widget|allout-get-or-create-item-widget|allout-get-or-create-parent-widget|allout-get-prefix-bullet|allout-goto-prefix-doublechecked
+				|allout-goto-prefix|allout-graphics-modification-handler|allout-hidden-p|allout-hide-bodies|allout-hide-by-annotation|allout-hide-current-entry|allout-hide-current-leaves|allout-hide-current-subtree
+				|allout-hide-region-body|allout-hotspot-key-handler|allout-indented-exposed-to-buffer|allout-infer-body-reindent|allout-infer-header-lead-and-primary-bullet|allout-infer-header-lead
+				|allout-inhibit-auto-save-info-for-decryption|allout-init|allout-insert-latex-header|allout-insert-latex-trailer|allout-insert-listified|allout-institute-keymap|allout-isearch-end-handler
+				|allout-item-actual-position|allout-item-element-span-is|allout-item-icon-key-handler|allout-item-location|allout-item-span|allout-kill-line|allout-kill-topic|allout-latex-verb-quote
+				|allout-latex-verbatim-quote-curr-line|allout-latexify-exposed|allout-latexify-one-item|allout-lead-with-comment-string|allout-listify-exposed|allout-make-topic-prefix
+				|allout-mark-active-p|allout-mark-marker|allout-mark-topic|allout-maybe-resume-auto-save-info-after-encryption|allout-minor-mode|allout-mode-map|allout-new-exposure
+				|allout-new-item-widget|allout-next-heading|allout-next-sibling-leap|allout-next-sibling|allout-next-single-char-property-change|allout-next-topic-pending-encryption|allout-next-visible-heading
+				|allout-number-siblings|allout-numbered-type-prefix|allout-old-expose-topic|allout-on-current-heading-p|allout-on-heading-p|allout-open-sibtopic|allout-open-subtopic|allout-open-supertopic
+				|allout-open-topic|allout-overlay-insert-in-front-handler|allout-overlay-interior-modification-handler|allout-overlay-preparations|allout-parse-item-at-point|allout-post-command-business
+				|allout-pre-command-business|allout-pre-next-prefix|allout-prefix-data|allout-previous-heading|allout-previous-sibling|allout-previous-single-char-property-change|allout-previous-visible-heading
+				|allout-process-exposed|allout-range-overlaps|allout-rebullet-current-heading|allout-rebullet-heading|allout-rebullet-topic-grunt|allout-rebullet-topic|allout-recent-bullet|allout-recent-depth
+				|allout-recent-prefix|allout-redecorate-item|allout-redecorate-visible-subtree|allout-region-active-p|allout-reindent-body|allout-renumber-to-depth|allout-reset-header-lead|allout-resolve-xref
+				|allout-run-unit-tests|allout-select-safe-coding-system|allout-set-boundary-marker|allout-setup-menubar|allout-setup-text-properties|allout-shift-in|allout-shift-out|allout-show-all
+				|allout-show-children|allout-show-current-branches|allout-show-current-entry|allout-show-current-subtree|allout-show-entry|allout-show-to-offshoot|allout-sibling-index|allout-snug-back
+				|allout-solicit-alternate-bullet|allout-stringify-flat-index-indented|allout-stringify-flat-index-plain|allout-stringify-flat-index|allout-substring-no-properties|allout-test-range-overlaps
+				|allout-test-resumptions|allout-tests-obliterate-variable|allout-this-or-next-heading|allout-toggle-current-subtree-encryption|allout-toggle-current-subtree-exposure|allout-toggle-subtree-encryption
+				|allout-topic-flat-index|allout-unload-function|allout-unprotected|allout-up-current-level|allout-version|allout-widgetize-buffer|allout-widgets-additions-processor|allout-widgets-additions-recorder
+				|allout-widgets-adjusting-message|allout-widgets-after-change-handler|allout-widgets-after-copy-or-kill-function|allout-widgets-after-undo-function|allout-widgets-before-change-handler
+				|allout-widgets-changes-dispatcher|allout-widgets-copy-list|allout-widgets-count-buttons-in-region|allout-widgets-deletions-processor|allout-widgets-deletions-recorder|allout-widgets-exposure-change-processor
+				|allout-widgets-exposure-change-recorder|allout-widgets-exposure-undo-processor|allout-widgets-exposure-undo-recorder|allout-widgets-hook-error-handler|allout-widgets-mode-disable|allout-widgets-mode-enable
+				|allout-widgets-mode-off|allout-widgets-mode-on|allout-widgets-post-command-business|allout-widgets-pre-command-business|allout-widgets-prepopulate-buffer|allout-widgets-run-unit-tests|allout-widgets-shifts-processor
+				|allout-widgets-shifts-recorder|allout-widgets-tally-string|allout-widgets-undecorate-item|allout-widgets-undecorate-region|allout-widgets-undecorate-text|allout-widgets-version|allout-write-contents-hook-handler
+				|allout-yank-pop|allout-yank-processing|allout-yank|ange-ftp-abbreviate-filename|ange-ftp-add-bs2000-host|ange-ftp-add-bs2000-posix-host|ange-ftp-add-cms-host|ange-ftp-add-dl-dir|ange-ftp-add-dumb-unix-host
+				|ange-ftp-add-file-entry|ange-ftp-add-mts-host|ange-ftp-add-vms-host|ange-ftp-allow-child-lookup|ange-ftp-barf-if-not-directory|ange-ftp-barf-or-query-if-file-exists|ange-ftp-binary-file|ange-ftp-bs2000-cd-to-posix
+				|ange-ftp-bs2000-host|ange-ftp-bs2000-posix-host|ange-ftp-call-chmod|ange-ftp-call-cont|ange-ftp-canonize-filename|ange-ftp-cd|ange-ftp-cf1|ange-ftp-cf2|ange-ftp-chase-symlinks|ange-ftp-cms-host
+				|ange-ftp-cms-make-compressed-filename|ange-ftp-compress|ange-ftp-copy-file-internal|ange-ftp-copy-files-async|ange-ftp-copy-file|ange-ftp-del-tmp-name|ange-ftp-delete-directory|ange-ftp-delete-file-entry
+				|ange-ftp-delete-file|ange-ftp-directory-file-name|ange-ftp-directory-files-and-attributes|ange-ftp-directory-files|ange-ftp-dired-compress-file|ange-ftp-dired-uncache|ange-ftp-dl-parser
+				|ange-ftp-dumb-unix-host|ange-ftp-error|ange-ftp-expand-dir|ange-ftp-expand-file-name|ange-ftp-expand-symlink|ange-ftp-file-attributes|ange-ftp-file-directory-p|ange-ftp-file-entry-not-ignored-p
+				|ange-ftp-file-entry-p|ange-ftp-file-executable-p|ange-ftp-file-exists-p|ange-ftp-file-local-copy|ange-ftp-file-modtime|ange-ftp-file-name-all-completions|ange-ftp-file-name-as-directory
+				|ange-ftp-file-name-completion-1|ange-ftp-file-name-completion|ange-ftp-file-name-directory|ange-ftp-file-name-nondirectory|ange-ftp-file-name-sans-versions
+				|rectangle--\\*-char|rem\\*|remove\\*|ring-insert\\+extend|ring-remove\\+insert\\+extend)
+			(?=[\\s()]|$)"""
+		},{
 			# 2026/05/24: Updates for Emacs 30.2
 			name: "support.function.emacs.lisp"
 			match: """(?x)(?<=[()]|^)

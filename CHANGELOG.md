@@ -10,7 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org).
 ------------------------------------------------------------------------
 * __Added:__ Highlighting for [key binding substitution sequences][2] in
 Elisp comments and docstrings, introduced (or changed) circa Emacs 28.1.
-* __Added:__ Highlighting for 458 functions added since Emacs 29.4
+* __Added:__ Highlighting for 931 functions added since Emacs 29.4
 * __Added:__ Filename support for [`Eask` and `Easkfile` manifests][3]
 * __Added:__ Modeline recognition of [`cask`][4] and [`eask`][5] modes
 * __Added:__ Modeline recognition of `lisp-data` mode, used by [Tramp]
